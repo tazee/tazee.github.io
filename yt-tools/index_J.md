@@ -1,22 +1,30 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+permalink: /yt-tools/index_J.html
+---
 # YT-Tools for Blender
 このアドオンは、Blenderのモデリングワークフローに便利なツールのコレクションです。主にModoユーザーがBlenderを使いやすくする目的に特化したユーティリティが含まれています。<br>
 
 ## Blenderバージョン
 - 4.0以上、もしくはその派生バージョン
-- アドオンはPythonのみで記述されており、macOS, Window, Linuxで動作します。
+- アドオンはPythonのみで記述されており、macOS, Windowで動作します。
 
 ## インストール
 BlenderのPreferencesのAdd-onsメニューからyt-tools.zipをインストールし、YT-Toolsを有効にします。
 <div align="left">
-<img src="./images/addon.png" object-fit: contain'/>
+<img src="images/addon.png"/>
 </div>
+<br>
 
 ## 使い方
 基本的な機能は、サイドバーの"YT-Tools"タブからアクセスできます。一部の機能はショートカットキーもしくはマウスクリック操作にマッピングされています。
 <div align="left">
-<img src="./images/sideBar.png"  object-fit: contain'/>
+<img src="images/sideBar.png"/>
 </div>
-
+<br>
 
 ## 選択機能
 ### <ins>Select Convert Edge to Face</ins><br>
@@ -31,7 +39,7 @@ Edit Modeで、２つ以上選択したFace（もしくはEdge、Vert）の選�
 Edit Modeで、FaceをマウスでダブルクリックするとそのFaceに連結された他のFaceが選択されます。Edgeをダブルクリックするとエッジループが選択されます。SHIFTキーを押しながらダブルクリックすると既存の選択に加えて、前述のエレメントが選択状態になります。<br>
 <ins><b>制限事項: </b>ダブルクリックのショートカットは、3D ViewでCircle選択モードの時、およびUV EditorでUV syncがオフの時は動作しません。これはBlender側のなにかしらの制限によるもので、現時点対応策はありません。</ins>
 <div align="left">
-<img src="./images/SelectContextual.gif" object-fit: contain'/>
+<img src="images/SelectContextual.gif"/>
 </div>
 
 ### <ins>Select Loop</ins> （ショートカットのみ）<br>
@@ -46,8 +54,9 @@ Altキー＋LMBで選択するBlender標準のループ選択と同じですが�
 <b>Selection Set</b>は、Vert、Edge、Faceの選択状態を名前をつけてメッシュに保存する機能です。これらの情報はメッシュのカスタムデータとして保存されます。Blenderのシーンファイルに保存されますので、保存したシーンを再度開いた場合にも保持されています。<b>Add</b>は、現在選択されているメッシュエレメントを<b>Selection Set</b>に追加します。<b>Selection Set</b>は、Vert、Edge、Faceに対して別々に保存されます。<b>Remove</b>は、現在表示されている<b>Selection Set</b>を削除します。<b>Remove All</b>を有効にすると、現在のEditモードに対して保存されている<b>Selection Set</b>を全て削除します。<b>Select</b>は、現在表示されている<b>Selection Set</b>に保存されいるエレメントを選択状態にします。<br><br>
 <b>Push</b>, <b>Pop</b>, <b>Clear</b>は、現在選択されているエレメントの状態を一時的に退避し、必要な時に選択状態を呼び戻す機能です。基本的には<b>Selection Set</b>と同じメカニズムを使用していますが、明示的に名前をつけて保存せずにクリップボード感覚で選択状態のプッシュ・ポップを行うことができます。この選択状態もカスタムデータとして保存していますので、必要がなくなった時は<b>Clear</b>ボタンを押して選択データを削除することをお勧めします。
 <div align="left">
-<img src="./images/SelectionSet.png" object-fit: contain'/>
+<img src="images/SelectionSet.png"/>
 </div>
+<br>
 
 ## メッシュ編集
 ### <ins>Loop Slice</ins><br>
@@ -57,14 +66,14 @@ Loop Sliceは、Modoのループスライスに似た動作を実現するため
 **Cut Positions by Spans**は、スライスの数と間隔を各スパンの比率で直接指定するモードです。例えば"1 3 1"と入力するとポリゴンループは1:3:1の比率で三分割されます。各スパンはスペース文字で区切って入力します。スパンはその総数で徐算して正規化されますので、任意のスケールの数値で入力することができます。このフィールドでスパンが入力された場合は、分割数や**Symmetic Cut**などの項目は上書きされます。
 
 <div align="left">
-<img src="./images/loopSlice2.png" object-fit: contain'/>
+<img src="images/loopSlice2.png"/>
 </div>
 
 ### <ins>Add Loop</ins><br>
 <b>Add Loop</b>は、インタラクティブバージョンのLoop Sliceで、スライスするループのエッジを直接クリックして指定します。エッジをクリックするとスライスラインが黄色の線で表示されます。クリックした位置に表示されるハンドルをドラッグするとスライス位置を変更することができます。SPACEキーを押すとスライスが確定され、ツールが終了します。Returnキーを押すとスライスが確定されますがツールは継続され、次のスライス操作を連続して行うことができます。<b>Add Loop</b>には、スライスする位置を各エッジの比率ではなく、クリックしたエッジ上の距離でスライスする<b>Absolute Distance</b>オプションがあります。このオプションを有効にするとクリックしたエッジの分割位置の距離を基準にその他のエッジが分割されます。スライスのループラインを平行に移動させたい場合に有効です。<b>Offset from End</b>を有効にするとエッジの反対側からオフセットが行われます。
 
 <div align="left">
-<img src="./images/AddLoop.gif" object-fit: contain'/>
+<img src="images/AddLoop.gif"/>
 </div>
 
 ### <ins>Delete Contextual</ins> （ショートカットのみ）<br>
@@ -81,7 +90,7 @@ Polygon Sliceは、Modoのポリゴンスライスに似た動作を実現する
 * ESCキー、RMBクリック：メッシュを変更せずにツールを終了します。<br>
 <ins>制限事項：ツールハンドルの移動はBlenderがSnapに関するAPIを公開していないためスナップには対応していません。また、このオペレータは４面図ビューモードでは動作しません。これはBlenderが４面図を特殊なビューとして表示しており、アドオン側で４面図を正しく認識できないためです。</ins>
 <div align="left">
-<img src="./images/PolygonSlice.gif" object-fit: contain'/>
+<img src="images/PolygonSlice.gif"/>
 </div>
 
 ### <ins>Linear Transform</ins><br>
@@ -100,7 +109,7 @@ Polygon Sliceは、Modoのポリゴンスライスに似た動作を実現する
 * Returnキー：変更を確定し、変更値をリセットします。
 * ESCキー、Spaceキー、RMBクリック：ツールを終了します。<br>
 <div align="left">
-<img src="./images/LinearTransform.gif" object-fit: contain'/>
+<img src="images/LinearTransform.gif"/>
 </div>
 
 ### <ins>Radial Transform</ins><br>
@@ -114,11 +123,11 @@ Polygon Sliceは、Modoのポリゴンスライスに似た動作を実現する
 * LMB + Shift + サイドハンドルドラッグ：フォールオフのサイズを全ての軸均等にリサイズします。<br>
 * LMB + 中心ハンドルドラッグ：フォールオフ形状全体を移動します。<br>
 * LMB + Control + サイドハンドルドラッグ：フォールオフ形状全体を移動します。<br>
-* LMB + Altドラッグ：マウスボタンを放すまで変更を行いません。重いメッシュでハンドル操作を素早く位置合わせしたい場合に有効です。<b>
+* LMB + Altドラッグ：マウスボタンを放すまで変更を行いません。重いメッシュでハンドル操作を素早く位置合わせしたい場合に有効です。<br>
 * Returnキー：変更を確定し、変更値をリセットします。
 * ESCキー、Spaceキー、RMBクリック：ツールを終了します。<br>
 <div align="left">
-<img src="./images/RadialTransform.gif" object-fit: contain'/>
+<img src="images/RadialTransform.gif"/>
 </div>
 
 ### <ins>Edge Slice</ins><br>
@@ -130,7 +139,7 @@ Polygon Sliceは、Modoのポリゴンスライスに似た動作を実現する
 * Control + Zキー：最後に追加したハンドルを削除します。<br>
 * ESCキー、RMBクリック：メッシュを変更せずにツールを終了します。<br>
 <div align="left">
-<img src="./images/EdgeSlice.gif" object-fit: contain'/>
+<img src="images/EdgeSlice.gif"/>
 </div>
 
 ### <ins>Merge</ins><br>
@@ -159,7 +168,7 @@ Adjust Last Operation(最後の操作を調整) パネルで、UVs(UV) がチェ
 <b>Symmetry</b>は、指定した対称軸と対称に選択されたエレメントをトランスフォームします。<br>
 <b>Auto Fit</b>は、フォールオフシェイプを選択されているメッシュエレメントに指定した方向にフィットするようにStartとEndを移動します。<br>
 <b>Show Axis</b>を有効にするとフォールオフシェイプのStartとEndの位置に軸ハンドルが表示されます。<br>
-<b>Show Weight<b>は、Mesh Edit Mode OverlaysパネルにあるVertex Group Weightsを有効にし、Meshにウェイトをグラデーションカラーで表示します。<b>
+<b>Show Weight<b>は、Mesh Edit Mode OverlaysパネルにあるVertex Group Weightsを有効にし、Meshにウェイトをグラデーションカラーで表示します。<br>
 * G, R, S キー: 移動、回転、スケールの切り替え<br>
 * LMBドラッグ: マウスドラッグでHaulingで設定された項目の値をHaulingで変更します。<br>
 * LMB + Shiftドラッグ：新規にフォールオフシェイプを引き直します。<br>
@@ -171,7 +180,7 @@ Adjust Last Operation(最後の操作を調整) パネルで、UVs(UV) がチェ
 ## メッシュオブジェクトの表示属性の変更（Viewport Display）
 Viewport Displayは、選択されているメッシュオブジェクトと非選択のメッシュオブジェクトのビューポート表示属性を一括して変更する機能です。BlenderではメッシュオブジェクトのプロパティにViewport Displayがあり、個々のオブジェクトに対して設定可能ですが、この属性を一括して設定します。Active Meshesでは、選択されているメッシュオブジェトのための表示属性を設定し、Inactive Meshesでは非選択のメッシュオブジェトのための表示属性を設定します。Set Only Active Meshesを有効にして、Set Attributesボタンを押すと非選択のメッシュオブジェクトには変更は加えず、選択されているメッシュオブジェクトの表示属性だけを変更します。
 <div align="left">
-<img src="./images/viewport_display.png" object-fit: contain'/>
+<img src="images/viewport_display.png" style='max-height: 800px; object-fit: contain'/>
 </div>
 
 ## 表示情報（Display Info）
@@ -183,17 +192,17 @@ Edit Modeで選択されているFace、Edge、Vertの選択数もしくは単�
 ## グリッドサイズ<br>
 Viewport Overlaysパネルで設定されているGridのスケールを表示します。
 <div align="left">
-<img src="./images/display_info.png" object-fit: contain'/>
+<img src="images/display_info.png"/>
 </div>
 PreferencesパネルのYT-Toolsのタブでこの表示情報に使用するフォントのサイズを変更することができます。この情報は初期設定値として保存されますので、シーンファイルに共通の設定値として恒久的に使用されます。
 <div align="left">
-<img src="./images/preferences.png" object-fit: contain'/>
+<img src="images/preferences.png"/>
 </div>
 
 ## 寸法ツール(Dimension)
 寸法ツールは選択されているエレメントを包含する境界ボックスを計算し、そのサイズを画面上に表示します。エレメントが選択されていない場合は、アクティブメッシュ全体を包含する境界ボックスが表示されます。
 <div align="left">
-<img src="./images/dimension.png" object-fit: contain'/>
+<img src="images/dimension.png"/>
 </div>
 
 ## アクションセンター(Action Center)
@@ -225,7 +234,7 @@ Pivotは、アクティブオブジェクトの位置に3D Cursor位置を移動
 ## メッシュエレメントヒット位置の設定(Hit Mesh Element)
 Hit Mesh Elementは、Meshオブジェクトをマウスでクリックし、ヒットしたメッシュ上のエレメントの位置を、Active Element、3D CursorもしくはObject Originに設定します。Hit Mesh Elementsは、一度実行’するとツールを解除するまで、マウスクリックはヒットテストのイベントとして処理されます。トランスフォームツールなどの操作を続行する場合は、Hit Mesh Elementsを一旦解除する必要があります。ESCAPEキー、マウスの右クリック、Hit Mesh Elementsボタンを押すことでツールを解除することができます。
 <div align="left">
-<img src="./images/HitMeshElement.gif" object-fit: contain'/>
+<img src="images/HitMeshElement.gif"/>
 </div>
 
 ### <ins>Set To</ins><br>
@@ -250,14 +259,14 @@ Set Originは、指定した方法でオブジェクトの原点位置（黄色�
 作業平面はEditモードで選択したエレメントをビューの中心に移動および選択の法線ベクトルをビューのZ軸方向へ一時的に設定し、平面ビューでのモデリング作業を容易にする機能です。この機能は選択したエレメントをもとに選択を平面ビューの中心に変換するために計算したトランスフォームを"_Workplane"という名前で作成したEmptyオブジェクトに設定し、編集するメッシュオブジェクトをこの"_Workplane"オブジェクトにペアレンティングします。<b>Unset</b>を押すとこの"_Workplane"オブジェクトは削除され、ペアレンティングされているオブジェクトはもとに戻ります。これにより一時的に編集したいメッシュエレメントが置かれている平面をTopビューにしてメッシュを編集することが可能になります。<br>
 また、Objectモードで作業平面を<b>Set</b>すると現在選択されているオブジェクトのトランスフォームを原点に戻すトランスフォームマトリックスが"_Workplane"オブジェクトに設定され、すべてのメッシュオブジェクトが"_Workplane"にペアレンティングされます。これによりアクティブオブジェクトを一時的にワールド座標の中心にした操作が可能になります。
 <div align="left">
-<img src="./images/WorkPlane.gif" object-fit: contain'/>
+<img src="images/WorkPlane.gif"/>
 </div>
 
 ## 情報パネル(Statistics)
 Statisticsは、MeshのVert、Edge、Faceの情報を項目別に表示し、その属性を持つエレメントを選択もしくは非選択にすることができる情報パネルです。"+"ボタンを押すとその項目に関するエレメントが選択され、"-"を押すと非選択になります。パネルに表示されるエレメント数の表示はポリゴン数が多くなると検出に時間がかかるため、<b>Update Counts</b>を押して手動で更新してもらうように変更いたしました。情報を最新の状態で表示させたい場合は、<b>Update Counts</b>を押してください。<b>Auto Update</b>が有効になっている場合は、自動的にエレメント数の更新が行われます。ポリゴン数が多いメッシュを使用する場合などで更新速度が問題になる場合は、<b>Auto Update</b>を無効にしてください。
 
 <div align="left">
-<img src="./images/statistics.png" object-fit: contain'/>
+<img src="./images/statistics.png" style='max-height: 500px; object-fit: contain'/>
 </div>
 
 ### Verts
@@ -286,18 +295,18 @@ Statisticsは、MeshのVert、Edge、Faceの情報を項目別に表示し、そ
 ## パイメニュー
 アクションセンターの項目の選択を行うもう一つの方法としてアクションセンターのパイメニューが用意されています。これはプリファレンスのYT-Toolsアドオンに設定されている<b>Action Center</b>を有効にすると利用可能になります。パイメニューには比較的使用頻度の高い、アクションセンターのオペレータが８つ登録されていて、アサインされたショートカットキーを押すと表示されます。
 <div align="left">
-<img src="./images/piemenu.png" style='max-height: 300px; object-fit: contain'/>
+<img src="images/piemenu.png" style='max-height: 300px; object-fit: contain'/>
 </div>
 
 ## キーマッピング
 このアドオンでは、特定のオペレータに対して、独自にキーマップを割り当てています。キーマップの変更は、PreferencesのKeymapsで独自に割り当てたキーマップを無効にするか、yt-tools/addon/yt_ui_keymap.pyに記述されているキーマップの設定を編集してお使いください。また、インタラクティブにショートカットを登録するには、登録したいオペレータのボタン上でマウスの右ボタンを押すとコンテキストメニューが表示されます。ここからAssign Shortcutを選択し、マップしたいキーを押せばショートカットが'3D View'エリアに登録されます。ショートカットを登録したいエリアを'Mesh'や'Object'に変更したい場合は、プリファレンスのKeymapsに登録されているショートカットを別のエリアにコピーペーストして登録し直すことができます。SBL ModelingToolsで追加したオペレータは全て"yt_"という接頭子をつけて命名されていますので、"yt_"で検索すれば簡単に登録されているショートカットの一覧を得ることができます。<b>Active All</b>を押すと全てのショートカットキーが有効になります。<b>Deactive All</b>を押すと全てのショートカットキーが無効になります。
 
 <div align="left">
-<img src="./images/AssignShortcut.png" style='max-height: 500px; object-fit: contain'/>
+<img src="images/AssignShortcut.png" style='max-height: 500px; object-fit: contain'/>
 </div>
 
 <div align="left">
-<img src="./images/keymaps.png" style='max-height: 500px; object-fit: contain'/>
+<img src="images/keymaps.png" style='max-height: 500px; object-fit: contain'/>
 </div>
 
 #### 上矢印（UP_ARROW）<br>

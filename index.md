@@ -1,1 +1,25 @@
-Hello World
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+---
+
+### About This Web
+
+Hello I'm Taz, a software engineer specializing in modeling tools for 3D computer graphics, and the author of YT-Tools. Please feel free to contact me if you have any questions or requests regarding YT-Tools or other my projects.
+
+<b>YT-Tools : </b><br>
+- <a href="/yt-tools/">English document</a>
+- <a href="/yt-tools/index_J.html">日本語ドキュメント</a>
+- <a href="https://tazaki.gumroad.com/l/gamki">Gumroad online store</a>
+
+<b>Modo Open Source Plug-ins : </b><br>
+- <a href="{{ site.githuburl }}/">https://github.com/tazee</a>
+
+<br>
+
+---
+Yoshiaki Tazaki<br>
+e-mail : [tazee@mac.com](mailto:tazee@mac.com)<br>
+blog : <a href="{{ site.blogurl }}/">Life with Modo</a><br>

@@ -1,3 +1,10 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+permalink: /yt-tools/
+---
 # YT-Tools for Blender
 This addon is a collection of tools useful for Blender modeling workflow. It contains utilities that are mainly aimed at Modo users to make Blender easier to use.<br>
 
@@ -8,14 +15,16 @@ This addon is a collection of tools useful for Blender modeling workflow. It con
 ## Installation
 Install yt-tools.zip from the Add-ons menu in Blender Preferences and enable YT-Tools.
 <div align="left">
-<img src="./images/addon.png" object-fit: contain'/>
+<img src="images/addon.png"/>
 </div>
+<br>
 
 ## Usage
 Basic functions can be accessed from the "YT-Tools" tab in the sidebar. Some functions are mapped to shortcut keys or mouse clicks.
 <div align="left">
-<img src="./images/sideBar.png"  object-fit: contain'/>
+<img src="images/sideBar.png"/>
 </div>
+<br>
 
 
 ## Selection functions
@@ -31,7 +40,7 @@ In Edit Mode, selects the next element based on the selection pattern of two or 
 In Edit Mode, double-clicking a face with the mouse selects other faces connected to that face. Double-clicking an edge selects an edge loop. Double-clicking while holding down the SHIFT key selects the aforementioned elements in addition to the existing selection.<br>
 <ins><b>Limitations: </b>The double-click shortcut does not work in Circle selection mode in the 3D View or when UV sync is off in the UV Editor. This is due to some limitation on Blender, and there is currently no workaround.</ins>
 <div align="left">
-<img src="./images/SelectContextual.gif" object-fit: contain'/>
+<img src="images/SelectContextual.gif"/>
 </div>
 
 ### <ins>Select Loop</ins> (shortcut only)<br>
@@ -46,8 +55,9 @@ This is the same as Blender's standard loop selection with Alt + LMB, but it reg
 Selection Set is a function that saves the selection state of vert, edge, and face to a mesh with a name. This information is saved as custom data for the mesh. It is saved in the Blender scene file, so it is retained even if you reopen the saved scene. Add adds the currently selected mesh elements to the Selection Set. Selection Sets are saved separately for verts, edges, and faces. Remove deletes the currently displayed Selection Set. Enabling Remove All deletes all Selection Sets saved for the current Edit mode. Select selects the elements saved in the currently displayed Selection Set.<br><br>
 Push, Pop, and Clear are functions that temporarily save the state of the currently selected elements and recall the selection state when necessary. Basically, they use the same mechanism as Selection Set, but you can push and pop the selection state like a clipboard without explicitly saving it with a name. This selection state is also saved as custom data, so we recommend pressing the Clear button to delete the selection data when it is no longer necessary.
 <div align="left">
-<img src="./images/SelectionSet.png" style='max-height: 200px; object-fit: contain'/>
+<img src="images/SelectionSet.png" style='max-height: 200px; object-fit: contain'/>
 </div>
+<br>
 
 ## Mesh Editing
 ### <ins>Loop Slice</ins><br>
@@ -57,14 +67,14 @@ Enable Symmetric_Cut to set the slice position symmetrically within the loop. En
 Cut Positions by Spans is a mode in which you directly specify the number and spacing of slices in the ratio of each span. For example, entering "1 3 1" will divide the polygon loop into thirds in a 1:3:1 ratio. Enter each span separated by a space character. Spans are normalized by dividing by their total number, so you can enter numbers of any scale. If a span is entered in this field, it will overwrite the divisions and Symmetic Cut.
 
 <div align="left">
-<img src="./images/loopSlice2.png" object-fit: contain'/>
+<img src="images/loopSlice2.png"/>
 </div>
 
 ### <ins>Add Loop</ins><br>
 Add Loop is an interactive version of Loop Slice, where you click directly on the edge of the loop to slice. When you click on the edge, a yellow slice line appears. You can change the slice position by dragging the handle that appears at the clicked position. Press SPACE to confirm the slice and exit the tool. Press RETURN to confirm the slice but continue the tool, allowing you to perform the next slice operation consecutively. Add Loop has an Absolute Distance option that slices the slice position by the distance on the clicked edge rather than the ratio of each edge. When this option is enabled, other edges are divided based on the distance of the clicked edge's division position. This is useful when you want to move the slice loop line in parallel. Enabling Offset from End will offset from the opposite side of the edge.
 
 <div align="left">
-<img src="./images/AddLoop.gif" object-fit: contain'/>
+<img src="images/AddLoop.gif"/>
 </div>
 
 ### <ins>Delete Contextual</ins> (shortcut only)<br>
@@ -81,7 +91,7 @@ Polygon Slice is an operator developed to achieve behavior similar to Modo's pol
 * ESC key, RMB click: Exit the tool without changing the mesh.<br>
 <ins>Limitations: Tool handle movement does not support snapping because Blender does not expose the Snap API. This operator also does not work in 4-view view mode. This is because Blender displays 4-view as a special view, and the add-on cannot correctly recognize 4-view.</ins>
 <div align="left">
-<img src="./images/PolygonSlice.gif" object-fit: contain'/>
+<img src="images/PolygonSlice.gif"/>
 </div>
 
 ### <ins>Linear Transform</ins><br>
@@ -100,7 +110,7 @@ Enabling <b>Show Axis</b> displays axis handles at the Start and End positions o
 * Return key: Confirms changes and resets changes.<br>
 * ESC key, Space key, RMB click: Exit the tool.<br>
 <div align="left">
-<img src="./images/LinearTransform.gif" object-fit: contain'/>
+<img src="images/LinearTransform.gif"/>
 </div>
 
 ### <ins>Radial Transform</ins><br>
@@ -118,7 +128,7 @@ Enabling <b>Show Axis</b> displays axis handles at the Start and End positions o
 * Return key: Confirms changes and resets modified values.<br>
 * ESC key, Space key, RMB click: Exits the tool.<br>
 <div align="left">
-<img src="./images/RadialTransform.gif" object-fit: contain'/>
+<img src="images/RadialTransform.gif"/>
 </div>
 
 ### <ins>Edge Slice</ins><br>
@@ -130,7 +140,7 @@ Edge Slice is an interactive slicing tool with operability similar to Modo's Edg
 * Control + Z key: Delete the last added handle.<br>
 * ESC key, RMB click: Exit the tool without changing the mesh.<br>
 <div align="left">
-<img src="./images/EdgeSlice.gif" object-fit: contain'/>
+<img src="images/EdgeSlice.gif"/>
 </div>
 
 ### <ins>Merge</ins><br>
@@ -171,7 +181,7 @@ Enabling <b>Reverse</b> causes attenuation from Linear End to Linear Start.<br>
 ## Viewport Display
 Viewport Display is a function that changes the viewport display attributes of selected and unselected mesh objects all at once. In Blender, mesh objects have Viewport Display as a property that can be set for each individual object, but this sets this attribute all at once. Active Meshes sets the display attributes for selected mesh objects, and Inactive Meshes sets the display attributes for unselected mesh objects. Enabling Set Only Active Meshes and pressing the Set Attributes button will make no changes to unselected mesh objects and will only change the display attributes of selected mesh objects.
 <div align="left">
-<img src="./images/viewport_display.png" object-fit: contain'/>
+<img src="images/viewport_display.png" style='max-height: 800px; object-fit: contain'/>
 </div>
 
 ## Display Info<br>
@@ -183,17 +193,17 @@ Displays the number of Faces, Edges, and Verts selected in Edit Mode, or informa
 ## Grid Size<br>
 Displays the scale of the Grid set in the Viewport Overlays panel.
 <div align="left">
-<img src="./images/display_info.png" object-fit: contain'/>
+<img src="images/display_info.png"/>
 </div>
 You can change the font size used for this display information in the YT-Tools tab of the Preferences panel. This information is saved as the initial setting, so it is permanently used as a common setting for the scene file.
 <div align="left">
-<img src="./images/preferences.png" object-fit: contain'/>
+<img src="images/preferences.png"/>
 </div>
 
 ## Dimension Tool
 The Dimension tool calculates a bounding box that contains the selected elements and displays its size on screen. If no elements are selected, it displays a bounding box that contains the entire active mesh.
 <div align="left">
-<img src="./images/dimension.png" object-fit: contain'/>
+<img src="images/dimension.png"/>
 </div>
 
 ## Action Center
@@ -224,7 +234,7 @@ Pivot moves the 3D Cursor position to the position of the active object and sets
 ## Hit Mesh Element
 Hit Mesh Element sets the position of the hit element on the mesh by clicking the mouse on the Mesh object to Active Element, 3D Cursor, or Object Origin. Once Hit Mesh Elements is executed, mouse clicks are processed as hit test events until the tool is released. If you want to continue operations such as transform tools, you must release Hit Mesh Elements once. You can release the tool by pressing the ESCAPE key, right-clicking the mouse, or pressing the Hit Mesh Elements button.
 <div align="left">
-<img src="./images/HitMeshElement.gif" object-fit: contain'/>
+<img src="images/HitMeshElement.gif"/>
 </div>
 
 ### <ins>Set To</ins><br>
@@ -249,14 +259,14 @@ Sets the origin position (0,0,0) to Origin.
 The workplane function moves the selected element to the center of the view in Edit mode and temporarily sets the normal vector of the selection to the Z-axis direction of the view, making modeling in the planar view easier. This function sets the calculated transform to convert the selection to the center of the planar view based on the selected element to an empty object created with the name "_Workplane", and parent the mesh object to be edited to this "_Workplane" object. Pressing Unset will delete this "_Workplane" object and return the parented object to its original state. This allows you to temporarily edit the mesh by setting the plane on which the mesh element you want to edit is located to the Top view.<br>
 In addition, when you set the workplane in Object mode, a transform matrix that returns the transform of the currently selected object to the origin is set to the "_Workplane" object, and all mesh objects are parented to "_Workplane". This allows you to temporarily operate the active object at the center of the world coordinates.
 <div align="left">
-<img src="./images/WorkPlane.gif" object-fit: contain'/>
+<img src="images/WorkPlane.gif"/>
 </div>
 
 ## Statistics
 Statistics is an information panel that displays information on the verts, edges, and faces of a mesh by item, and allows you to select or deselect elements with those attributes. Pressing the "+" button selects the element related to that item, and pressing "-" deselects it. The number of elements displayed in the panel takes time to detect when there are a large number of polygons, so we have changed it so that you can update it manually by pressing Update Counts. If you want to display the latest information, press Update Counts. If Auto Update is enabled, the number of elements will be updated automatically. If the update speed is a problem when using a mesh with a large number of polygons, disable Auto Update.
 
 <div align="left">
-<img src="./images/statistics.png" object-fit: contain'/>
+<img src="./images/statistics.png" style='max-height: 500px; object-fit: contain'/>
 </div>
 
 ### Verts
@@ -285,18 +295,18 @@ Detects faces with the material selected from the list.
 ## Pie Menu
 Another way to select Action Center items is the Action Center pie menu. This becomes available when you enable the Action Center set in the YT-Tools add-on in Preferences. The pie menu contains eight relatively frequently used Action Center operators, which are displayed when you press the assigned shortcut key.
 <div align="left">
-<img src="./images/piemenu.png" style='max-height: 500px; object-fit: contain'/>
+<img src="images/piemenu.png" style='max-height: 500px; object-fit: contain'/>
 </div>
 
 ## Key Mapping
 This addon assigns its own keymaps to certain operators. To change the keymap, disable the keymap you assigned in Keymaps in Preferences, or edit the keymap settings in yt-tools/addon/yt_ui_keymap.py. To register a shortcut interactively, right-click on the button of the operator you want to register to display a context menu. Select Assign Shortcut from here and press the key you want to map to register the shortcut in the '3D View' area. If you want to change the area you want to register the shortcut to 'Mesh' or 'Object', you can copy and paste the shortcut registered in Keymaps in Preferences to another area and register it again. All operators added in YT-Tools are named with the prefix "yt_", so you can easily get a list of registered shortcuts by searching for "yt_". Press Active All to enable all shortcut keys. Press Deactive All to disable all shortcut keys.
 
 <div align="left">
-<img src="./images/AssignShortcut.png" style='max-height: 500px; object-fit: contain'/>
+<img src="images/AssignShortcut.png" style='max-height: 500px; object-fit: contain'/>
 </div>
 
 <div align="left">
-<img src="./images/keymaps.png" style='max-height: 500px; object-fit: contain'/>
+<img src="images/keymaps.png" style='max-height: 500px; object-fit: contain'/>
 </div>
 
 #### Up arrow (UP_ARROW)<br>
