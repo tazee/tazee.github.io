@@ -202,7 +202,7 @@ PreferencesパネルのYT-Toolsのタブでこの表示情報に使用するフ�
 ## 寸法ツール(Dimension)
 寸法ツールは選択されているエレメントを包含する境界ボックスを計算し、そのサイズを画面上に表示します。エレメントが選択されていない場合は、アクティブメッシュ全体を包含する境界ボックスが表示されます。
 <div align="left">
-<img src="images/dimension.png"/>
+<img src="images/Dimension.png"/>
 </div>
 
 ## アクションセンター(Action Center)
@@ -266,7 +266,7 @@ Set Originは、指定した方法でオブジェクトの原点位置（黄色�
 Statisticsは、MeshのVert、Edge、Faceの情報を項目別に表示し、その属性を持つエレメントを選択もしくは非選択にすることができる情報パネルです。"+"ボタンを押すとその項目に関するエレメントが選択され、"-"を押すと非選択になります。パネルに表示されるエレメント数の表示はポリゴン数が多くなると検出に時間がかかるため、<b>Update Counts</b>を押して手動で更新してもらうように変更いたしました。情報を最新の状態で表示させたい場合は、<b>Update Counts</b>を押してください。<b>Auto Update</b>が有効になっている場合は、自動的にエレメント数の更新が行われます。ポリゴン数が多いメッシュを使用する場合などで更新速度が問題になる場合は、<b>Auto Update</b>を無効にしてください。
 
 <div align="left">
-<img src="./images/statistics.png" style='max-height: 500px; object-fit: contain'/>
+<img src="images/statistics.png" style='max-height: 500px; object-fit: contain'/>
 </div>
 
 ### Verts

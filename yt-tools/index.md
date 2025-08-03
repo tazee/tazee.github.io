@@ -203,7 +203,7 @@ You can change the font size used for this display information in the YT-Tools t
 ## Dimension Tool
 The Dimension tool calculates a bounding box that contains the selected elements and displays its size on screen. If no elements are selected, it displays a bounding box that contains the entire active mesh.
 <div align="left">
-<img src="images/dimension.png"/>
+<img src="images/Dimension.png"/>
 </div>
 
 ## Action Center
@@ -266,7 +266,7 @@ In addition, when you set the workplane in Object mode, a transform matrix that 
 Statistics is an information panel that displays information on the verts, edges, and faces of a mesh by item, and allows you to select or deselect elements with those attributes. Pressing the "+" button selects the element related to that item, and pressing "-" deselects it. The number of elements displayed in the panel takes time to detect when there are a large number of polygons, so we have changed it so that you can update it manually by pressing Update Counts. If you want to display the latest information, press Update Counts. If Auto Update is enabled, the number of elements will be updated automatically. If the update speed is a problem when using a mesh with a large number of polygons, disable Auto Update.
 
 <div align="left">
-<img src="./images/statistics.png" style='max-height: 500px; object-fit: contain'/>
+<img src="images/statistics.png" style='max-height: 500px; object-fit: contain'/>
 </div>
 
 ### Verts
