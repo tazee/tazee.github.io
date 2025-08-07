@@ -5,6 +5,21 @@
 layout: default
 permalink: /yt-tools/index_J.html
 ---
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 6px;
+  text-align: left;
+}
+</style>
+
 # YT-Tools for Blender
 このアドオンは、Blenderのモデリングワークフローに便利なツールのコレクションです。主にModoユーザーがBlenderを使いやすくする目的に特化したユーティリティが含まれています。<br>
 
