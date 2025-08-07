@@ -343,6 +343,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 ## オペレータ一覧
 
 ### 選択
+
 | Name | Operator |
 |---------|------------------|
 | Select Next | mesh.select_next_item |
@@ -354,6 +355,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 | Select Loop Direct | mesh.yt_select_loop_direct |
 
 ### 選択セット
+
 | Name | Operator |
 |---------|------------------|
 | Select | mesh.yt_selection_set_select |
@@ -364,6 +366,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 | Clear | mesh.yt_selection_clipboard_clear |
 
 ### アクションセンター
+
 | Name | Operator |
 |---------|------------------|
 | Automatic | view3d.yt_action_automatic |
@@ -379,6 +382,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 | Pivot Center Parent Axis | view3d.yt_action_pivot_parent_axis |
 
 ### サブツール
+
 | Name | Operator |
 |---------|------------------|
 | Hit Mesh Element | view3d.yt_hit_mesh_element |
@@ -391,6 +395,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 
 
 ### メッシュ編集
+
 | Name | Operator |
 |---------|------------------|
 | Loop Slice | mesh.yt_loopslice |
@@ -404,9 +409,10 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 
 
 ### ビューポート表示
+
 | Name | Operator |
 |---------|------------------|
 | Set Attributes | mesh.yt_viewport_display |
 | Display Info | mesh.yt_viewport_text |
 | Dimension | mesh.yt_dimension |
- |
+
