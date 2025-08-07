@@ -28,17 +28,17 @@ github_username:  tazee
 githuburl: https://github.com/tazee/
 
 # Build settings
-theme: minima
-theme: jekyll-theme-modernist
-theme: jekyll-theme-leap-day
-theme: minimal-mistakes-jekyll
-theme: jekyll-theme-hacker
-theme: jekyll-theme-plain
-theme: jekyll-theme-architect
-theme: jekyll-theme-primer
-theme: jekyll-theme-dinky
-theme: jekyll-theme-merlot
-theme: jekyll-theme-slate
+# theme: minima
+# theme: jekyll-theme-modernist
+# theme: jekyll-theme-leap-day
+# theme: minimal-mistakes-jekyll
+# theme: jekyll-theme-hacker
+# theme: jekyll-theme-plain
+# theme: jekyll-theme-architect
+# theme: jekyll-theme-primer
+# theme: jekyll-theme-dinky
+# theme: jekyll-theme-merlot
+# theme: jekyll-theme-slate
 theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
