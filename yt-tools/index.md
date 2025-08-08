@@ -5,6 +5,21 @@
 layout: default
 permalink: /yt-tools/
 ---
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 6px;
+  text-align: left;
+}
+</style>
+
 # YT-Tools for Blender
 This addon is a collection of tools useful for Blender modeling workflow. It contains utilities that are mainly aimed at Modo users to make Blender easier to use.<br>
 
@@ -259,7 +274,7 @@ Sets the origin position (0,0,0) to Origin.
 The workplane function moves the selected element to the center of the view in Edit mode and temporarily sets the normal vector of the selection to the Z-axis direction of the view, making modeling in the planar view easier. This function sets the calculated transform to convert the selection to the center of the planar view based on the selected element to an empty object created with the name "_Workplane", and parent the mesh object to be edited to this "_Workplane" object. Pressing Unset will delete this "_Workplane" object and return the parented object to its original state. This allows you to temporarily edit the mesh by setting the plane on which the mesh element you want to edit is located to the Top view.<br>
 In addition, when you set the workplane in Object mode, a transform matrix that returns the transform of the currently selected object to the origin is set to the "_Workplane" object, and all mesh objects are parented to "_Workplane". This allows you to temporarily operate the active object at the center of the world coordinates.
 <div align="left">
-<img src="images/WorkPlane.gif"/>
+<img src="images/Workplane.gif"/>
 </div>
 
 ## Statistics
@@ -343,6 +358,7 @@ Reverses the order of Edit Mode switching by the space key.
 ## Operator List
 
 ### Select
+
 | Name | Operator |
 |---------|------------------|
 | Select Next | mesh.select_next_item |
@@ -354,6 +370,7 @@ Reverses the order of Edit Mode switching by the space key.
 | Select Loop Direct | mesh.yt_select_loop_direct |
 
 ### Selection Set
+
 | Name | Operator |
 |---------|------------------|
 | Select | mesh.yt_selection_set_select |
@@ -364,6 +381,7 @@ Reverses the order of Edit Mode switching by the space key.
 | Clear | mesh.yt_selection_clipboard_clear |
 
 ### Action Center
+
 | Name | Operator |
 |---------|------------------|
 | Automatic | view3d.yt_action_automatic |
@@ -379,6 +397,7 @@ Reverses the order of Edit Mode switching by the space key.
 | Pivot Center Parent Axis | view3d.yt_action_pivot_parent_axis |
 
 ### Sub Tools
+
 | Name | Operator |
 |---------|------------------|
 | Hit Mesh Element | view3d.yt_hit_mesh_element |
@@ -391,6 +410,7 @@ Reverses the order of Edit Mode switching by the space key.
 
 
 ### Mesh Editting
+
 | Name | Operator |
 |---------|------------------|
 | Loop Slice | mesh.yt_loopslice |
@@ -404,9 +424,10 @@ Reverses the order of Edit Mode switching by the space key.
 
 
 ### Viewport Display
+
 | Name | Operator |
 |---------|------------------|
 | Set Attributes | mesh.yt_viewport_display |
 | Display Info | mesh.yt_viewport_text |
 | Dimension | mesh.yt_dimension |
- |
+
