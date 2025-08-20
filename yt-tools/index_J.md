@@ -108,43 +108,6 @@ Polygon Sliceは、Modoのポリゴンスライスに似た動作を実現する
 <img src="images/PolygonSlice.gif"/>
 </div>
 
-### <ins>Linear Transform</ins><br>
-<b>Linear Transform</b>は、リニアフォールオフを使用したトランスフォームオペレータです。菱形で表示される線分に沿ってトランスフォームの度合いが減衰されます。<b>Move Offset</b>, <b>Scale</b>, <b>Angle</b>は、それぞれトランスフォームする相対的な移動量、スケール、および回転量を指定します。回転とスケールの中心は現在設定されている<b>Transform Pivot Point</b>を参照しています。<b>Transform Orientation</b>は、Normalのみに対応しています。それ以外はGlobalの方向に準じます。LMBを押しながら３Dビュー上でHaulingもしくはトランスフォームハンドルを操作するとインタラクティブにトランスフォーム値を変更することができます。Hauling操作で使用する項目は、メニューのHaulingで指定できます。また、ショートカットキーのT、R、Sに割り当てられていますので、キーボードショートカットからも変更することが可能です。<b>Linear Start</b>, <b>Linear End</b>は、リニアフォールオフの始点と終点の座標値です。始点に近いほどフォールオフウェイトが大きく、終点に近づくほど減衰されて小さな移動になります。これらの位置はオペレータ起動時に現在選択されているメッシュエレメントのバウンディングボックスにフィットするように設定されます。Shiftキーを押しながら３Dビュー画面をドラックするとこのラインを新しく引き直すことができます。また、Ctrlキーを押しながらLMBをドラッグするとドラッグ方向が水平または垂直方向に拘束されます。<br>
-<b>Shape</b>はフォールオフの減衰計算方法を指定します。デフォルトはLinearで線形に減衰が行われます。<br>
-<b>Reverse</b>を有効にすると<b>Linear End</b>から<b>Linear Start</b>に向かって減衰が行われます。<br>
-<b>Mirror</b>は、フォールオフシェイプをStartもしくはEndでミラーします。フォールオフは元のフォールオフシェイプとミラーシェイプの両方から影響を与えます。<br>
-<b>Symmetry</b>は、指定した対称軸と対称に選択されたエレメントをトランスフォームします。<br>
-<b>Auto Fit</b>は、フォールオフシェイプを選択されているメッシュエレメントに指定した方向にフィットするようにStartとEndを移動します。<br>
-<b>Show Axis</b>を有効にするとフォールオフシェイプのStartとEndの位置に軸ハンドルが表示されます。<br>
-* G, R, S キー: 移動、回転、スケールの切り替え<br>
-* LMBドラッグ: マウスドラッグでHaulingで設定された項目の値をHaulingで変更します。<br>
-* LMB + Shiftドラッグ：新規にフォールオフシェイプを引き直します。<br>
-* LMB + Control + Shiftドラッグ：新規にフォールオフシェイプを水平もしくは垂直方向に引き直します。<br>
-* LMB + Altドラッグ：マウスボタンを放すまで変更を行いません。重いメッシュでハンドル操作を素早く位置合わせしたい場合に有効です。<b>
-* Returnキー：変更を確定し、変更値をリセットします。
-* ESCキー、Spaceキー、RMBクリック：ツールを終了します。<br>
-<div align="left">
-<img src="images/LinearTransform.gif"/>
-</div>
-
-### <ins>Radial Transform</ins><br>
-<b>Radial Transform</b>は、ラディアルフォールオフを使用したトランスフォームオペレータです。円環状の形状の中でトランスフォームの度合いが減衰されます。<b>Move Offset</b>, <b>Scale</b>, <b>Angle</b>は、それぞれトランスフォームする相対的な移動量、スケール、および回転量を指定します。回転とスケールの中心は現在設定されている<b>Transform Pivot Point</b>を参照しています。<b>Transform Orientation</b>は、Normalのみに対応しています。それ以外はGlobalの方向に準じます。LMBを押しながら３Dビュー上でHaulingもしくはトランスフォームハンドルを操作するとインタラクティブにトランスフォーム値を変更することができます。Hauling操作で使用する項目は、メニューのHaulingで指定できます。また、ショートカットキーのT、R、Sに割り当てられていますので、キーボードショートカットからも変更することが可能です。<b>Radial Center</b>, <b>Radial Side</b>は、ラディアルフォールオフの中心点と球体の半径です。中心点に近いほどフォールオフウェイトが小さく、中心から離れるほど大きな移動になります。球体の外側のウェイトはゼロになります。これらの位置はオペレータ起動時に現在選択されているメッシュエレメントのバウンディングボックスにフィットするように設定されます。Shiftキーを押しながら３Dビュー画面をドラックするとこの球体を新しく引き直すことができます。また、Ctrlキーを押しながらLMBをドラッグするとドラッグ方向が水平または垂直方向に拘束されます。<br>
-<b>Shape</b>はフォールオフの減衰計算方法を指定します。デフォルトはLinearで線形に減衰が行われます。<br>
-<b>Symmetry</b>は、指定した対称軸と対称に選択されたエレメントをトランスフォームします。<br>
-* G, R, S キー: 移動、回転、スケールの切り替え<br>
-* LMBドラッグ: マウスドラッグでHaulingで設定された項目の値をHaulingで変更します。<br>
-* LMB + Shiftドラッグ：新規にフォールオフシェイプを引き直します。<br>
-* LMB + サイドハンドルドラッグ：フォールオフのサイズを各軸別にリサイズします。<br>
-* LMB + Shift + サイドハンドルドラッグ：フォールオフのサイズを全ての軸均等にリサイズします。<br>
-* LMB + 中心ハンドルドラッグ：フォールオフ形状全体を移動します。<br>
-* LMB + Control + サイドハンドルドラッグ：フォールオフ形状全体を移動します。<br>
-* LMB + Altドラッグ：マウスボタンを放すまで変更を行いません。重いメッシュでハンドル操作を素早く位置合わせしたい場合に有効です。<br>
-* Returnキー：変更を確定し、変更値をリセットします。
-* ESCキー、Spaceキー、RMBクリック：ツールを終了します。<br>
-<div align="left">
-<img src="images/RadialTransform.gif"/>
-</div>
-
 ### <ins>Edge Slice</ins><br>
 <b>Edge Slice</b>は、ModoのEdge Sliceライクな操作性を持つインタラクティブなスライスツールで、FaceをクリックしたEdgeからEdgeの間を連続してスライスすることができます。このツールは対称をサポートしており、Edge Sliceボタンを押してツールを起動すると表示されるSymmetryオプションから対称軸を選択すると対称に位置するFaceを同時にスライスすることができます。また、FaceをまたがってEdgeが選択されたり、Face上をクリックした場合、現在操作しているビュー方向上にハンドルが追加されます。各ハンドルは追加した後で移動することができます。下記のようなオペレーションが用意されています。<br>
 * LMBクリック：EdgeもしくはFace上をLMBでクリックすると新しくハンドルが追加されます。追加されたハンドルはLMBを押しながら移動すると位置を移動することができます。<br>
@@ -183,14 +146,82 @@ Adjust Last Operation(最後の操作を調整) パネルで、UVs(UV) がチェ
 <b>Symmetry</b>は、指定した対称軸と対称に選択されたエレメントをトランスフォームします。<br>
 <b>Auto Fit</b>は、フォールオフシェイプを選択されているメッシュエレメントに指定した方向にフィットするようにStartとEndを移動します。<br>
 <b>Show Axis</b>を有効にするとフォールオフシェイプのStartとEndの位置に軸ハンドルが表示されます。<br>
-<b>Show Weight<b>は、Mesh Edit Mode OverlaysパネルにあるVertex Group Weightsを有効にし、Meshにウェイトをグラデーションカラーで表示します。<br>
+<b>Show Weight</b>は、Mesh Edit Mode OverlaysパネルにあるVertex Group Weightsを有効にし、Meshにウェイトをグラデーションカラーで表示します。<br>
 * G, R, S キー: 移動、回転、スケールの切り替え<br>
 * LMBドラッグ: マウスドラッグでHaulingで設定された項目の値をHaulingで変更します。<br>
 * LMB + Shiftドラッグ：新規にフォールオフシェイプを引き直します。<br>
 * LMB + Control + Shiftドラッグ：新規にフォールオフシェイプを水平もしくは垂直方向に引き直します。<br>
-* LMB + Altドラッグ：マウスボタンを放すまで変更を行いません。重いメッシュでハンドル操作を素早く位置合わせしたい場合に有効です。<b>
+* LMB + Altドラッグ：マウスボタンを放すまで変更を行いません。重いメッシュでハンドル操作を素早く位置合わせしたい場合に有効です。<br>
 * Returnキー：変更を確定し、変更値をリセットします。
 * ESCキー、Spaceキー、RMBクリック：ツールを終了します。<br>
+
+## 座標変換
+### <ins>Linear Transform</ins><br>
+<b>Linear Transform</b>は、リニアフォールオフを使用したトランスフォームオペレータです。菱形で表示される線分に沿ってトランスフォームの度合いが減衰されます。<b>Move Offset</b>, <b>Scale</b>, <b>Angle</b>は、それぞれトランスフォームする相対的な移動量、スケール、および回転量を指定します。回転とスケールの中心は現在設定されている<b>Transform Pivot Point</b>を参照しています。<b>Transform Orientation</b>は、Normalのみに対応しています。それ以外はGlobalの方向に準じます。LMBを押しながら３Dビュー上でHaulingもしくはトランスフォームハンドルを操作するとインタラクティブにトランスフォーム値を変更することができます。Hauling操作で使用する項目は、メニューのHaulingで指定できます。また、ショートカットキーのT、R、Sに割り当てられていますので、キーボードショートカットからも変更することが可能です。<b>Linear Start</b>, <b>Linear End</b>は、リニアフォールオフの始点と終点の座標値です。始点に近いほどフォールオフウェイトが大きく、終点に近づくほど減衰されて小さな移動になります。これらの位置はオペレータ起動時に現在選択されているメッシュエレメントのバウンディングボックスにフィットするように設定されます。Shiftキーを押しながら３Dビュー画面をドラックするとこのラインを新しく引き直すことができます。また、Ctrlキーを押しながらLMBをドラッグするとドラッグ方向が水平または垂直方向に拘束されます。<br>
+<b>Shape</b>はフォールオフの減衰計算方法を指定します。デフォルトはLinearで線形に減衰が行われます。<br>
+<b>Reverse</b>を有効にすると<b>Linear End</b>から<b>Linear Start</b>に向かって減衰が行われます。<br>
+<b>Mirror</b>は、フォールオフシェイプをStartもしくはEndでミラーします。フォールオフは元のフォールオフシェイプとミラーシェイプの両方から影響を与えます。<br>
+<b>Symmetry</b>は、指定した対称軸と対称に選択されたエレメントをトランスフォームします。<br>
+<b>Auto Fit</b>は、フォールオフシェイプを選択されているメッシュエレメントに指定した方向にフィットするようにStartとEndを移動します。Orient:は、リニアハンドルをフィットする方向を指定します。XYZはそれぞれ主軸方向にハンドルを移動します。Oriented Bounding Boxは方向性バウンディングボックスを計算しハンドルをその軸方向にフィットします。<br>
+<b>Show Axis</b>を有効にするとフォールオフシェイプのStartとEndの位置に軸ハンドルが表示されます。<br>
+* G, R, S キー: 移動、回転、スケールの切り替え<br>
+* LMBドラッグ: マウスドラッグでHaulingで設定された項目の値をHaulingで変更します。<br>
+* LMB + Shiftドラッグ：新規にフォールオフシェイプを引き直します。<br>
+* LMB + Control + Shiftドラッグ：新規にフォールオフシェイプを水平もしくは垂直方向に引き直します。<br>
+* LMB + Altドラッグ：マウスボタンを放すまで変更を行いません。重いメッシュでハンドル操作を素早く位置合わせしたい場合に有効です。<br>
+* Returnキー：変更を確定し、変更値をリセットします。
+* ESCキー、Spaceキー、RMBクリック：ツールを終了します。<br>
+<div align="left">
+<img src="images/LinearTransform.gif"/>
+</div>
+
+### <ins>Radial Transform</ins><br>
+<b>Radial Transform</b>は、ラディアルフォールオフを使用したトランスフォームオペレータです。円環状の形状の中でトランスフォームの度合いが減衰されます。<b>Move Offset</b>, <b>Scale</b>, <b>Angle</b>は、それぞれトランスフォームする相対的な移動量、スケール、および回転量を指定します。回転とスケールの中心は現在設定されている<b>Transform Pivot Point</b>を参照しています。<b>Transform Orientation</b>は、Normalのみに対応しています。それ以外はGlobalの方向に準じます。LMBを押しながら３Dビュー上でHaulingもしくはトランスフォームハンドルを操作するとインタラクティブにトランスフォーム値を変更することができます。Hauling操作で使用する項目は、メニューのHaulingで指定できます。また、ショートカットキーのT、R、Sに割り当てられていますので、キーボードショートカットからも変更することが可能です。<b>Radial Center</b>, <b>Radial Side</b>は、ラディアルフォールオフの中心点と球体の半径です。中心点に近いほどフォールオフウェイトが小さく、中心から離れるほど大きな移動になります。球体の外側のウェイトはゼロになります。これらの位置はオペレータ起動時に現在選択されているメッシュエレメントのバウンディングボックスにフィットするように設定されます。Shiftキーを押しながら３Dビュー画面をドラックするとこの球体を新しく引き直すことができます。また、Ctrlキーを押しながらLMBをドラッグするとドラッグ方向が水平または垂直方向に拘束されます。<br>
+<b>Shape</b>はフォールオフの減衰計算方法を指定します。デフォルトはLinearで線形に減衰が行われます。<br>
+<b>Symmetry</b>は、指定した対称軸と対称に選択されたエレメントをトランスフォームします。<br>
+<b>Invert</b>は、フォールオフウェイト値を反転します（w = 1.0 - w）。<br>
+* G, R, S キー: 移動、回転、スケールの切り替え<br>
+* LMBドラッグ: マウスドラッグでHaulingで設定された項目の値をHaulingで変更します。<br>
+* LMB + Shiftドラッグ：新規にフォールオフシェイプを引き直します。<br>
+* LMB + サイドハンドルドラッグ：フォールオフのサイズを各軸別にリサイズします。<br>
+* LMB + Shift + サイドハンドルドラッグ：フォールオフのサイズを全ての軸均等にリサイズします。<br>
+* LMB + 中心ハンドルドラッグ：フォールオフ形状全体を移動します。<br>
+* LMB + Control + サイドハンドルドラッグ：フォールオフ形状全体を移動します。<br>
+* LMB + Altドラッグ：マウスボタンを放すまで変更を行いません。重いメッシュでハンドル操作を素早く位置合わせしたい場合に有効です。<br>
+* Returnキー：変更を確定し、変更値をリセットします。
+* ESCキー、Spaceキー、RMBクリック：ツールを終了します。<br>
+<div align="left">
+<img src="images/RadialTransform.gif"/>
+</div>
+
+### <ins>Bend Transform</ins><br>
+<b>Bend Transform</b>は、Modoのベンドツールに似た機能を持つトランスフォームツールです。選択されている頂点の座標値をベンドのスパインハンドルを軸に湾曲させます。<b>Center</b>は、ベンドの中心位置でこの位置を中心にベンドが行われます。<b>Spine</b>は、湾曲を行う軸となるベクトルです。<b>Axis</b>は、ベンドを行う平面を定義するオプションで、XYZの主軸もしくは現在操作しているビュー方向を設定することができます。選択されているエレメントの法線ベクトル方向を指定したい場合は、作業平面を使って操作することができます。<b>Angle</b>は、ベンドする量を角度で指定します。この値は、白い円形のハンドルを操作して変更することができます。<br>
+<b>Both Sides</b>は、スパインベクトルと反対方向に位置する頂点の座標も変形します。<br>
+<b>Symmetry</b>は、指定した対称軸と対称に選択されたエレメントをトランスフォームします。<br>
+* LMB + Shiftドラッグ：新規にフォールオフシェイプを引き直します。<br>
+* LMB + スパインハンドルドラッグ：スパインの終点位置を変更します。<br>
+* LMB + 中心ハンドルドラッグ：スパインの始点位置を変更します。<br>
+* LMB + Shift + スパインハンドルドラッグ：スパインベクトルの長さをリサイズします。<br>
+* LMB + 回転ハンドルドラッグ：ベンドアングル量を変更します。<br>
+* LMB + Control + ハンドルドラッグ：スクリーンの水平もしくは垂直方向に移動を制限します。<br>
+* LMB + Altドラッグ：マウスボタンを放すまで変更を行いません。重いメッシュでハンドル操作を素早く位置合わせしたい場合に有効です。<br>
+* Returnキー：変更を確定し、変更値をリセットします。
+* ESCキー、Spaceキー、RMBクリック：ツールを終了します。<br>
+<div align="left">
+<img src="images/BendTool.gif"/>
+</div>
+
+<b>Reverse</b>は、スパインベクトルの方向を反転します。<br>
+<b>Auto Fit</b>は、スパインハンドルを選択されているメッシュエレメントに指定した方向にフィットするように移動します。<b>Orient:</b>は、スパインハンドルをフィットする方向を指定します。XYZはそれぞれ主軸方向にハンドルを移動します。<b>Oriented Bounding Box</b>は方向性バウンディングボックスを計算しハンドルをその軸方向にフィットします。<b>Spine Only</b>を有効にするとスパインの中心位置は移動せずにスパインベクトルの長さだけを計算したバウンディングボックスにフィットするように変更します。<br>
+
+### <ins>Set Vertex Positions</ins><br>
+<b>Set Vertex Positions</b>は、選択した頂点の座標値を指定した値に設定します。<b>Axis</b>は、設定する座標値のコンポーネントで、有効になっている軸の座標値のコンポーネントのみが更新されます。<b>Position</b>は、設定する座標値で、アクティブ頂点の座標値がデフォルト値としてセットされます。アクティブ頂点がない場合は、選択した頂点座標値の中心値がセットされます。<b>Space</b>は、座標値をメッシュのローカル座標値で設定するか、オブジェクトのグローバル座標値で設定するかを指定します。<b>Mode</b>は、指定したPositionの値を既存の頂点の値と置き換えるか（SET)、追加するか（ADD)を指定します。<br>
+<div align="left">
+<img src="images/SetPositions.gif"/>
+</div>
+
+### <ins>Center Vertex Positions</ins><br>
+<b>Center Vertex Positions</b>は、選択した頂点の座標値を選択した頂点を包含するバウンディングボックスの中心値に設定します。<b>Axis</b>は、設定する座標値のコンポーネントで、有効になっている軸の座標値のコンポーネントのみが更新されます。<b>Space</b>は、座標値をメッシュのローカル座標値で設定するか、オブジェクトのグローバル座標値で設定するかを指定します。<br>
 
 ## メッシュオブジェクトの表示属性の変更（Viewport Display）
 Viewport Displayは、選択されているメッシュオブジェクトと非選択のメッシュオブジェクトのビューポート表示属性を一括して変更する機能です。BlenderではメッシュオブジェクトのプロパティにViewport Displayがあり、個々のオブジェクトに対して設定可能ですが、この属性を一括して設定します。Active Meshesでは、選択されているメッシュオブジェトのための表示属性を設定し、Inactive Meshesでは非選択のメッシュオブジェトのための表示属性を設定します。Set Only Active Meshesを有効にして、Set Attributesボタンを押すと非選択のメッシュオブジェクトには変更は加えず、選択されているメッシュオブジェクトの表示属性だけを変更します。
@@ -246,8 +277,8 @@ Localは、Pivot PointをIndivisual Originに設定し、OrientationはNormalに
 ### Pivot Center Parent Axis<br>
 Pivotは、アクティブオブジェクトの位置に3D Cursor位置を移動し、Pivot PointをCursorに設定しますOrientationはParentに設定します。
 
-## メッシュエレメントヒット位置の設定(Hit Mesh Element)
-Hit Mesh Elementは、Meshオブジェクトをマウスでクリックし、ヒットしたメッシュ上のエレメントの位置を、Active Element、3D CursorもしくはObject Originに設定します。Hit Mesh Elementsは、一度実行’するとツールを解除するまで、マウスクリックはヒットテストのイベントとして処理されます。トランスフォームツールなどの操作を続行する場合は、Hit Mesh Elementsを一旦解除する必要があります。ESCAPEキー、マウスの右クリック、Hit Mesh Elementsボタンを押すことでツールを解除することができます。
+## メッシュエレメントヒット位置の設定(Pick Mesh Element)
+Pick Mesh Elementは、Meshオブジェクトをマウスでクリックし、ヒットしたメッシュ上のエレメントの位置を、Active Element、3D CursorもしくはObject Originに設定します。Pick Mesh Elementsは、一度実行’するとツールを解除するまで、マウスクリックはヒットテストのイベントとして処理されます。トランスフォームツールなどの操作を続行する場合は、Pick Mesh Elementsを一旦解除する必要があります。ESCAPEキー、マウスの右クリック、Pick Mesh Elementsボタンを押すことでツールを解除することができます。
 <div align="left">
 <img src="images/HitMeshElement.gif"/>
 </div>
@@ -344,6 +375,8 @@ Select Rotate Mode (mesh.yt_select_rotate_mode)<br>
 ## プリファレンス
 #### <ins>Font Size</ins><br>
 Display Infoで表示するテキストのフォントサイズを指定します。
+#### <ins>Text Position X/Y Offset</ins><br>
+Display Infoで表示するテキストスクリーン上の位置を調整します。
 #### <ins>Handle Point Size</ins><br>
 Polygon Sliceなどで表示されるポイントハンドルのサイズをピクセルサイズで指定します。
 #### <ins>Non Planar Threshold</ins><br>
@@ -368,6 +401,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 | Select Boundary | mesh.yt_select_boundary |
 | Select Loop | mesh.yt_select_loop |
 | Select Loop Direct | mesh.yt_select_loop_direct |
+| Cycle Selection Mode | mesh.yt_cycle_select_mode |
 
 ### 選択セット
 
@@ -400,7 +434,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 
 | Name | Operator |
 |---------|------------------|
-| Hit Mesh Element | view3d.yt_hit_mesh_element |
+| Pick Mesh Element | view3d.yt_hit_mesh_element |
 | 3D Cursor | view3d.yt_origin_to_cursor |
 | Selection Center | view3d.yt_origin_to_selection |
 | Selection Border Center | view3d.yt_origin_to_selection_border |
@@ -415,12 +449,20 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 |---------|------------------|
 | Loop Slice | mesh.yt_loopslice |
 | Polygon Slice | mesh.yt_polyslice |
-| Linear Transform | mesh.yt_transform_linear |
-| Radial Transform | mesh.yt_transform_radial |
 | Edge Slice | mesh.yt_edgeslice |
 | Merge | mesh.yt_merge_verts |
 | Linear Weight | mesh.yt_weight_linear |
 | Add Loop | mesh.yt_addloop |
+
+
+### 座標変換
+| Name | Operator |
+|---------|------------------|
+| Linear Transform | mesh.yt_transform_linear |
+| Radial Transform | mesh.yt_transform_radial |
+| Bend Transform | mesh.yt_transform_bend |
+| Set Vertex Positions | mesh.yt_vert_position_set |
+| Center Vertex Positions | mesh.yt_vert_position_center |
 
 
 ### ビューポート表示

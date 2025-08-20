@@ -109,43 +109,6 @@ Polygon Slice is an operator developed to achieve behavior similar to Modo's pol
 <img src="images/PolygonSlice.gif"/>
 </div>
 
-### <ins>Linear Transform</ins><br>
-Linear Transform is a transform operator with a linear falloff. The degree of transformation falls off along the line segment displayed as a diamond. Move Offset, Scale, and Angle specify the relative amount of movement, scale, and rotation to transform, respectively. The center of rotation and scale refers to the currently set Transform Pivot Point. Transform Orientation supports only Normal. The rest conform to the Global direction. Hold down LMB and select Hauling or Tracking in the 3D view.<br>
-<b>Shape</b> specifies how the falloff is calculated. The default is Linear, which means the falloff is linear.<br>
-Enabling <b>Reverse</b> causes the falloff to fall from Linear End to Linear Start.<br>
-<b>Mirror</b> mirrors the falloff shape at Start or End. The falloff affects both the original falloff shape and the mirror shape.<br>
-<b>Symmetry</b> transforms the selected elements symmetrically along the specified axis.<br>
-<b>Auto Fit</b> moves Start and End to fit the falloff shape to the selected mesh elements in the specified direction.<br>
-Enabling <b>Show Axis</b> displays axis handles at the Start and End positions of the falloff shape.<br>
-* G, R, S keys: Switch between moving, rotating, and scaling.<br>
-* LMB drag: Drag the mouse to change the value of the item set by Hauling with Hauling.<br>
-* LMB + Shift drag: Draw a new falloff shape.<br>
-* LMB + Control + Shift drag: Draw a new falloff shape horizontally or vertically.<br>
-* LMB + Alt drag: No changes are made until the mouse button is released. Useful for quickly aligning handle operations on heavy meshes.<br>
-* Return key: Confirms changes and resets changes.<br>
-* ESC key, Space key, RMB click: Exit the tool.<br>
-<div align="left">
-<img src="images/LinearTransform.gif"/>
-</div>
-
-### <ins>Radial Transform</ins><br>
-<b>Radial Transform</b> is a transform operator with a radial falloff. The degree of transformation is attenuated in a circular shape. Move Offset, Scale, and Angle specify the relative amount of movement, scale, and rotation to transform, respectively. The center of rotation and scale refers to the currently set Transform Pivot Point. Transform Orientation only supports Normal. The rest follow the Global direction. You can interactively change the transformation value by manipulating the Hauling or Transform Handle in the 3D view while holding down the LMB. The items used for the Hauling operation can be specified in the Hauling menu. They are also assigned to the shortcut keys T, R, and S, so they can also be changed using keyboard shortcuts. Radial Center and Radial Side are the center point of the radial falloff and the radius of the sphere. The closer to the center point, the smaller the falloff weight, and the farther away from the center, the larger the movement. The weight on the outside of the sphere is zero. These positions are set to fit the bounding box of the currently selected mesh element when the operator is started. You can redraw this sphere by dragging in the 3D view while holding down the Shift key. You can also constrain the drag direction to horizontal or vertical by holding down the Ctrl key and dragging the LMB.<br>
-<b>Shape</b> specifies how the falloff attenuation is calculated. The default is Linear, which performs linear falloff.<br>
-<b>Symmetry</b> transforms the selected elements symmetrically along the specified axis of symmetry.<br>
-* G, R, S keys: Switch between moving, rotating, and scaling<br>
-* LMB drag: Change the value of the item set by Hauling by dragging the mouse.<br>
-* LMB + Shift drag: Redraw a new falloff shape.<br>
-* LMB + drag side handle: Resize the falloff size on each axis.<br>
-* LMB + Shift + drag side handle: Resize the falloff size equally on all axes.<br>
-* LMB + drag center handle: Move the entire falloff shape.。<br>
-* LMB + Control + drag side handle: Move the entire falloff shape.<br>
-* LMB + Alt drag: No changes are made until you release the mouse button. Useful for quickly aligning handle operations on heavy meshes.<br>
-* Return key: Confirms changes and resets modified values.<br>
-* ESC key, Space key, RMB click: Exits the tool.<br>
-<div align="left">
-<img src="images/RadialTransform.gif"/>
-</div>
-
 ### <ins>Edge Slice</ins><br>
 Edge Slice is an interactive slicing tool with operability similar to Modo's Edge Slice, and allows you to slice a face continuously between the edges you clicked. This tool supports symmetry, and you can slice symmetrically positioned faces at the same time by selecting a symmetry axis from the Symmetry option that appears when you press the Edge Slice button to start the tool. In addition, if an edge is selected across faces or you click on a face, a handle is added in the currently operated view direction. Each handle can be moved after it is added. The following operations are available.<br>
 * LMB click: Click on an edge or face with the LMB to add a new handle. You can move the added handle by moving it while holding down the LMB.<br>
@@ -192,6 +155,75 @@ Enabling <b>Reverse</b> causes attenuation from Linear End to Linear Start.<br>
 * LMB + Alt drag: No changes are applied until the mouse button is released. Useful for quickly aligning handle operations on heavy meshes.<br>
 * Return key: Confirms changes and resets changes.<br>
 * ESC key, Space key, RMB click: Exit the tool.<br>
+
+## Transform
+
+### <ins>Linear Transform</ins><br>
+Linear Transform is a transform operator with a linear falloff. The degree of transformation falls off along the line segment displayed as a diamond. Move Offset, Scale, and Angle specify the relative amount of movement, scale, and rotation to transform, respectively. The center of rotation and scale refers to the currently set Transform Pivot Point. Transform Orientation supports only Normal. The rest conform to the Global direction. Hold down LMB and select Hauling or Tracking in the 3D view.<br>
+<b>Shape</b> specifies how the falloff is calculated. The default is Linear, which means the falloff is linear.<br>
+Enabling <b>Reverse</b> causes the falloff to fall from Linear End to Linear Start.<br>
+<b>Mirror</b> mirrors the falloff shape at Start or End. The falloff affects both the original falloff shape and the mirror shape.<br>
+<b>Symmetry</b> transforms the selected elements symmetrically along the specified axis.<br>
+<b>Auto Fit</b> moves Start and End to fit the falloff shape to the selected mesh elements in the specified direction. Orient: specifies the direction to fit the linear handles, XYZ move the handles along each major axis, and Oriented Bounding Box calculates a directional bounding box to fit the handles along that axis.<br>
+Enabling <b>Show Axis</b> displays axis handles at the Start and End positions of the falloff shape.<br>
+* G, R, S keys: Switch between moving, rotating, and scaling.<br>
+* LMB drag: Drag the mouse to change the value of the item set by Hauling with Hauling.<br>
+* LMB + Shift drag: Draw a new falloff shape.<br>
+* LMB + Control + Shift drag: Draw a new falloff shape horizontally or vertically.<br>
+* LMB + Alt drag: No changes are made until the mouse button is released. Useful for quickly aligning handle operations on heavy meshes.<br>
+* Return key: Confirms changes and resets changes.<br>
+* ESC key, Space key, RMB click: Exit the tool.<br>
+<div align="left">
+<img src="images/LinearTransform.gif"/>
+</div>
+
+### <ins>Radial Transform</ins><br>
+<b>Radial Transform</b> is a transform operator with a radial falloff. The degree of transformation is attenuated in a circular shape. Move Offset, Scale, and Angle specify the relative amount of movement, scale, and rotation to transform, respectively. The center of rotation and scale refers to the currently set Transform Pivot Point. Transform Orientation only supports Normal. The rest follow the Global direction. You can interactively change the transformation value by manipulating the Hauling or Transform Handle in the 3D view while holding down the LMB. The items used for the Hauling operation can be specified in the Hauling menu. They are also assigned to the shortcut keys T, R, and S, so they can also be changed using keyboard shortcuts. Radial Center and Radial Side are the center point of the radial falloff and the radius of the sphere. The closer to the center point, the smaller the falloff weight, and the farther away from the center, the larger the movement. The weight on the outside of the sphere is zero. These positions are set to fit the bounding box of the currently selected mesh element when the operator is started. You can redraw this sphere by dragging in the 3D view while holding down the Shift key. You can also constrain the drag direction to horizontal or vertical by holding down the Ctrl key and dragging the LMB.<br>
+<b>Shape</b> specifies how the falloff attenuation is calculated. The default is Linear, which performs linear falloff.<br>
+<b>Symmetry</b> transforms the selected elements symmetrically along the specified axis of symmetry.<br>
+<b>Invert</b> inverts falloff weight (w = 1.0 - w).<br>
+* G, R, S keys: Switch between moving, rotating, and scaling<br>
+* LMB drag: Change the value of the item set by Hauling by dragging the mouse.<br>
+* LMB + Shift drag: Redraw a new falloff shape.<br>
+* LMB + drag side handle: Resize the falloff size on each axis.<br>
+* LMB + Shift + drag side handle: Resize the falloff size equally on all axes.<br>
+* LMB + drag center handle: Move the entire falloff shape.。<br>
+* LMB + Control + drag side handle: Move the entire falloff shape.<br>
+* LMB + Alt drag: No changes are made until you release the mouse button. Useful for quickly aligning handle operations on heavy meshes.<br>
+* Return key: Confirms changes and resets modified values.<br>
+* ESC key, Space key, RMB click: Exits the tool.<br>
+<div align="left">
+<img src="images/RadialTransform.gif"/>
+</div>
+
+### <ins>Bend Transform</ins><br>
+<b>Bend Transform</b> is a transformation tool similar to Modo's Bend tool. It bends the coordinate values of selected vertices around the spine handle of the bend. <b>Center</b> is the center position of the bend, from which the bend will occur. <b>Spine</b> is the vector along which the bend will occur. <b>Axis</b> defines the plane along which the bend will occur. You can set it to a major X/Y/Z axis or the current view direction. If you want to specify the direction of the selected element's normal vector, you can use WorkPlane feature. <b>Angle</b> specifies the amount of bend in degrees. This value can be changed by manipulating the white circular handle. <br>
+<b>Both Sides</b> also transforms the coordinates of vertices located in the opposite direction to the spine vector. <br>
+<b>Symmetry</b> transforms selected elements symmetrically around the specified axis of symmetry. <br>
+* LMB + Shift drag: Redraws a new falloff shape. <br>
+* LMB + Spine Handle Drag: Changes the end position of the spine. <br>
+* LMB + Center Handle Drag: Changes the start position of the spine. <br>
+* LMB + Shift + Spine Handle Drag: Resizes the length of the spine vector. <br>
+* LMB + Rotation Handle Drag: Changes the bend angle. <br>
+* LMB + Control + Handle Drag: Constrains movement horizontally or vertically on the screen. <br>
+* LMB + Alt Drag: Does not apply changes until you release the mouse button. This is useful for quickly aligning handle operations on heavy meshes. <br>
+* Return Key: Confirms changes and resets the modified values.
+* ESC Key, Space Bar Key or Right-click: Drop the tool. <br>
+<div align="left">
+<img src="images/BendTool.gif"/>
+</div>
+
+<b>Reverse</b> reverses the direction of the spine vector. <br>
+<b>Auto Fit</b> moves the spine handle to fit the selected mesh element in the specified direction. <b>Orient:</b> specifies the direction in which the spine handle fits. X, Y, and Z move the handle along each of the major axes. <b>Oriented Bounding Box</b> calculates an oriented bounding box and fits the handle along that axis. Enabling <b>Spine Only</b> does not move the spine's center position, but only changes the length of the spine vector to fit the calculated bounding box. <br>
+
+### <ins>Set Vertex Positions</ins><br>
+<b>Set Vertex Positions</b> sets the coordinate values of the selected vertices to the specified values. <b>Axis</b> specifies the component of the coordinate value to be set; only the coordinate components of the enabled axes are updated. <b>Position</b> specifies the coordinate value to be set; the coordinate value of the active vertex is set as the default. If there is no active vertex, the center value of the selected vertex coordinates is set. <b>Space</b> specifies whether the coordinate values are set in local mesh coordinates or global object coordinates. <b>Mode</b> specifies whether the specified Position value replaces the existing vertex value (SET) or is added (ADD). <br>
+<div align="left">
+<img src="images/SetPositions.gif"/>
+</div>
+
+### <ins>Center Vertex Positions</ins><br>
+<b>Center Vertex Positions</b> sets the coordinate values of the selected vertices to the center value of the bounding box containing the selected vertices. <b>Axis</b> is the component of the coordinate value to set; only the components of the coordinate value for the enabled axis will be updated. <b>Space</b> specifies whether the coordinate value is set in the mesh's local coordinate value or the object's global coordinate value.<br>
 
 ## Viewport Display
 Viewport Display is a function that changes the viewport display attributes of selected and unselected mesh objects all at once. In Blender, mesh objects have Viewport Display as a property that can be set for each individual object, but this sets this attribute all at once. Active Meshes sets the display attributes for selected mesh objects, and Inactive Meshes sets the display attributes for unselected mesh objects. Enabling Set Only Active Meshes and pressing the Set Attributes button will make no changes to unselected mesh objects and will only change the display attributes of selected mesh objects.
@@ -246,8 +278,8 @@ Pivot moves the 3D Cursor position to the active object's position and sets the 
 ### Pivot Center Parent Axis<br>
 Pivot moves the 3D Cursor position to the position of the active object and sets the Pivot Point to Cursor. Set Orientation to Parent.
 
-## Hit Mesh Element
-Hit Mesh Element sets the position of the hit element on the mesh by clicking the mouse on the Mesh object to Active Element, 3D Cursor, or Object Origin. Once Hit Mesh Elements is executed, mouse clicks are processed as hit test events until the tool is released. If you want to continue operations such as transform tools, you must release Hit Mesh Elements once. You can release the tool by pressing the ESCAPE key, right-clicking the mouse, or pressing the Hit Mesh Elements button.
+## Pick Mesh Element
+Pick Mesh Element sets the position of the hit element on the mesh by clicking the mouse on the Mesh object to Active Element, 3D Cursor, or Object Origin. Once Pick Mesh Elements is executed, mouse clicks are processed as hit test events until the tool is released. If you want to continue operations such as transform tools, you must release Pick Mesh Elements once. You can release the tool by pressing the ESCAPE key, right-clicking the mouse, or pressing the Pick Mesh Elements button.
 <div align="left">
 <img src="images/HitMeshElement.gif"/>
 </div>
@@ -344,6 +376,8 @@ Select Rotate Mode (mesh.yt_select_rotate_mode)<br>
 ## Preferences
 #### <ins>Font Size</ins><br>
 Specifies the font size of the text displayed in Display Info.
+#### <ins>Text Position X/Y Offset</ins><br>
+Offset the screen position of the text displayed in Display Info.
 #### <ins>Handle Point Size</ins><br>
 Specifies the size of the point handle displayed in Polygon Slice, etc. in pixels.
 #### <ins>Non Planar Threshold</ins><br>
@@ -368,6 +402,7 @@ Reverses the order of Edit Mode switching by the space key.
 | Select Boundary | mesh.yt_select_boundary |
 | Select Loop | mesh.yt_select_loop |
 | Select Loop Direct | mesh.yt_select_loop_direct |
+| Cycle Selection Mode | mesh.yt_cycle_select_mode |
 
 ### Selection Set
 
@@ -400,7 +435,7 @@ Reverses the order of Edit Mode switching by the space key.
 
 | Name | Operator |
 |---------|------------------|
-| Hit Mesh Element | view3d.yt_hit_mesh_element |
+| Pick Mesh Element | view3d.yt_hit_mesh_element |
 | 3D Cursor | view3d.yt_origin_to_cursor |
 | Selection Center | view3d.yt_origin_to_selection |
 | Selection Border Center | view3d.yt_origin_to_selection_border |
@@ -415,12 +450,20 @@ Reverses the order of Edit Mode switching by the space key.
 |---------|------------------|
 | Loop Slice | mesh.yt_loopslice |
 | Polygon Slice | mesh.yt_polyslice |
-| Linear Transform | mesh.yt_transform_linear |
-| Radial Transform | mesh.yt_transform_radial |
 | Edge Slice | mesh.yt_edgeslice |
 | Merge | mesh.yt_merge_verts |
 | Linear Weight | mesh.yt_weight_linear |
 | Add Loop | mesh.yt_addloop |
+
+
+### Deform
+| Name | Operator |
+|---------|------------------|
+| Linear Transform | mesh.yt_transform_linear |
+| Radial Transform | mesh.yt_transform_radial |
+| Bend Transform | mesh.yt_transform_bend |
+| Set Vertex Positions | mesh.yt_vert_position_set |
+| Center Vertex Positions | mesh.yt_vert_position_center |
 
 
 ### Viewport Display
@@ -430,4 +473,7 @@ Reverses the order of Edit Mode switching by the space key.
 | Set Attributes | mesh.yt_viewport_display |
 | Display Info | mesh.yt_viewport_text |
 | Dimension | mesh.yt_dimension |
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
