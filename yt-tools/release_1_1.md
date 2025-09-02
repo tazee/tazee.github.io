@@ -10,7 +10,7 @@ permalink: /yt-tools/release_1_1.html
 ## ✨ New Features Overview
 
 ### 🔹 Bend Tool
-<b>Bend Transform</b> is a transformation tool similar to Modo's Bend tool. It bends the coordinate values of selected vertices around the spine handle of the bend. <b>Center</b> is the center position of the bend, from which the bend will occur. <b>Spine</b> is the vector along which the bend will occur. <b>Axis</b> defines the plane along which the bend will occur. You can set it to a major X/Y/Z axis or the current view direction. If you want to specify the direction of the selected element's normal vector, you can use WorkPlane feature. 
+<b>Bend Transform</b> is a transformation tool similar to Modo's Bend tool. It bends the coordinate values of selected vertices around the spine handle of the bend. <b>Center</b> is the center position of the bend, from which the bend will occur. <b>Spine</b> is the vector along which the bend will occur. <b>Axis</b> defines the plane along which the bend will occur. You can set it to a major X/Y/Z axis or the current view direction. If you want to specify the direction of the selected element's normal vector, you can use WorkPlane feature.
 <div align="left">
 <img src="images/BendTool.gif"/>
 </div>
