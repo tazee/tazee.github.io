@@ -138,8 +138,10 @@ Adjust Last Operation(最後の操作を調整) パネルで、UVs(UV) がチェ
 * By Distance(距離でマージ):
 選択されている頂点周囲のジオメトリをマージし、指定された距離内で選択したメッシュ頂点やポイントクラウドの点をマージします。
 
+
+## ウェイト編集
 ### <ins>Linear Weight</ins><br>
-<b>Linear Weight</b>は、リニアフォールオフを使用ウェイトを設定するオペレータです。菱形で表示される線分に沿って設定されたウェイトを現在選択されているVertex Groupに設定します。アクティブなVertex Groupが存在しない場合は、新しくVertex Groupを作成し、そこにウェイト値を追加します。<b>Weight</b>は、設定するウェイト値で<b>Replace</b>は設定したウェイトで既存のウェイト値を書き換えます。<b>Additive</b>, <b>Subtract</b>は既存のウェイト値に新しい値を加算もしくは減算いたします。<b>Linear Start</b>, <b>Linear End</b>は、リニアフォールオフの始点と終点の座標値です。始点に近いほどフォールオフウェイトが大きく、終点に近づくほど減衰されて小さな移動になります。これらの位置はオペレータ起動時に現在選択されているメッシュエレメントのバウンディングボックスにフィットするように設定されます。Shiftキーを押しながら３Dビュー画面をドラックするとこのラインを新しく引き直すことができます。また、Ctrlキーを押しながらLMBをドラッグするとドラッグ方向が水平または垂直方向に拘束されます。<br>
+<b>Linear Weight</b>は、リニアフォールオフを使用ウェイトを設定するオペレータです。菱形で表示される線分に沿って設定されたウェイトを現在選択されているVertex Groupに設定します。アクティブなVertex Groupが存在しない場合は、新しくVertex Groupを作成し、そこにウェイト値を追加します。<b>Weight</b>は、設定するウェイト値で<b>Replace</b>は設定したウェイトで既存のウェイト値を書き換えます。<b>Additive</b>, <b>Subtract</b>は既存のウェイト値に新しい値を加算もしくは減算いたします。<b>Linear Start</b>, <b>Linear End</b>は、リニアフォールオフの始点と終点の座標値です。始点に近いほどフォールオフウェイトが大きく、終点に近づくほど減衰されて小さな移動になります。これらの位置はオペレータ起動時に現在選択されているメッシュエレメントのバウンディングボックスにフィットするように設定されます。Shiftキーを押しながら３Dビュー画面をドラックするとこのラインを新しく引き直すことができます。また、Ctrlキーを押しながらLMBをドラッグするとドラッグ方向が水平または垂直方向に拘束されます。Altキーを押しながらHaulingするとAltキーを離すまでウェイト値の適用が遅延されるため、より高速にマウス操作することができます。<br>
 <b>Shape</b>はフォールオフの減衰計算方法を指定します。デフォルトはLinearで線形に減衰が行われます。<br>
 <b>Reverse</b>を有効にすると<b>Linear End</b>から<b>Linear Start</b>に向かって減衰が行われます。<br>
 <b>Mirror</b>は、フォールオフシェイプをStartもしくはEndでミラーします。フォールオフは元のフォールオフシェイプとミラーシェイプの両方から影響を与えます。<br>
@@ -147,13 +149,32 @@ Adjust Last Operation(最後の操作を調整) パネルで、UVs(UV) がチェ
 <b>Auto Fit</b>は、フォールオフシェイプを選択されているメッシュエレメントに指定した方向にフィットするようにStartとEndを移動します。<br>
 <b>Show Axis</b>を有効にするとフォールオフシェイプのStartとEndの位置に軸ハンドルが表示されます。<br>
 <b>Show Weight</b>は、Mesh Edit Mode OverlaysパネルにあるVertex Group Weightsを有効にし、Meshにウェイトをグラデーションカラーで表示します。<br>
-* G, R, S キー: 移動、回転、スケールの切り替え<br>
 * LMBドラッグ: マウスドラッグでHaulingで設定された項目の値をHaulingで変更します。<br>
 * LMB + Shiftドラッグ：新規にフォールオフシェイプを引き直します。<br>
 * LMB + Control + Shiftドラッグ：新規にフォールオフシェイプを水平もしくは垂直方向に引き直します。<br>
 * LMB + Altドラッグ：マウスボタンを放すまで変更を行いません。重いメッシュでハンドル操作を素早く位置合わせしたい場合に有効です。<br>
-* Returnキー：変更を確定し、変更値をリセットします。
 * ESCキー、Spaceキー、RMBクリック：ツールを終了します。<br>
+<div align="left">
+<img src="images/LinearWeight.gif">
+</div>
+
+### <ins>Radial Weight</ins><br>
+<b>Radial Weight</b>は、ラディアルフォールオフを使用ウェイトを設定するオペレータです。球形で表示される領域内の頂点のウェイトを現在選択されているVertex Groupに設定します。アクティブなVertex Groupが存在しない場合は、新しくVertex Groupを作成し、そこにウェイト値を追加します。<b>Weight</b>は、設定するウェイト値で<b>Replace</b>は設定したウェイトで既存のウェイト値を書き換えます。<b>Additive</b>, <b>Subtract</b>は既存のウェイト値に新しい値を加算もしくは減算いたします。<b>Radial Center</b>, <b>Radial Side</b>は、ラディアルフォールオフの中心点と球体の半径です。中心点に近いほどフォールオフウェイトが小さく、中心から離れるほど大きな移動になります。球体の外側のウェイトはゼロになります。これらの位置はオペレータ起動時に現在選択されているメッシュエレメントのバウンディングボックスにフィットするように設定されます。Shiftキーを押しながら３Dビュー画面をドラックするとこの球体を新しく引き直すことができます。また、Ctrlキーを押しながらLMBをドラッグするとドラッグ方向が水平または垂直方向に拘束されます。Altキーを押しながらHaulingするとAltキーを離すまでウェイト値の適用が遅延されるため、より高速にマウス操作することができます。<br>
+<b>Shape</b>はフォールオフの減衰計算方法を指定します。デフォルトはLinearで線形に減衰が行われます。<br>
+<b>Invert</b>を有効にするとウェイトの減衰値を反転して適用します（w' = 1.0 - w）。<br>
+<b>Symmetry</b>は、指定した対称軸と対称に選択されたエレメントをトランスフォームします。<br>
+<b>Show Weight</b>は、Mesh Edit Mode OverlaysパネルにあるVertex Group Weightsを有効にし、Meshにウェイトをグラデーションカラーで表示します。<br>
+* LMBドラッグ: マウスドラッグでHaulingで設定された項目の値をHaulingで変更します。<br>
+* LMB + Shiftドラッグ：新規にフォールオフシェイプを引き直します。<br>
+* LMB + サイドハンドルドラッグ：フォールオフのサイズを各軸別にリサイズします。<br>
+* LMB + Shift + サイドハンドルドラッグ：フォールオフのサイズを全ての軸均等にリサイズします。<br>
+* LMB + 中心ハンドルドラッグ：フォールオフ形状全体を移動します。<br>
+* LMB + Control + サイドハンドルドラッグ：フォールオフ形状全体を移動します。<br>
+* LMB + Altドラッグ：マウスボタンを放すまで変更を行いません。重いメッシュでハンドル操作を素早く位置合わせしたい場合に有効です。<br>
+* ESCキー、Spaceキー、RMBクリック：ツールを終了します。<br>
+<div align="left">
+<img src="images/RadialWeight.gif">
+</div>
 
 ## 座標変換
 ### <ins>Linear Transform</ins><br>
@@ -214,6 +235,17 @@ Adjust Last Operation(最後の操作を調整) パネルで、UVs(UV) がチェ
 <b>Reverse</b>は、スパインベクトルの方向を反転します。<br>
 <b>Auto Fit</b>は、スパインハンドルを選択されているメッシュエレメントに指定した方向にフィットするように移動します。<b>Orient:</b>は、スパインハンドルをフィットする方向を指定します。XYZはそれぞれ主軸方向にハンドルを移動します。<b>Oriented Bounding Box</b>は方向性バウンディングボックスを計算しハンドルをその軸方向にフィットします。<b>Spine Only</b>を有効にするとスパインの中心位置は移動せずにスパインベクトルの長さだけを計算したバウンディングボックスにフィットするように変更します。<br>
 
+### <ins>Soft Drag</ins><br>
+<b>Soft Drag</b>は、クリックしたスクリーン上のポイントを中心にサイズで指定した半径内にある頂点の座標値をスムースに移動するトランスフォームツールです。<b>Size</b>はスクリーン上のフォールオフ円の半径で、Shiftキーを押しながらLMBをドラッグするとインタラクティブに変更する事ができます。LMBで変形を行いたい場所をクリックしてドラッグするとフォールオフの円形内にある頂点が移動します。<br>
+<b>Occlusion Test</b>は、対象となる頂点が他のポリゴンの後ろに隠れているかどうかをテストし、隠れている頂点は移動しません<br>
+<b>Symmetry</b>は、指定した対称軸と対称に選択されたエレメントをトランスフォームします。<br>
+* LMB + Shiftドラッグ：フォールオフの円のサイズを変更します。<br>
+* LMB + Altドラッグ：マウスボタンを放すまで変更を行いません。重いメッシュでハンドル操作を素早く位置合わせしたい場合に有効です。<br>
+* ESCキー、Spaceキー、RMBクリック：ツールを終了します。<br>
+<div align="left">
+<img src="images/SoftDrag.gif" style='max-height: 400px; object-fit: contain'/>
+</div>
+
 ### <ins>Set Vertex Positions</ins><br>
 <b>Set Vertex Positions</b>は、選択した頂点の座標値を指定した値に設定します。<b>Axis</b>は、設定する座標値のコンポーネントで、有効になっている軸の座標値のコンポーネントのみが更新されます。<b>Position</b>は、設定する座標値で、アクティブ頂点の座標値がデフォルト値としてセットされます。アクティブ頂点がない場合は、選択した頂点座標値の中心値がセットされます。<b>Space</b>は、座標値をメッシュのローカル座標値で設定するか、オブジェクトのグローバル座標値で設定するかを指定します。<b>Mode</b>は、指定したPositionの値を既存の頂点の値と置き換えるか（SET)、追加するか（ADD)を指定します。<br>
 <div align="left">
@@ -252,7 +284,7 @@ PreferencesパネルのYT-Toolsのタブでこの表示情報に使用するフ�
 </div>
 
 ## アクションセンター(Action Center)
-アクションセンターは、BlenderのTransform Pivot PointとTransform OrientationをModoのアクションセンターと近い動作になるように設定します。アクションセンターはサイドバーのAction Centerタブから設定できます。SideBarでは最後にセットしたアクションセンターがハイライト表示されます。ハイライトされているアクションセンターをオフにするとデフォルトのTransform Pivot PointとTransform Orientationがセットされます。
+アクションセンターは、BlenderのTransform Pivot PointとTransform OrientationをModoのアクションセンターと近い動作になるように設定します。アクションセンターはサイドバーのAction Centerタブから設定できます。SideBarでは最後にセットしたアクションセンターがハイライト表示されます。ハイライトされているアクションセンターをオフにするとデフォルトのTransform Pivot PointとTransform Orientationがセットされます。Pivot Point, Orientationを別々に指定したい場合は、Pivot Point, Orientationのトグルボタンを使用します。トグルボタンがオフになっているPivot PointもしくはOrientationはセットされません。
 ### Automatic<br>
 Automaticは、選択位置に3D Cursor位置を移動し、Pivot PointをCursorにOrientationをGlobalに設定します。
 ### Selection<br>
@@ -303,7 +335,8 @@ Set Originは、指定した方法でオブジェクトの原点位置（黄色�
 
 ## 作業平面(Workplane)
 作業平面はEditモードで選択したエレメントをビューの中心に移動および選択の法線ベクトルをビューのZ軸方向へ一時的に設定し、平面ビューでのモデリング作業を容易にする機能です。この機能は選択したエレメントをもとに選択を平面ビューの中心に変換するために計算したトランスフォームを"_Workplane"という名前で作成したEmptyオブジェクトに設定し、編集するメッシュオブジェクトをこの"_Workplane"オブジェクトにペアレンティングします。<b>Unset</b>を押すとこの"_Workplane"オブジェクトは削除され、ペアレンティングされているオブジェクトはもとに戻ります。これにより一時的に編集したいメッシュエレメントが置かれている平面をTopビューにしてメッシュを編集することが可能になります。<br>
-また、Objectモードで作業平面を<b>Set</b>すると現在選択されているオブジェクトのトランスフォームを原点に戻すトランスフォームマトリックスが"_Workplane"オブジェクトに設定され、すべてのメッシュオブジェクトが"_Workplane"にペアレンティングされます。これによりアクティブオブジェクトを一時的にワールド座標の中心にした操作が可能になります。
+また、Objectモードで作業平面を<b>Set</b>すると現在選択されているオブジェクトのトランスフォームを原点に戻すトランスフォームマトリックスが"_Workplane"オブジェクトに設定され、すべてのメッシュオブジェクトが"_Workplane"にペアレンティングされます。これによりアクティブオブジェクトを一時的にワールド座標の中心にした操作が可能になります。<br>
+<b>Set Transform Orientations</b>は、作業平面の回転マトリックスを名称をつけてカスタムTransform Orientationsに設定します。平面ビューではなくパースペクティブビューでトランスフォーム操作をしたい場合などに便利です。
 <div align="left">
 <img src="images/Workplane.gif"/>
 </div>
@@ -444,15 +477,20 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 
 
 ### メッシュ編集
-
 | Name | Operator |
 |---------|------------------|
 | Loop Slice | mesh.yt_loopslice |
 | Polygon Slice | mesh.yt_polyslice |
 | Edge Slice | mesh.yt_edgeslice |
 | Merge | mesh.yt_merge_verts |
-| Linear Weight | mesh.yt_weight_linear |
 | Add Loop | mesh.yt_addloop |
+
+
+### ウェイト編集
+| Name | Operator |
+|---------|------------------|
+| Linear Weight | mesh.yt_weight_linear |
+| Radial Weight | mesh.yt_weight_radial |
 
 
 ### 座標変換
@@ -461,8 +499,17 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 | Linear Transform | mesh.yt_transform_linear |
 | Radial Transform | mesh.yt_transform_radial |
 | Bend Transform | mesh.yt_transform_bend |
+| Soft Drag | mesh.yt_transform_softdrag |
 | Set Vertex Positions | mesh.yt_vert_position_set |
 | Center Vertex Positions | mesh.yt_vert_position_center |
+
+
+### 作業平面
+| Name | Operator |
+|---------|------------------|
+| Set Workplane | view3d.yt_workplane_set |
+| Unset Workplane | view3d.yt_workplane_unset |
+| Set Transform Orientations | view3d.yt_workplane_to_orientations |
 
 
 ### ビューポート表示

@@ -139,6 +139,7 @@ If UVs is checked in the Adjust Last Operation panel, UV mapping coordinates wil
 * Merge By Distance: 
 Merges geometry around selected vertices, merging selected mesh vertices or point cloud points within the specified distance.
 
+## Weight Editing
 ### <ins>Linear Weight</ins><br>
 Linear Weight is an operator that sets the weight used for linear falloff. The weight set along the line displayed as a diamond is set to the currently selected Vertex Group. If there is no active Vertex Group, a new Vertex Group is created and the weight value is added to it. Weight is the weight value to be set, and Replace replaces the existing weight value with the set weight. Additive and Subtract add or subtract a new value to the existing weight value. Linear Start and Linear End are the coordinate values of the start and end points of the linear falloff. The falloff weight is larger the closer to the start point, and the smaller the movement is as it is attenuated as it is closer to the end point. These positions are set to fit the bounding box of the mesh element currently selected when the operator is started. You can redraw this line by dragging the 3D view screen while holding down the Shift key. Also, dragging the LMB while holding down the Ctrl key will constrain the drag direction to horizontal or vertical.<br>
 <b>Shape</b> specifies the falloff attenuation calculation method. The default is Linear, which causes linear attenuation.<br>
@@ -155,9 +156,29 @@ Enabling <b>Reverse</b> causes attenuation from Linear End to Linear Start.<br>
 * LMB + Alt drag: No changes are applied until the mouse button is released. Useful for quickly aligning handle operations on heavy meshes.<br>
 * Return key: Confirms changes and resets changes.<br>
 * ESC key, Space key, RMB click: Exit the tool.<br>
+<div align="left">
+<img src="images/LinearWeight.gif">
+</div>
+
+### <ins>Radial Weight</ins><br>
+<b>Radial Weight</b> is an operator that sets the weight used for the radial falloff. It sets the weight of vertices within the spherical area to the currently selected Vertex Group. If there is no active Vertex Group, a new Vertex Group will be created and the weight value will be added to it. <b>Weight</b> is the weight value to set, and <b>Replace</b> overwrites the existing weight value with the set weight. <b>Additive</b> and <b>Subtract</b> add or subtract new values ​​to the existing weight value. <b>Radial Center</b> and <b>Radial Side</b> are the center point and radius of the radial falloff sphere. The falloff weight is smaller the closer to the center point, and larger the movement is the farther away from the center. The weight is zero outside the sphere. These positions are set to fit the bounding box of the currently selected mesh element when the operator is launched. You can redraw the sphere by holding down the Shift key and dragging in the 3D view screen. Additionally, holding down the Ctrl key while dragging the LMB constrains the drag direction to horizontal or vertical. Holding down the Alt key while hauling delays the application of the weight value until you release the Alt key, allowing for faster mouse operation. <br>
+<b>Shape</b> specifies how the falloff is calculated. The default is Linear, which applies a linear falloff. <br>
+Enable <b>Invert</b> to invert the weight falloff value (w' = 1.0 - w). <br>
+<b>Symmetry</b> transforms selected elements symmetrically along the specified axis of symmetry. <br>
+<b>Show Weight</b> enables Vertex Group Weights in the Mesh Edit Mode Overlays panel and displays the weights on the mesh using a gradient color. <br>
+* LMB drag: Drag with the mouse to change the value of the item set by Hauling. <br>
+* LMB + Shift drag: Redraws a new falloff shape. <br>
+* LMB + Drag Side Handle: Resize the falloff on each axis independently. <br>
+* LMB + Shift + Drag Side Handle: Resize the falloff equally on all axes. <br>
+* LMB + Drag Center Handle: Move the entire falloff shape. <br>
+* LMB + Control + Drag Side Handle: Move the entire falloff shape. <br>
+* LMB + Alt Drag: No changes are made until you release the mouse button. This is useful for quickly aligning handle operations on heavy meshes. <br>
+* ESC, Spacebar, or RMB click: Exit the tool. <br>
+<div align="left">
+<img src="images/RadialWeight.gif">
+</div>
 
 ## Transform
-
 ### <ins>Linear Transform</ins><br>
 Linear Transform is a transform operator with a linear falloff. The degree of transformation falls off along the line segment displayed as a diamond. Move Offset, Scale, and Angle specify the relative amount of movement, scale, and rotation to transform, respectively. The center of rotation and scale refers to the currently set Transform Pivot Point. Transform Orientation supports only Normal. The rest conform to the Global direction. Hold down LMB and select Hauling or Tracking in the 3D view.<br>
 <b>Shape</b> specifies how the falloff is calculated. The default is Linear, which means the falloff is linear.<br>
@@ -216,6 +237,17 @@ Enabling <b>Show Axis</b> displays axis handles at the Start and End positions o
 <b>Reverse</b> reverses the direction of the spine vector. <br>
 <b>Auto Fit</b> moves the spine handle to fit the selected mesh element in the specified direction. <b>Orient:</b> specifies the direction in which the spine handle fits. X, Y, and Z move the handle along each of the major axes. <b>Oriented Bounding Box</b> calculates an oriented bounding box and fits the handle along that axis. Enabling <b>Spine Only</b> does not move the spine's center position, but only changes the length of the spine vector to fit the calculated bounding box. <br>
 
+### <ins>Soft Drag</ins><br>
+<b>Soft Drag</b> is a transformation tool that smoothly moves the coordinate values ​​of vertices within the radius specified by Size, centered on the point you click on the screen. <b>Size</b> is the radius of the falloff circle on the screen, which you can change interactively by holding down the Shift key and dragging the LMB. Clicking and dragging the LMB at the desired location will move vertices within the falloff circle. <br>
+<b>Occlusion Test</b> tests whether the target vertex is hidden behind other polygons; hidden vertices will not be moved. <br>
+<b>Symmetry</b> transforms selected elements symmetrically along a specified axis of symmetry. <br>
+* LMB + Shift drag: Changes the size of the falloff circle. <br>
+* LMB + Alt drag: No changes are made until you release the mouse button. This is useful for quickly aligning handle operations on large meshes. <br>
+* ESC, Spacebar, or RMB click: Exit the tool. <br>
+<div align="left">
+<img src="images/SoftDrag.gif">
+</div>
+
 ### <ins>Set Vertex Positions</ins><br>
 <b>Set Vertex Positions</b> sets the coordinate values of the selected vertices to the specified values. <b>Axis</b> specifies the component of the coordinate value to be set; only the coordinate components of the enabled axes are updated. <b>Position</b> specifies the coordinate value to be set; the coordinate value of the active vertex is set as the default. If there is no active vertex, the center value of the selected vertex coordinates is set. <b>Space</b> specifies whether the coordinate values are set in local mesh coordinates or global object coordinates. <b>Mode</b> specifies whether the specified Position value replaces the existing vertex value (SET) or is added (ADD). <br>
 <div align="left">
@@ -254,7 +286,7 @@ The Dimension tool calculates a bounding box that contains the selected elements
 </div>
 
 ## Action Center
-Action Center sets Blender's Transform Pivot Point and Transform Orientation to behave similarly to Modo's Action Center. Action Center can be set from the Action Center tab in the Sidebar. The last Action Center set is highlighted in the SideBar. Turning off a highlighted Action Center sets the default Transform Pivot Point and Transform Orientation.
+Action Center sets Blender's Transform Pivot Point and Transform Orientation to behave similarly to Modo's Action Center. Action Center can be set from the Action Center tab in the Sidebar. The last Action Center set is highlighted in the SideBar. Turning off a highlighted Action Center sets the default Transform Pivot Point and Transform Orientation. If you want to specify the Pivot Point and Orientation separately, use the Pivot Point and Orientation toggle buttons. If the toggle button is off, the Pivot Point or Orientation will not be set.
 ### Automatic<br>
 Automatic moves the 3D Cursor position to the selection position and sets the Pivot Point to Cursor and Orientation to Global.
 ### Selection<br>
@@ -304,7 +336,8 @@ Sets the origin position (0,0,0) to Origin.
 
 ## Workplane
 The workplane function moves the selected element to the center of the view in Edit mode and temporarily sets the normal vector of the selection to the Z-axis direction of the view, making modeling in the planar view easier. This function sets the calculated transform to convert the selection to the center of the planar view based on the selected element to an empty object created with the name "_Workplane", and parent the mesh object to be edited to this "_Workplane" object. Pressing Unset will delete this "_Workplane" object and return the parented object to its original state. This allows you to temporarily edit the mesh by setting the plane on which the mesh element you want to edit is located to the Top view.<br>
-In addition, when you set the workplane in Object mode, a transform matrix that returns the transform of the currently selected object to the origin is set to the "_Workplane" object, and all mesh objects are parented to "_Workplane". This allows you to temporarily operate the active object at the center of the world coordinates.
+In addition, when you set the workplane in Object mode, a transform matrix that returns the transform of the currently selected object to the origin is set to the "_Workplane" object, and all mesh objects are parented to "_Workplane". This allows you to temporarily operate the active object at the center of the world coordinates.<br>
+<b>Set Transform Orientations</b> sets the construction plane rotation matrix to a named custom Transform Orientation. This is useful if you want to manipulate transformations in the perspective view rather than the planar view.
 <div align="left">
 <img src="images/Workplane.gif"/>
 </div>
@@ -445,15 +478,20 @@ Reverses the order of Edit Mode switching by the space key.
 
 
 ### Mesh Editting
-
 | Name | Operator |
 |---------|------------------|
 | Loop Slice | mesh.yt_loopslice |
 | Polygon Slice | mesh.yt_polyslice |
 | Edge Slice | mesh.yt_edgeslice |
 | Merge | mesh.yt_merge_verts |
-| Linear Weight | mesh.yt_weight_linear |
 | Add Loop | mesh.yt_addloop |
+
+
+### Weight Editting
+| Name | Operator |
+|---------|------------------|
+| Linear Weight | mesh.yt_weight_linear |
+| Radial Weight | mesh.yt_weight_radial |
 
 
 ### Deform
@@ -462,8 +500,17 @@ Reverses the order of Edit Mode switching by the space key.
 | Linear Transform | mesh.yt_transform_linear |
 | Radial Transform | mesh.yt_transform_radial |
 | Bend Transform | mesh.yt_transform_bend |
+| Soft Drag | mesh.yt_transform_softdrag |
 | Set Vertex Positions | mesh.yt_vert_position_set |
 | Center Vertex Positions | mesh.yt_vert_position_center |
+
+
+### WorkPlane
+| Name | Operator |
+|---------|------------------|
+| Set Workplane | view3d.yt_workplane_set |
+| Unset Workplane | view3d.yt_workplane_unset |
+| Set Transform Orientations | view3d.yt_workplane_to_orientations |
 
 
 ### Viewport Display
@@ -473,7 +520,3 @@ Reverses the order of Edit Mode switching by the space key.
 | Set Attributes | mesh.yt_viewport_display |
 | Display Info | mesh.yt_viewport_text |
 | Dimension | mesh.yt_dimension |
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
