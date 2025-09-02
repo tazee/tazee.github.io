@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-permalink: /yt-tools/release_1_1.html
+permalink: /yt-tools/release_1_2.html
 ---
 # YT-Tools for Blender v1.2 Release Note
 
