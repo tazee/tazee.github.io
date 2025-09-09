@@ -477,6 +477,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 
 
 ### メッシュ編集
+
 | Name | Operator |
 |---------|------------------|
 | Loop Slice | mesh.yt_loopslice |
@@ -487,6 +488,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 
 
 ### ウェイト編集
+
 | Name | Operator |
 |---------|------------------|
 | Linear Weight | mesh.yt_weight_linear |
@@ -494,6 +496,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 
 
 ### 座標変換
+
 | Name | Operator |
 |---------|------------------|
 | Linear Transform | mesh.yt_transform_linear |
@@ -505,6 +508,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 
 
 ### 作業平面
+
 | Name | Operator |
 |---------|------------------|
 | Set Workplane | view3d.yt_workplane_set |

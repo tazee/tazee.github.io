@@ -478,6 +478,7 @@ Reverses the order of Edit Mode switching by the space key.
 
 
 ### Mesh Editting
+
 | Name | Operator |
 |---------|------------------|
 | Loop Slice | mesh.yt_loopslice |
@@ -488,6 +489,7 @@ Reverses the order of Edit Mode switching by the space key.
 
 
 ### Weight Editting
+
 | Name | Operator |
 |---------|------------------|
 | Linear Weight | mesh.yt_weight_linear |
@@ -506,6 +508,7 @@ Reverses the order of Edit Mode switching by the space key.
 
 
 ### WorkPlane
+
 | Name | Operator |
 |---------|------------------|
 | Set Workplane | view3d.yt_workplane_set |
