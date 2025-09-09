@@ -497,6 +497,7 @@ Reverses the order of Edit Mode switching by the space key.
 
 
 ### Deform
+
 | Name | Operator |
 |---------|------------------|
 | Linear Transform | mesh.yt_transform_linear |
