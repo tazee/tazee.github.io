@@ -12,7 +12,7 @@ permalink: /yt-tools/release_1_3.html
 ### 🔹 Smooth Brush
 <b>Smooth Brush</b> is a transform tool that smooths the coordinate values ​​of vertices within a radius around the cursor with a brushing action. <b>Size</b> is the radius of the on-screen falloff circle, which can be interactively changed by dragging the RMB. Dragging the LMB around the vertices you want to smooth will smooth vertices within the falloff circle. <br><br>
 <div align="left">
-<img src="images/SmoothBrash.gif">
+<img src="images/SmoothBrush.gif">
 </div>
 
 ### 🔹 Soft Drag Update
