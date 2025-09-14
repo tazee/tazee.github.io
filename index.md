@@ -17,7 +17,8 @@ Hello I'm Taz, a software engineer specializing in modeling tools for 3D compute
 - <a href="https://forms.gle/3XkJnZyQFghUkScw8">Feedback Form</a>
 - Release Note :<br>
     <a href="/yt-tools/release_1_1.html">v1.1</a><br>
-    <a href="/yt-tools/release_1_2.html">v1.2</a>
+    <a href="/yt-tools/release_1_2.html">v1.2</a><br>
+    <a href="/yt-tools/release_1_3.html">v1.3</a>
 
 <b>Modo Open Source Plug-ins : </b><br>
 - <a href="{{ site.githuburl }}/">https://github.com/tazee</a>

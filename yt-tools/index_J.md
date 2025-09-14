@@ -66,7 +66,7 @@ Altキー＋LMBで選択するBlender標準のループ選択と同じですが�
 
 
 ## 選択セット(Selection Set)
-<b>Selection Set</b>は、Vert、Edge、Faceの選択状態を名前をつけてメッシュに保存する機能です。これらの情報はメッシュのカスタムデータとして保存されます。Blenderのシーンファイルに保存されますので、保存したシーンを再度開いた場合にも保持されています。<b>Add</b>は、現在選択されているメッシュエレメントを<b>Selection Set</b>に追加します。<b>Selection Set</b>は、Vert、Edge、Faceに対して別々に保存されます。<b>Remove</b>は、現在表示されている<b>Selection Set</b>を削除します。<b>Remove All</b>を有効にすると、現在のEditモードに対して保存されている<b>Selection Set</b>を全て削除します。<b>Select</b>は、現在表示されている<b>Selection Set</b>に保存されいるエレメントを選択状態にします。<br><br>
+<b>Selection Set</b>は、Vert、Edge、Faceの選択状態を名前をつけてメッシュに保存する機能です。これらの情報はメッシュのカスタムデータとして保存されます。Blenderのシーンファイルに保存されますので、保存したシーンを再度開いた場合にも保持されています。<b>Add</b>は、現在選択されているメッシュエレメントを<b>Selection Set</b>に追加します。<b>Selection Set</b>は、Vert、Edge、Faceに対して別々に保存されます。<b>Remove</b>は、現在表示されている<b>Selection Set</b>を削除します。<b>Remove All</b>を有効にすると、現在のEditモードに対して保存されている<b>Selection Set</b>を全て削除します。<b>Select</b>は、現在表示されている<b>Selection Set</b>に保存されいるエレメントを選択状態にします。<b>Replace</b>は、現在表示されている<b>Selection Set</b>を現在の選択状態で上書きします。<br><br>
 <b>Push</b>, <b>Pop</b>, <b>Clear</b>は、現在選択されているエレメントの状態を一時的に退避し、必要な時に選択状態を呼び戻す機能です。基本的には<b>Selection Set</b>と同じメカニズムを使用していますが、明示的に名前をつけて保存せずにクリップボード感覚で選択状態のプッシュ・ポップを行うことができます。この選択状態もカスタムデータとして保存していますので、必要がなくなった時は<b>Clear</b>ボタンを押して選択データを削除することをお勧めします。
 <div align="left">
 <img src="images/SelectionSet.png"/>
@@ -81,6 +81,7 @@ Loop Sliceは、Modoのループスライスに似た動作を実現するため
 **Cut Positions by Spans**は、スライスの数と間隔を各スパンの比率で直接指定するモードです。例えば"1 3 1"と入力するとポリゴンループは1:3:1の比率で三分割されます。各スパンはスペース文字で区切って入力します。スパンはその総数で徐算して正規化されますので、任意のスケールの数値で入力することができます。このフィールドでスパンが入力された場合は、分割数や**Symmetic Cut**などの項目は上書きされます。
 
 <div align="left">
+<img src="images/loopSlice1.png"/>
 <img src="images/loopSlice2.png"/>
 </div>
 
@@ -149,6 +150,9 @@ Adjust Last Operation(最後の操作を調整) パネルで、UVs(UV) がチェ
 <b>Auto Fit</b>は、フォールオフシェイプを選択されているメッシュエレメントに指定した方向にフィットするようにStartとEndを移動します。<br>
 <b>Show Axis</b>を有効にするとフォールオフシェイプのStartとEndの位置に軸ハンドルが表示されます。<br>
 <b>Show Weight</b>は、Mesh Edit Mode OverlaysパネルにあるVertex Group Weightsを有効にし、Meshにウェイトをグラデーションカラーで表示します。<br>
+<div align="left">
+<img src="images/vertexGroupWeights.png">
+</div>
 * LMBドラッグ: マウスドラッグでHaulingで設定された項目の値をHaulingで変更します。<br>
 * LMB + Shiftドラッグ：新規にフォールオフシェイプを引き直します。<br>
 * LMB + Control + Shiftドラッグ：新規にフォールオフシェイプを水平もしくは垂直方向に引き直します。<br>
@@ -236,15 +240,26 @@ Adjust Last Operation(最後の操作を調整) パネルで、UVs(UV) がチェ
 <b>Auto Fit</b>は、スパインハンドルを選択されているメッシュエレメントに指定した方向にフィットするように移動します。<b>Orient:</b>は、スパインハンドルをフィットする方向を指定します。XYZはそれぞれ主軸方向にハンドルを移動します。<b>Oriented Bounding Box</b>は方向性バウンディングボックスを計算しハンドルをその軸方向にフィットします。<b>Spine Only</b>を有効にするとスパインの中心位置は移動せずにスパインベクトルの長さだけを計算したバウンディングボックスにフィットするように変更します。<br>
 
 ### <ins>Soft Drag</ins><br>
-<b>Soft Drag</b>は、クリックしたスクリーン上のポイントを中心にサイズで指定した半径内にある頂点の座標値をスムースに移動するトランスフォームツールです。<b>Size</b>はスクリーン上のフォールオフ円の半径で、Shiftキーを押しながらLMBをドラッグするとインタラクティブに変更する事ができます。LMBで変形を行いたい場所をクリックしてドラッグするとフォールオフの円形内にある頂点が移動します。<br>
+<b>Soft Drag</b>は、クリックしたスクリーン上のポイントを中心にサイズで指定した半径内にある頂点の座標値をスムースに移動するトランスフォームツールです。<b>Size</b>はスクリーン上のフォールオフ円の半径で、RMBをドラッグするとインタラクティブに変更する事ができます。LMBで変形を行いたい場所をクリックしてドラッグするとフォールオフの円形内にある頂点が移動します。Shiftキーを押しながらLMBでドラッグするとフォールオフ内の頂点座標のスムージングを行います。これはスムースブラシと同じ処理です。<br>
 <b>Occlusion Test</b>は、対象となる頂点が他のポリゴンの後ろに隠れているかどうかをテストし、隠れている頂点は移動しません<br>
+<b>Smooth Strength</b>は、スムースブラシで行うスムージングの強さを設定します。<br>
 <b>Symmetry</b>は、指定した対称軸と対称に選択されたエレメントをトランスフォームします。<br>
-* LMB + Shiftドラッグ：フォールオフの円のサイズを変更します。<br>
+* RMBドラッグ：フォールオフの円のサイズを変更します。<br>
+* LMB + Shiftドラッグ：頂点座標値の平滑化を行います。<br>
 * LMB + Altドラッグ：マウスボタンを放すまで変更を行いません。重いメッシュでハンドル操作を素早く位置合わせしたい場合に有効です。<br>
-* ESCキー、Spaceキー、RMBクリック：ツールを終了します。<br>
+* ESCキー、Spaceキー：ツールを終了します。<br>
 <div align="left">
 <img src="images/SoftDrag.gif" style='max-height: 400px; object-fit: contain'/>
 </div>
+
+### <ins>Smooth Brush</ins><br>
+<b>Smooth Brush</b>は、ブラッシング操作でカーソル周辺の半径内にある頂点の座標値をスムージングするトランスフォームツールです。<b>Size</b>はスクリーン上のフォールオフ円の半径で、RMBをドラッグするとインタラクティブに変更する事ができます。LMBでスムージングしたい頂点の周辺をドラッグするとフォールオフの円形内にある頂点が平滑化されます。<br>
+<b>Occlusion Test</b>は、対象となる頂点が他のポリゴンの後ろに隠れているかどうかをテストし、隠れている頂点は移動しません<br>
+<b>Smooth Strength</b>は、スムースブラシで行うスムージングの強さを設定します。<br>
+<b>Symmetry</b>は、指定した対称軸と対称に選択されたエレメントをトランスフォームします。<br>
+* RMBドラッグ：フォールオフの円のサイズを変更します。<br>
+* LMB + Altドラッグ：マウスボタンを放すまで変更を行いません。重いメッシュでハンドル操作を素早く位置合わせしたい場合に有効です。<br>
+* ESCキー、Spaceキー：ツールを終了します。<br>
 
 ### <ins>Set Vertex Positions</ins><br>
 <b>Set Vertex Positions</b>は、選択した頂点の座標値を指定した値に設定します。<b>Axis</b>は、設定する座標値のコンポーネントで、有効になっている軸の座標値のコンポーネントのみが更新されます。<b>Position</b>は、設定する座標値で、アクティブ頂点の座標値がデフォルト値としてセットされます。アクティブ頂点がない場合は、選択した頂点座標値の中心値がセットされます。<b>Space</b>は、座標値をメッシュのローカル座標値で設定するか、オブジェクトのグローバル座標値で設定するかを指定します。<b>Mode</b>は、指定したPositionの値を既存の頂点の値と置き換えるか（SET)、追加するか（ADD)を指定します。<br>
@@ -274,7 +289,7 @@ Viewport Overlaysパネルで設定されているGridのスケールを表示�
 </div>
 PreferencesパネルのYT-Toolsのタブでこの表示情報に使用するフォントのサイズを変更することができます。この情報は初期設定値として保存されますので、シーンファイルに共通の設定値として恒久的に使用されます。
 <div align="left">
-<img src="images/preferences.png"/>
+<img src="images/addon.png"/>
 </div>
 
 ## 寸法ツール(Dimension)
@@ -309,8 +324,8 @@ Localは、Pivot PointをIndivisual Originに設定し、OrientationはNormalに
 ### Pivot Center Parent Axis<br>
 Pivotは、アクティブオブジェクトの位置に3D Cursor位置を移動し、Pivot PointをCursorに設定しますOrientationはParentに設定します。
 
-## メッシュエレメントヒット位置の設定(Pick Mesh Element)
-Pick Mesh Elementは、Meshオブジェクトをマウスでクリックし、ヒットしたメッシュ上のエレメントの位置を、Active Element、3D CursorもしくはObject Originに設定します。Pick Mesh Elementsは、一度実行’するとツールを解除するまで、マウスクリックはヒットテストのイベントとして処理されます。トランスフォームツールなどの操作を続行する場合は、Pick Mesh Elementsを一旦解除する必要があります。ESCAPEキー、マウスの右クリック、Pick Mesh Elementsボタンを押すことでツールを解除することができます。
+## アクティブエレメントの設定(Pick Active Element)
+Pick Active Elementは、Meshオブジェクトをマウスでクリックし、ヒットしたメッシュ上のエレメントの位置を、Active Element、3D CursorもしくはObject Originに設定します。Pick Mesh Elementsは、一度実行’するとツールを解除するまで、マウスクリックはヒットテストのイベントとして処理されます。トランスフォームツールなどの操作を続行する場合は、Pick Mesh Elementsを一旦解除する必要があります。ESCAPEキー、マウスの右クリック、Pick Mesh Elementsボタンを押すことでツールを解除することができます。
 <div align="left">
 <img src="images/HitMeshElement.gif"/>
 </div>
@@ -336,7 +351,8 @@ Set Originは、指定した方法でオブジェクトの原点位置（黄色�
 ## 作業平面(Workplane)
 作業平面はEditモードで選択したエレメントをビューの中心に移動および選択の法線ベクトルをビューのZ軸方向へ一時的に設定し、平面ビューでのモデリング作業を容易にする機能です。この機能は選択したエレメントをもとに選択を平面ビューの中心に変換するために計算したトランスフォームを"_Workplane"という名前で作成したEmptyオブジェクトに設定し、編集するメッシュオブジェクトをこの"_Workplane"オブジェクトにペアレンティングします。<b>Unset</b>を押すとこの"_Workplane"オブジェクトは削除され、ペアレンティングされているオブジェクトはもとに戻ります。これにより一時的に編集したいメッシュエレメントが置かれている平面をTopビューにしてメッシュを編集することが可能になります。<br>
 また、Objectモードで作業平面を<b>Set</b>すると現在選択されているオブジェクトのトランスフォームを原点に戻すトランスフォームマトリックスが"_Workplane"オブジェクトに設定され、すべてのメッシュオブジェクトが"_Workplane"にペアレンティングされます。これによりアクティブオブジェクトを一時的にワールド座標の中心にした操作が可能になります。<br>
-<b>Set Transform Orientations</b>は、作業平面の回転マトリックスを名称をつけてカスタムTransform Orientationsに設定します。平面ビューではなくパースペクティブビューでトランスフォーム操作をしたい場合などに便利です。
+<b>Set Transform Orientations</b>は、作業平面の回転マトリックスを名称をつけてカスタムTransform Orientationsに設定します。平面ビューではなくパースペクティブビューでトランスフォーム操作をしたい場合などに便利です。<br>
+<b>Set to 3D Cursor and Rotation</b>は、作業平面の回転マトリックスを名称をTransform OrientationsのCursorに、位置座標をTransform Pivot Positionの3D Cursorに設定します。
 <div align="left">
 <img src="images/Workplane.gif"/>
 </div>
@@ -443,6 +459,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 | Select | mesh.yt_selection_set_select |
 | Add | mesh.yt_selection_set_select |
 | Remove | mesh.yt_selection_set_remove |
+| Replace | mesh.yt_selection_set_replace |
 | Push | mesh.yt_selection_clipboard_push |
 | Pop | mesh.yt_selection_clipboard_pop |
 | Clear | mesh.yt_selection_clipboard_clear |
@@ -467,13 +484,11 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 
 | Name | Operator |
 |---------|------------------|
-| Pick Mesh Element | view3d.yt_hit_mesh_element |
+| Pick Active Element | view3d.yt_hit_mesh_element |
 | 3D Cursor | view3d.yt_origin_to_cursor |
 | Selection Center | view3d.yt_origin_to_selection |
 | Selection Border Center | view3d.yt_origin_to_selection_border |
 | Origin | view3d.yt_origin_to_origin |
-| Workplane Set | view3d.yt_workplane_set |
-| Workplane Unset | view3d.yt_workplane_unset |
 
 
 ### メッシュ編集
@@ -503,6 +518,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 | Radial Transform | mesh.yt_transform_radial |
 | Bend Transform | mesh.yt_transform_bend |
 | Soft Drag | mesh.yt_transform_softdrag |
+| Smooth Brush | mesh.yt_sculpt_smooth |
 | Set Vertex Positions | mesh.yt_vert_position_set |
 | Center Vertex Positions | mesh.yt_vert_position_center |
 
@@ -513,7 +529,8 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 |---------|------------------|
 | Set Workplane | view3d.yt_workplane_set |
 | Unset Workplane | view3d.yt_workplane_unset |
-| Set Transform Orientations | view3d.yt_workplane_to_orientations |
+| Set to Transform Orientations | view3d.yt_workplane_to_orientations |
+| Set to 3D Cursor and Rotation | view3d.yt_workplane_to_3dcursor |
 
 
 ### ビューポート表示
@@ -524,3 +541,41 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 | Display Info | mesh.yt_viewport_text |
 | Dimension | mesh.yt_dimension |
 
+
+## 変更履歴
+### v1.0.1 バグ修正
+- Add Loopに関するバグを修正
+- Contextual Edge Selectionに関するバグを修正
+- Select Rotate ModeをCycle Selection Modeに名称変更
+### v1.1 新機能追加
+- Bend Transformオペレータの追加
+- 頂点座標値の設定
+- 頂点座標値のセンタリング
+- Radial TransformにInvertオプションを追加
+### v1.1.1 バグ修正
+- Linear Weightに関するバグを修正
+- Bend ToolのShift-LMBオペレーションに関するバグを修正
+- View Navigationオプションをプリファレンスに追加
+### v1.2 新機能追加
+- Soft Dragオペレータの追加
+- Radial Weightオペレータの追加
+- Pivot PointとOrientationを個別に設定できるようにするオプションをAction Centerに追加
+- Set Transform OrientationオプションをWorkPlaneに追加
+### v1.2.1 バグ修正
+- Edge Sliceに関するバグを修正
+- Pick Mesh Elementに関するバグを修正
+- Soft Dragに関するバグを修正
+- Display Infoをデフォルトで無効にし、テキストをキャッシュ
+### v1.3 新機能追加
+- Smooth Brushオペレータの追加
+- Soft DragにSmooth Brush操作を追加（Shift-LMB）
+- Set to 3D Cursor and Rotationを作業平面に追加
+- ReplaceボタンをSelection Setsに追加
+- ビューナビゲーション操作を自動判別し、プリファレンスからNavigation選択オプションを削除
+
+## License
+
+This Blender add-on is licensed under the GNU General Public License v3.0 or later.
+
+You are free to use, modify, and redistribute it under the terms of the GPL license.
+For details, please see the included `LICENSE.txt`.

@@ -67,7 +67,7 @@ This is the same as Blender's standard loop selection with Alt + LMB, but it reg
 
 
 ## Selection Set
-Selection Set is a function that saves the selection state of vert, edge, and face to a mesh with a name. This information is saved as custom data for the mesh. It is saved in the Blender scene file, so it is retained even if you reopen the saved scene. Add adds the currently selected mesh elements to the Selection Set. Selection Sets are saved separately for verts, edges, and faces. Remove deletes the currently displayed Selection Set. Enabling Remove All deletes all Selection Sets saved for the current Edit mode. Select selects the elements saved in the currently displayed Selection Set.<br><br>
+Selection Set is a function that saves the selection state of vert, edge, and face to a mesh with a name. This information is saved as custom data for the mesh. It is saved in the Blender scene file, so it is retained even if you reopen the saved scene. Add adds the currently selected mesh elements to the Selection Set. Selection Sets are saved separately for verts, edges, and faces. Remove deletes the currently displayed Selection Set. Enabling Remove All deletes all Selection Sets saved for the current Edit mode. Select selects the elements saved in the currently displayed Selection Set.<b>Replace</b> overwrites the currently displayed <b>Selection Set</b> with the current selection.<br><br>
 Push, Pop, and Clear are functions that temporarily save the state of the currently selected elements and recall the selection state when necessary. Basically, they use the same mechanism as Selection Set, but you can push and pop the selection state like a clipboard without explicitly saving it with a name. This selection state is also saved as custom data, so we recommend pressing the Clear button to delete the selection data when it is no longer necessary.
 <div align="left">
 <img src="images/SelectionSet.png" style='max-height: 200px; object-fit: contain'/>
@@ -82,6 +82,7 @@ Enable Symmetric_Cut to set the slice position symmetrically within the loop. En
 Cut Positions by Spans is a mode in which you directly specify the number and spacing of slices in the ratio of each span. For example, entering "1 3 1" will divide the polygon loop into thirds in a 1:3:1 ratio. Enter each span separated by a space character. Spans are normalized by dividing by their total number, so you can enter numbers of any scale. If a span is entered in this field, it will overwrite the divisions and Symmetic Cut.
 
 <div align="left">
+<img src="images/loopSlice1.png"/>
 <img src="images/loopSlice2.png"/>
 </div>
 
@@ -238,15 +239,26 @@ Enabling <b>Show Axis</b> displays axis handles at the Start and End positions o
 <b>Auto Fit</b> moves the spine handle to fit the selected mesh element in the specified direction. <b>Orient:</b> specifies the direction in which the spine handle fits. X, Y, and Z move the handle along each of the major axes. <b>Oriented Bounding Box</b> calculates an oriented bounding box and fits the handle along that axis. Enabling <b>Spine Only</b> does not move the spine's center position, but only changes the length of the spine vector to fit the calculated bounding box. <br>
 
 ### <ins>Soft Drag</ins><br>
-<b>Soft Drag</b> is a transformation tool that smoothly moves the coordinate values ​​of vertices within the radius specified by Size, centered on the point you click on the screen. <b>Size</b> is the radius of the falloff circle on the screen, which you can change interactively by holding down the Shift key and dragging the LMB. Clicking and dragging the LMB at the desired location will move vertices within the falloff circle. <br>
+<b>Soft Drag</b> is a transformation tool that smoothly moves the coordinate values ​​of vertices within the radius specified by Size, centered on the point you click on the screen. <b>Size</b> is the radius of the falloff circle on the screen, which you can change interactively by dragging the RMB. Clicking and dragging the LMB at the desired location will move vertices within the falloff circle. Holding down the Shift key and dragging with the LMB will smooth the vertex coordinates within the falloff, which is the same process as the smooth brush. <br>
 <b>Occlusion Test</b> tests whether the target vertex is hidden behind other polygons; hidden vertices will not be moved. <br>
+<b>Smooth Strength</b> sets the strength of the smoothing performed by the smooth brush. <br>
 <b>Symmetry</b> transforms selected elements symmetrically along a specified axis of symmetry. <br>
-* LMB + Shift drag: Changes the size of the falloff circle. <br>
+* RMB: Changes the size of the falloff circle. <br>
+* LMB + Shift drag: Smooth Brush. <br>
 * LMB + Alt drag: No changes are made until you release the mouse button. This is useful for quickly aligning handle operations on large meshes. <br>
-* ESC, Spacebar, or RMB click: Exit the tool. <br>
+* ESC, Spacebar: Exit the tool. <br>
 <div align="left">
 <img src="images/SoftDrag.gif">
 </div>
+
+### <ins>Smooth Brush</ins><br>
+<b>Smooth Brush</b> is a transform tool that smooths the coordinate values ​​of vertices within a radius around the cursor with a brushing action. <b>Size</b> is the radius of the on-screen falloff circle, which can be interactively changed by dragging the RMB. Dragging the LMB around the vertices you want to smooth will smooth vertices within the falloff circle. <br>
+<b>Occlusion Test</b> tests whether the target vertex is hidden behind other polygons; hidden vertices will not be moved. <br>
+<b>Smooth Strength</b> sets the strength of the smoothing performed by the smooth brush. <br>
+<b>Symmetry</b> transforms selected elements symmetrically along a specified axis of symmetry. <br>
+* RMB drag: Changes the size of the falloff circle. <br>
+* LMB + Alt drag: No changes are made until you release the mouse button. This is useful for quickly aligning handle operations on heavy meshes.<br>
+* ESC key, Spacebar key: Exit the tool.<br>
 
 ### <ins>Set Vertex Positions</ins><br>
 <b>Set Vertex Positions</b> sets the coordinate values of the selected vertices to the specified values. <b>Axis</b> specifies the component of the coordinate value to be set; only the coordinate components of the enabled axes are updated. <b>Position</b> specifies the coordinate value to be set; the coordinate value of the active vertex is set as the default. If there is no active vertex, the center value of the selected vertex coordinates is set. <b>Space</b> specifies whether the coordinate values are set in local mesh coordinates or global object coordinates. <b>Mode</b> specifies whether the specified Position value replaces the existing vertex value (SET) or is added (ADD). <br>
@@ -276,7 +288,7 @@ Displays the scale of the Grid set in the Viewport Overlays panel.
 </div>
 You can change the font size used for this display information in the YT-Tools tab of the Preferences panel. This information is saved as the initial setting, so it is permanently used as a common setting for the scene file.
 <div align="left">
-<img src="images/preferences.png"/>
+<img src="images/addon.png"/>
 </div>
 
 ## Dimension Tool
@@ -310,8 +322,8 @@ Pivot moves the 3D Cursor position to the active object's position and sets the 
 ### Pivot Center Parent Axis<br>
 Pivot moves the 3D Cursor position to the position of the active object and sets the Pivot Point to Cursor. Set Orientation to Parent.
 
-## Pick Mesh Element
-Pick Mesh Element sets the position of the hit element on the mesh by clicking the mouse on the Mesh object to Active Element, 3D Cursor, or Object Origin. Once Pick Mesh Elements is executed, mouse clicks are processed as hit test events until the tool is released. If you want to continue operations such as transform tools, you must release Pick Mesh Elements once. You can release the tool by pressing the ESCAPE key, right-clicking the mouse, or pressing the Pick Mesh Elements button.
+## Pick Active Element
+Pick Active Element sets the position of the hit element on the mesh by clicking the mouse on the Mesh object to Active Element, 3D Cursor, or Object Origin. Once Pick Mesh Elements is executed, mouse clicks are processed as hit test events until the tool is released. If you want to continue operations such as transform tools, you must release Pick Active Elements once. You can release the tool by pressing the ESCAPE key, right-clicking the mouse, or pressing the Pick Mesh Elements button.
 <div align="left">
 <img src="images/HitMeshElement.gif"/>
 </div>
@@ -337,7 +349,8 @@ Sets the origin position (0,0,0) to Origin.
 ## Workplane
 The workplane function moves the selected element to the center of the view in Edit mode and temporarily sets the normal vector of the selection to the Z-axis direction of the view, making modeling in the planar view easier. This function sets the calculated transform to convert the selection to the center of the planar view based on the selected element to an empty object created with the name "_Workplane", and parent the mesh object to be edited to this "_Workplane" object. Pressing Unset will delete this "_Workplane" object and return the parented object to its original state. This allows you to temporarily edit the mesh by setting the plane on which the mesh element you want to edit is located to the Top view.<br>
 In addition, when you set the workplane in Object mode, a transform matrix that returns the transform of the currently selected object to the origin is set to the "_Workplane" object, and all mesh objects are parented to "_Workplane". This allows you to temporarily operate the active object at the center of the world coordinates.<br>
-<b>Set Transform Orientations</b> sets the construction plane rotation matrix to a named custom Transform Orientation. This is useful if you want to manipulate transformations in the perspective view rather than the planar view.
+<b>Set to Transform Orientations</b> sets the construction plane rotation matrix to a named custom Transform Orientation. This is useful if you want to manipulate transformations in the perspective view rather than the planar view.<br>
+<b>Set to 3D Cursor and Rotation</b> sets the rotation matrix of the work plane to the name Cursor in Transform Orientations and the position coordinates to the 3D Cursor in Transform Pivot Position.
 <div align="left">
 <img src="images/Workplane.gif"/>
 </div>
@@ -443,6 +456,7 @@ Reverses the order of Edit Mode switching by the space key.
 |---------|------------------|
 | Select | mesh.yt_selection_set_select |
 | Add | mesh.yt_selection_set_select |
+| Replace | mesh.yt_selection_set_replace |
 | Remove | mesh.yt_selection_set_remove |
 | Push | mesh.yt_selection_clipboard_push |
 | Pop | mesh.yt_selection_clipboard_pop |
@@ -468,13 +482,11 @@ Reverses the order of Edit Mode switching by the space key.
 
 | Name | Operator |
 |---------|------------------|
-| Pick Mesh Element | view3d.yt_hit_mesh_element |
+| Pick Active Element | view3d.yt_hit_mesh_element |
 | 3D Cursor | view3d.yt_origin_to_cursor |
 | Selection Center | view3d.yt_origin_to_selection |
 | Selection Border Center | view3d.yt_origin_to_selection_border |
 | Origin | view3d.yt_origin_to_origin |
-| Workplane Set | view3d.yt_workplane_set |
-| Workplane Unset | view3d.yt_workplane_unset |
 
 
 ### Mesh Editting
@@ -504,6 +516,7 @@ Reverses the order of Edit Mode switching by the space key.
 | Radial Transform | mesh.yt_transform_radial |
 | Bend Transform | mesh.yt_transform_bend |
 | Soft Drag | mesh.yt_transform_softdrag |
+| Smooth Brush | mesh.yt_sculpt_smooth |
 | Set Vertex Positions | mesh.yt_vert_position_set |
 | Center Vertex Positions | mesh.yt_vert_position_center |
 
@@ -515,6 +528,7 @@ Reverses the order of Edit Mode switching by the space key.
 | Set Workplane | view3d.yt_workplane_set |
 | Unset Workplane | view3d.yt_workplane_unset |
 | Set Transform Orientations | view3d.yt_workplane_to_orientations |
+| Set to 3D Cursor and Rotation | view3d.yt_workplane_to_3dcursor |
 
 
 ### Viewport Display
@@ -524,3 +538,43 @@ Reverses the order of Edit Mode switching by the space key.
 | Set Attributes | mesh.yt_viewport_display |
 | Display Info | mesh.yt_viewport_text |
 | Dimension | mesh.yt_dimension |
+
+
+## History
+### v1.0.1 Bug Fix
+- Fixed bugs about Add Loop
+- Fixed bugs about Contextual Edge Selection
+- Renamed Select Rotate Mode to Cycle Selection Mode
+### v1.1 New Features
+- Bend Transform operator
+- Set Vertex Positions
+- Center Vertex Positions
+- Added Invert option to Radial Transform
+### v1.1.1 Bug Fix
+- Fixed a bug about Linear Weight
+- Fixed a handle operation with Shift-LMB in Bend tool
+- Added View Navigation option to preference panel.
+### v1.2 New Features
+- Soft Drag Operator
+- Radial Weight Operator
+- Added options to set Pivot Point and Orientation separately in Action Center
+- Added Set Transform Orientation in WorkPlane
+### v1.2.1 Bug Fix
+- Fixed a bug about Edge Slice
+- Fixed a bug about Pick Mesh Element
+- Fixed a bug about Soft Drag
+- Cache display info text and disabled Display Info by default
+### v1.3 New Features
+- Added Smooth Brush operator
+- Added Smooth Brush operation to Soft Drag (Shift-LMB)
+- Added Set to 3D Cursor and Rotation to the WorkPlane
+- Added Replace button to Selection Sets
+- Automatically detects view navigation operations and removes the Navigation selection option from the Preferences
+
+## License
+
+This Blender add-on is licensed under the GNU General Public License v3.0 or later.
+
+You are free to use, modify, and redistribute it under the terms of the GPL license.
+For details, please see the included `LICENSE.txt`.
+
