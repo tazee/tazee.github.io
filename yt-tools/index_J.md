@@ -352,10 +352,21 @@ Set Originは、指定した方法でオブジェクトの原点位置（黄色�
 作業平面はEditモードで選択したエレメントをビューの中心に移動および選択の法線ベクトルをビューのZ軸方向へ一時的に設定し、平面ビューでのモデリング作業を容易にする機能です。この機能は選択したエレメントをもとに選択を平面ビューの中心に変換するために計算したトランスフォームを"_Workplane"という名前で作成したEmptyオブジェクトに設定し、編集するメッシュオブジェクトをこの"_Workplane"オブジェクトにペアレンティングします。<b>Unset</b>を押すとこの"_Workplane"オブジェクトは削除され、ペアレンティングされているオブジェクトはもとに戻ります。これにより一時的に編集したいメッシュエレメントが置かれている平面をTopビューにしてメッシュを編集することが可能になります。<br>
 また、Objectモードで作業平面を<b>Set</b>すると現在選択されているオブジェクトのトランスフォームを原点に戻すトランスフォームマトリックスが"_Workplane"オブジェクトに設定され、すべてのメッシュオブジェクトが"_Workplane"にペアレンティングされます。これによりアクティブオブジェクトを一時的にワールド座標の中心にした操作が可能になります。<br>
 <b>Set Transform Orientations</b>は、作業平面の回転マトリックスを名称をつけてカスタムTransform Orientationsに設定します。平面ビューではなくパースペクティブビューでトランスフォーム操作をしたい場合などに便利です。<br>
-<b>Set to 3D Cursor and Rotation</b>は、作業平面の回転マトリックスを名称をTransform OrientationsのCursorに、位置座標をTransform Pivot Positionの3D Cursorに設定します。
+<b>Cursor Aligned to Selected</b>は、作業平面の回転マトリックスを名称をTransform OrientationsのCursorに、位置座標をTransform Pivot Positionの3D Cursorに設定します。
 <div align="left">
 <img src="images/Workplane.gif"/>
 </div>
+
+## スナッピング(Snapping)
+インタラクティブなオペレータのツールハンドルはスナッピングをサポートしています。BlenderのSnapのオン・オフ状態とパネルで設定されている下記の項目を参照しています。
+### <ins>Snap Target</ins><br>
+Increment, Grid, Vertex, Edge, Face, Edge Center, Edge Perpendicularに対応しています。Vertexではメッシュの頂点およびカーブの制御点にスナップします。
+### <ins>Target Selection</ins><br>
+<b>Include Active</b>がオフの時にはアクティブオブジェクトのエレメントにはスナップしません。
+### <ins>Affect</ins><br>
+Move, Rotate, Scaleに対応しています。
+### <ins>Rotation Increment</ins><br>
+標準のインクリメンタル角度を参照します。
 
 ## 情報パネル(Statistics)
 Statisticsは、MeshのVert、Edge、Faceの情報を項目別に表示し、その属性を持つエレメントを選択もしくは非選択にすることができる情報パネルです。"+"ボタンを押すとその項目に関するエレメントが選択され、"-"を押すと非選択になります。パネルに表示されるエレメント数の表示はポリゴン数が多くなると検出に時間がかかるため、<b>Update Counts</b>を押して手動で更新してもらうように変更いたしました。情報を最新の状態で表示させたい場合は、<b>Update Counts</b>を押してください。<b>Auto Update</b>が有効になっている場合は、自動的にエレメント数の更新が行われます。ポリゴン数が多いメッシュを使用する場合などで更新速度が問題になる場合は、<b>Auto Update</b>を無効にしてください。
@@ -529,8 +540,8 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 |---------|------------------|
 | Set Workplane | view3d.yt_workplane_set |
 | Unset Workplane | view3d.yt_workplane_unset |
-| Set to Transform Orientations | view3d.yt_workplane_to_orientations |
-| Set to 3D Cursor and Rotation | view3d.yt_workplane_to_3dcursor |
+| Set Transform Orientations | view3d.yt_workplane_to_orientations |
+| Cursor Aligned to Selected | view3d.yt_workplane_to_3dcursor |
 
 
 ### ビューポート表示
@@ -572,6 +583,9 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - Set to 3D Cursor and Rotationを作業平面に追加
 - ReplaceボタンをSelection Setsに追加
 - ビューナビゲーション操作を自動判別し、プリファレンスからNavigation選択オプションを削除
+### v1.4 新機能追加
+- ツールハンドルがBlenderのスナップ状態を参照してスナップするように変更いたしました。
+- YT-Toolsを有効にするとRandomize Transformが動作しなくなる問題を解決しました。
 
 ## License
 

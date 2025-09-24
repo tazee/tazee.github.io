@@ -349,11 +349,22 @@ Sets the origin position (0,0,0) to Origin.
 ## Workplane
 The workplane function moves the selected element to the center of the view in Edit mode and temporarily sets the normal vector of the selection to the Z-axis direction of the view, making modeling in the planar view easier. This function sets the calculated transform to convert the selection to the center of the planar view based on the selected element to an empty object created with the name "_Workplane", and parent the mesh object to be edited to this "_Workplane" object. Pressing Unset will delete this "_Workplane" object and return the parented object to its original state. This allows you to temporarily edit the mesh by setting the plane on which the mesh element you want to edit is located to the Top view.<br>
 In addition, when you set the workplane in Object mode, a transform matrix that returns the transform of the currently selected object to the origin is set to the "_Workplane" object, and all mesh objects are parented to "_Workplane". This allows you to temporarily operate the active object at the center of the world coordinates.<br>
-<b>Set to Transform Orientations</b> sets the construction plane rotation matrix to a named custom Transform Orientation. This is useful if you want to manipulate transformations in the perspective view rather than the planar view.<br>
-<b>Set to 3D Cursor and Rotation</b> sets the rotation matrix of the work plane to the name Cursor in Transform Orientations and the position coordinates to the 3D Cursor in Transform Pivot Position.
+<b>Set Transform Orientations</b> sets the construction plane rotation matrix to a named custom Transform Orientation. This is useful if you want to manipulate transformations in the perspective view rather than the planar view.<br>
+<b>Cursor Aligned to Selected</b> sets the rotation matrix of the work plane to the name Cursor in Transform Orientations and the position coordinates to the 3D Cursor in Transform Pivot Position.
 <div align="left">
 <img src="images/Workplane.gif"/>
 </div>
+
+## Snapping
+Interactive operator tool handles support snapping. They respect Blender's Snap on/off state and the following panel settings:
+### <ins>Snap Target</ins><br>
+Supports Increment, Grid, Vertex, Edge, Face, Edge Center, and Edge Perpendicular.Vertex snaps to mesh vertices and curve control points.
+### <ins>Target Selection</ins><br>
+When <b>Include Active</b> is off, snapping to elements of the active object is not supported.
+### <ins>Affect</ins><br>
+Supports Move, Rotate, and Scale.
+### <ins>Rotation Increment</ins><br>
+Refers to the standard incremental angle.
 
 ## Statistics
 Statistics is an information panel that displays information on the verts, edges, and faces of a mesh by item, and allows you to select or deselect elements with those attributes. Pressing the "+" button selects the element related to that item, and pressing "-" deselects it. The number of elements displayed in the panel takes time to detect when there are a large number of polygons, so we have changed it so that you can update it manually by pressing Update Counts. If you want to display the latest information, press Update Counts. If Auto Update is enabled, the number of elements will be updated automatically. If the update speed is a problem when using a mesh with a large number of polygons, disable Auto Update.
@@ -528,7 +539,7 @@ Reverses the order of Edit Mode switching by the space key.
 | Set Workplane | view3d.yt_workplane_set |
 | Unset Workplane | view3d.yt_workplane_unset |
 | Set Transform Orientations | view3d.yt_workplane_to_orientations |
-| Set to 3D Cursor and Rotation | view3d.yt_workplane_to_3dcursor |
+| Cursor Aligned to Selected | view3d.yt_workplane_to_3dcursor |
 
 
 ### Viewport Display
@@ -570,6 +581,9 @@ Reverses the order of Edit Mode switching by the space key.
 - Added Set to 3D Cursor and Rotation to the WorkPlane
 - Added Replace button to Selection Sets
 - Automatically detects view navigation operations and removes the Navigation selection option from the Preferences
+### v1.4 New Features
+- Changed tool handles to respect Blender's snap states.
+- Fixed another issue so that Randomize Transform does not work with YT-Tools
 
 ## License
 
