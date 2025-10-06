@@ -586,6 +586,10 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 ### v1.4 新機能追加
 - ツールハンドルがBlenderのスナップ状態を参照してスナップするように変更いたしました。
 - YT-Toolsを有効にするとRandomize Transformが動作しなくなる問題を解決しました。
+### v1.4.1 バグ修正
+- UIの日本語化対応
+- Loop Slice, Statisticsなどに関するバグを修正
+- view3d_modo.zoomをビューナビゲーションイベントとしてチェック
 
 ## License
 

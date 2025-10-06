@@ -584,6 +584,10 @@ Reverses the order of Edit Mode switching by the space key.
 ### v1.4 New Features
 - Changed tool handles to respect Blender's snap states.
 - Fixed another issue so that Randomize Transform does not work with YT-Tools
+### v1.4.1 Bug Fix
+- Japanese localization
+- Fixed bugs about Loop Slice and Statistics
+- Check view3d_modo.zoom as navigation event
 
 ## License
 
