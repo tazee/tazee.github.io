@@ -590,6 +590,9 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - UIの日本語化対応
 - Loop Slice, Statisticsなどに関するバグを修正
 - view3d_modo.zoomをビューナビゲーションイベントとしてチェック
+### v1.4.2 バグ修正
+- UIの日本語化対応に伴うLoop Sliceのバグを修正
+- View Navigationをプリファレンスに再追加
 
 ## License
 
