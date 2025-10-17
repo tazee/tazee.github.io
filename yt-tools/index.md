@@ -240,6 +240,7 @@ Enabling <b>Show Axis</b> displays axis handles at the Start and End positions o
 
 ### <ins>Soft Drag</ins><br>
 <b>Soft Drag</b> is a transformation tool that smoothly moves the coordinate values ​​of vertices within the radius specified by Size, centered on the point you click on the screen. <b>Size</b> is the radius of the falloff circle on the screen, which you can change interactively by dragging the RMB. Clicking and dragging the LMB at the desired location will move vertices within the falloff circle. Holding down the Shift key and dragging with the LMB will smooth the vertex coordinates within the falloff, which is the same process as the smooth brush. <br>
+<b>Soft Drag</b> allows you to edit not only mesh vertices but also UV map points. You can edit the UV map displayed in the UV editor using the same operations as in the 3D view.<br>
 <b>Occlusion Test</b> tests whether the target vertex is hidden behind other polygons; hidden vertices will not be moved. <br>
 <b>Smooth Strength</b> sets the strength of the smoothing performed by the smooth brush. <br>
 <b>Symmetry</b> transforms selected elements symmetrically along a specified axis of symmetry. <br>
@@ -365,6 +366,16 @@ When <b>Include Active</b> is off, snapping to elements of the active object is 
 Supports Move, Rotate, and Scale.
 ### <ins>Rotation Increment</ins><br>
 Refers to the standard incremental angle.
+
+## Clipboard
+Sub Tools provide a clipboard for copying, cutting, and pasting mesh elements (vertices, edges, and faces). Select an element and press the Copy button to save it to the internal mesh on the clipboard. Saved elements can be pasted to the currently active mesh by pressing the Paste button. Pressing the Copy button without selecting anything copies all elements of the active mesh to the clipboard. The Cut button copies the mesh elements and then deletes the selected elements from the active mesh. When copying in vertex mode, only the mesh vertices are saved to the clipboard. In edge mode, only the edges that make up the mesh are copied like a wireframe. <br>
+<b>New Mesh from Clipboard</b> pastes the data stored in the clipboard into a newly created mesh. <br>
+The following attributes can also be copied and pasted on the clipboard: <br>
+* Material
+* UV Map, Vertex Color, Shapekey
+* Edge Crease, Smooth, Seam, Freestyle
+* Vertex Weight (Vertex Group)
+<br>
 
 ## Statistics
 Statistics is an information panel that displays information on the verts, edges, and faces of a mesh by item, and allows you to select or deselect elements with those attributes. Pressing the "+" button selects the element related to that item, and pressing "-" deselects it. The number of elements displayed in the panel takes time to detect when there are a large number of polygons, so we have changed it so that you can update it manually by pressing Update Counts. If you want to display the latest information, press Update Counts. If Auto Update is enabled, the number of elements will be updated automatically. If the update speed is a problem when using a mesh with a large number of polygons, disable Auto Update.
@@ -551,6 +562,14 @@ Reverses the order of Edit Mode switching by the space key.
 | Dimension | mesh.yt_dimension |
 
 
+### Clipboard
+| Name | Operator |
+|---------|------------------|
+| Copy | mesh.yt_clipboard_copy |
+| Cut | mesh.yt_clipboard_cut |
+| Paste | mesh.yt_clipboard_paste |
+
+
 ## History
 ### v1.0.1 Bug Fix
 - Fixed bugs about Add Loop
@@ -588,6 +607,12 @@ Reverses the order of Edit Mode switching by the space key.
 - Japanese localization
 - Fixed bugs about Loop Slice and Statistics
 - Check view3d_modo.zoom as navigation event
+### v1.4.2 Bug Fix
+- Fixed a bug in Loop Slice due to the Japanese UI localization.
+- Restored View Navigation to preferences.
+### v1.5 New Features
+- Soft dragging now supports UV map editing
+- Added clipboard functionality for mesh elements (copy/cut/paste)
 
 ## License
 
