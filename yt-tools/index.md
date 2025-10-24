@@ -369,7 +369,8 @@ Refers to the standard incremental angle.
 
 ## Clipboard
 Sub Tools provide a clipboard for copying, cutting, and pasting mesh elements (vertices, edges, and faces). Select an element and press the Copy button to save it to the internal mesh on the clipboard. Saved elements can be pasted to the currently active mesh by pressing the Paste button. Pressing the Copy button without selecting anything copies all elements of the active mesh to the clipboard. The Cut button copies the mesh elements and then deletes the selected elements from the active mesh. When copying in vertex mode, only the mesh vertices are saved to the clipboard. In edge mode, only the edges that make up the mesh are copied like a wireframe. <br>
-<b>New Mesh from Clipboard</b> pastes the data stored in the clipboard into a newly created mesh. <br>
+Starting with v1.5.1, we have updated the app so that you can also copy and paste curve splines.<br>
+<b>New Object from Clipboard</b> pastes the data stored in the clipboard into a newly created object. <br>
 The following attributes can also be copied and pasted on the clipboard: <br>
 * Material
 * UV Map, Vertex Color, Shapekey
@@ -456,6 +457,12 @@ Sets the threshold used to detect coplanar in the Statistics panel.
 Sets whether to automatically set Transform Gizmo when Action Center is set.
 #### <ins>Reverse Selection Mode Cycle</ins><br>
 Reverses the order of Edit Mode switching by the space key.
+#### <ins>View Navigation</ins><br>
+Specifies the keymap used for view navigation. This is used to prevent modal tools from blocking view navigation events.
+#### <ins>Clipboard Options</ins><br>
+- Deselect Elements after Copying: Deselects selected elements after copying.
+- Select Pasted Elements: Selects pasted elements.
+- Deselect Elements before Pasting: Deselects selected elements before pasting.
 
 ## Operator List
 
@@ -568,6 +575,7 @@ Reverses the order of Edit Mode switching by the space key.
 | Copy | mesh.yt_clipboard_copy |
 | Cut | mesh.yt_clipboard_cut |
 | Paste | mesh.yt_clipboard_paste |
+| New Object from Clipboard | mesh.yt_clipboard_new |
 
 
 ## History
@@ -613,6 +621,10 @@ Reverses the order of Edit Mode switching by the space key.
 ### v1.5 New Features
 - Soft dragging now supports UV map editing
 - Added clipboard functionality for mesh elements (copy/cut/paste)
+### v1.5.1 Minor Changes
+- Element selection after copy and paste is now compatible with Modo, and an option has been added to the Preferences.
+- Clipboard operators now work with curve objects.
+- Contextual selection and contextual deletion now work with curve objects.
 
 ## License
 
