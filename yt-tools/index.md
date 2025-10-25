@@ -570,6 +570,7 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 
 
 ### Clipboard
+
 | Name | Operator |
 |---------|------------------|
 | Copy | mesh.yt_clipboard_copy |
