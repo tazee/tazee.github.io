@@ -585,44 +585,54 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - Add Loopに関するバグを修正
 - Contextual Edge Selectionに関するバグを修正
 - Select Rotate ModeをCycle Selection Modeに名称変更
+
 ### v1.1 新機能追加
 - Bend Transformオペレータの追加
 - 頂点座標値の設定
 - 頂点座標値のセンタリング
 - Radial TransformにInvertオプションを追加
+
 ### v1.1.1 バグ修正
 - Linear Weightに関するバグを修正
 - Bend ToolのShift-LMBオペレーションに関するバグを修正
 - View Navigationオプションをプリファレンスに追加
+
 ### v1.2 新機能追加
 - Soft Dragオペレータの追加
 - Radial Weightオペレータの追加
 - Pivot PointとOrientationを個別に設定できるようにするオプションをAction Centerに追加
 - Set Transform OrientationオプションをWorkPlaneに追加
+
 ### v1.2.1 バグ修正
 - Edge Sliceに関するバグを修正
 - Pick Mesh Elementに関するバグを修正
 - Soft Dragに関するバグを修正
 - Display Infoをデフォルトで無効にし、テキストをキャッシュ
+
 ### v1.3 新機能追加
 - Smooth Brushオペレータの追加
 - Soft DragにSmooth Brush操作を追加（Shift-LMB）
 - Set to 3D Cursor and Rotationを作業平面に追加
 - ReplaceボタンをSelection Setsに追加
 - ビューナビゲーション操作を自動判別し、プリファレンスからNavigation選択オプションを削除
+
 ### v1.4 新機能追加
 - ツールハンドルがBlenderのスナップ状態を参照してスナップするように変更いたしました。
 - YT-Toolsを有効にするとRandomize Transformが動作しなくなる問題を解決しました。
+
 ### v1.4.1 バグ修正
 - UIの日本語化対応
 - Loop Slice, Statisticsなどに関するバグを修正
 - view3d_modo.zoomをビューナビゲーションイベントとしてチェック
+
 ### v1.4.2 バグ修正
 - UIの日本語化対応に伴うLoop Sliceのバグを修正
 - View Navigationをプリファレンスに再追加
+
 ### v1.5 新機能追加
 - ソフトドラッグがUVマップの編集をサポート
 - メッシュエレメントのクリップボード機能を追加（コピー/カット/ペースト）
+
 ### v1.5.1 マイナーチェンジ
 - コピー＆ペーストの後のエレメントの選択をModo互換にし、初期設定にオプションを追加
 - クリップボードオペレータがカーブオブジェクトに対して動作するように変更

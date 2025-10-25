@@ -459,7 +459,7 @@ Sets whether to automatically set Transform Gizmo when Action Center is set.
 Reverses the order of Edit Mode switching by the space key.
 #### <ins>View Navigation</ins><br>
 Specifies the keymap used for view navigation. This is used to prevent modal tools from blocking view navigation events.
-#### <ins>Clipboard Options</ins><br>
+#### <ins>Clipboard Settings</ins><br>
 - Deselect Elements after Copying: Deselects selected elements after copying.
 - Select Pasted Elements: Selects pasted elements.
 - Deselect Elements before Pasting: Deselects selected elements before pasting.
@@ -583,44 +583,54 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Fixed bugs about Add Loop
 - Fixed bugs about Contextual Edge Selection
 - Renamed Select Rotate Mode to Cycle Selection Mode
+
 ### v1.1 New Features
 - Bend Transform operator
 - Set Vertex Positions
 - Center Vertex Positions
 - Added Invert option to Radial Transform
+
 ### v1.1.1 Bug Fix
 - Fixed a bug about Linear Weight
 - Fixed a handle operation with Shift-LMB in Bend tool
 - Added View Navigation option to preference panel.
+
 ### v1.2 New Features
 - Soft Drag Operator
 - Radial Weight Operator
 - Added options to set Pivot Point and Orientation separately in Action Center
 - Added Set Transform Orientation in WorkPlane
+
 ### v1.2.1 Bug Fix
 - Fixed a bug about Edge Slice
 - Fixed a bug about Pick Mesh Element
 - Fixed a bug about Soft Drag
 - Cache display info text and disabled Display Info by default
+
 ### v1.3 New Features
 - Added Smooth Brush operator
 - Added Smooth Brush operation to Soft Drag (Shift-LMB)
 - Added Set to 3D Cursor and Rotation to the WorkPlane
 - Added Replace button to Selection Sets
 - Automatically detects view navigation operations and removes the Navigation selection option from the Preferences
+
 ### v1.4 New Features
 - Changed tool handles to respect Blender's snap states.
 - Fixed another issue so that Randomize Transform does not work with YT-Tools
+
 ### v1.4.1 Bug Fix
 - Japanese localization
 - Fixed bugs about Loop Slice and Statistics
 - Check view3d_modo.zoom as navigation event
+
 ### v1.4.2 Bug Fix
 - Fixed a bug in Loop Slice due to the Japanese UI localization.
 - Restored View Navigation to preferences.
+
 ### v1.5 New Features
 - Soft dragging now supports UV map editing
 - Added clipboard functionality for mesh elements (copy/cut/paste)
+
 ### v1.5.1 Minor Changes
 - Element selection after copy and paste is now compatible with Modo, and an option has been added to the Preferences.
 - Clipboard operators now work with curve objects.
