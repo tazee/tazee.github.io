@@ -27,6 +27,9 @@ Hello I'm Taz, a software engineer specializing in modeling tools for 3D compute
 
 <b>Modo Open Source Plug-ins : </b><br>
 - <a href="{{ site.githuburl }}/">https://github.com/tazee</a>
+- <a href="https://tazaki.gumroad.com/l/vsfkn">CDT Triangulation Kit (Gumroad)</a>
+- <a href="https://tazaki.gumroad.com/l/fcaiol">Parameterization Kit (Gumroad)</a>
+- <a href="https://tazaki.gumroad.com/l/vdxwqr">Decimation Kit (Gumroad)</a>
 
 <br>
 
