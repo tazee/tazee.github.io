@@ -105,7 +105,7 @@ Polygon Slice is an operator developed to achieve behavior similar to Modo's pol
 * Space key: Confirm the slice and change the mesh. The tool ends.<br>
 * P key: Shows a preview.<br>
 * ESC key, RMB click: Exit the tool without changing the mesh.<br>
-<ins>Limitations: Tool handle movement does not support snapping because Blender does not expose the Snap API. This operator also does not work in 4-view view mode. This is because Blender displays 4-view as a special view, and the add-on cannot correctly recognize 4-view.</ins>
+<ins>Limitation: Operators that use tool handles do not work in 4-view view mode. This is because Blender displays 4-views as a special view, and the add-on cannot correctly recognize 4-views.</ins>
 <div align="left">
 <img src="images/PolygonSlice.gif"/>
 </div>
@@ -378,6 +378,14 @@ The following attributes can also be copied and pasted on the clipboard: <br>
 * Vertex Weight (Vertex Group)
 <br>
 
+## External Clipboard
+**External Clipboard** allows you to exchange mesh data between Blender and Modo.
+When **Use External Clipboard** is enabled, copied mesh data is output to the external clipboard specified by **Type** instead of the add-on's internal cache. Using the Modo Clipboard kit, you can exchange mesh data between Modo and Blender via this external clipboard. Mesh data is converted to JSON-formatted text data and output to the external clipboard. The default **Type** of the external clipboard is a temporary file, but specifying OS Clipboard will save the JSON text to the OS-provided clipboard. This is useful for viewing output data or saving it as a file. The mesh information output from Blender is almost the same as the above items. For information on data that can be input into Modo, please refer to the Modo Clipboard kit documentation. The ModoClipboard kit is available from [Gumroad](https://tazaki.gumroad.com/) or [Github](https://github.com/tazee/ModoClipboard/releases) download site.
+
+<div align="left">
+<img src="images/ExternalClipboard.gif">
+</div>
+
 ## Statistics
 Statistics is an information panel that displays information on the verts, edges, and faces of a mesh by item, and allows you to select or deselect elements with those attributes. Pressing the "+" button selects the element related to that item, and pressing "-" deselects it. The number of elements displayed in the panel takes time to detect when there are a large number of polygons, so we have changed it so that you can update it manually by pressing Update Counts. If you want to display the latest information, press Update Counts. If Auto Update is enabled, the number of elements will be updated automatically. If the update speed is a problem when using a mesh with a large number of polygons, disable Auto Update.
 
@@ -636,6 +644,9 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Element selection after copy and paste is now compatible with Modo, and an option has been added to the Preferences.
 - Clipboard operators now work with curve objects.
 - Contextual selection and contextual deletion now work with curve objects.
+
+### v1.6 New Features Added
+- Added external clipboard functionality, enabling mesh data exchange with Modo.
 
 ## License
 

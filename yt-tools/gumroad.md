@@ -2,7 +2,7 @@
 *A powerful modeling extension inspired by Modo workflows.*  
 (日本語の説明は下にあります)
 
-YT-Tools is a Blender add-on designed to enhance the modeling workflow, especially for users familiar with Modo. It offers intuitive selection tools, slicing operators, falloff-based transforms, and various utilities to accelerate your modeling experience.
+YT-Tools is a Blender add-on designed to enhance the modeling workflow, especially for users familiar with Modo. It offers intuitive selection tools, slicing operators, falloff-based transforms, and various utilities to accelerate your modeling experience. Additionally, the external clipboard feature allows you to copy and paste mesh data between Modo and Blender.
 
 ---
 
@@ -29,6 +29,9 @@ Save and restore complex selections by name. Allows undo-independent management 
 - **Polygon Slice / Edge Slice**: Interactive slicing using handle gizmos
 - **Merge (Symmetry-aware)**: Intelligent merge across axes
 - **Delete Contextual**: Context-aware delete for faces, edges, vertices
+- **Bend Tool**
+- **Soft Drag**
+- **Smooth Brush**
 
 ### 🔹 Transform with Falloff
 - **Linear / Radial Transform**: Move/Scale/Rotate with linear or radial influence
@@ -40,6 +43,10 @@ Save and restore complex selections by name. Allows undo-independent management 
 - **Workplane**: Temporary Top view alignment for precision editing
 - **Statistics**: Select based on custom mesh attributes
 - **On-screen Info**: Display transform values in viewport
+- **Japanese UI**
+- **Clipboard**: Copy & Paste Face/Edge/Vert in Edit Mesh mode
+- **External Clipboard**: Exchange mesh data between Blender and Modo
+The Modo external clipboard kit can be downloaded from [Gumroad](https://tazaki.gumroad.com/l/xzcqrp) [Github](https://github.com/tazee/ModoClipboard/releases).
 
 ---
 
@@ -106,6 +113,9 @@ YT-Toolsは、BlenderにModoライクな操作性をもたらすアドオンで�
 - ポリゴンスライス：ハンドル操作で直感的に分割
 - シンメトリ対応マージ
 - 選択モードに応じたスマートな削除
+- ベンドツール
+- ソフトドラッグ
+- スムースブラシ
 
 ### 🔹 フォールオフ付き変形
 - リニア・ラディアルの影響範囲で移動・スケール・回転
@@ -117,6 +127,10 @@ YT-Toolsは、BlenderにModoライクな操作性をもたらすアドオンで�
 - 作業平面（選択エレメントを一時的にTopビュー中心に一時的に設定）
 - 統計選択パネル
 - ビュー左下にリアルタイム情報を表示
+- 日本語UIサポート
+- クリップボード（面・エッジ・頂点のコピー＆ペースト）
+- 外部クリップボード（ModoとBlenderの間でメッシュデータを交換）
+Modo側の外部クリップボードのキットは、[Github](https://github.com/tazee/ModoClipboard/releases)からダウンロードできます。
 
 ---
 
