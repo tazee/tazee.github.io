@@ -17,7 +17,7 @@ Hello I'm Taz, a software engineer specializing in modeling tools for 3D compute
 - <a href="https://superhivemarket.com/products/yt-tools">Superhive online store</a>
 - <a href="https://forms.gle/3XkJnZyQFghUkScw8">Feedback Form</a>
 - Release Note :<br>
-    <a href="/yt-tools/release_1_5.html">v1.6</a>
+    <a href="/yt-tools/release_1_6.html">v1.6</a>
     (
     <a href="/yt-tools/release_1_5.html">v1.5</a>
     <a href="/yt-tools/release_1_4.html">v1.4</a>
