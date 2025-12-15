@@ -10,6 +10,7 @@ layout: default
 Hello I'm Taz, a software engineer specializing in modeling tools for 3D computer graphics, and the author of YT-Tools. Please feel free to contact me if you have any questions or requests regarding YT-Tools or other my projects.
 
 <b>YT-Tools : </b><br>
+
 - <a href="/yt-tools/">English document</a>
 - <a href="/yt-tools/index_J.html">日本語ドキュメント</a>
 - <a href="https://tazaki.gumroad.com/l/gamki">Gumroad online store</a>
@@ -26,7 +27,12 @@ Hello I'm Taz, a software engineer specializing in modeling tools for 3D compute
     <a href="/yt-tools/release_1_1.html">v1.1</a>
     )
 
+<b>External Clipboard : </b><br>
+
+- <a href="https://tazaki.gumroad.com/l/xzcqrp">Modo Clipboard</a>
+
 <b>Modo Open Source Plug-ins : </b><br>
+
 - <a href="https://tazaki.gumroad.com">Download from Gumroad</a>
 - <a href="{{ site.githuburl }}/">https://github.com/tazee</a>
 
