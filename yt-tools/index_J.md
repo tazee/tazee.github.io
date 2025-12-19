@@ -817,6 +817,12 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - 外部クリップボードに関する幾つかのバグを修正
 - JSONファイルサイズを削減するために、クリースエッジなどのエッジ属性がデフォルトのエッジデータを出力しないように変更
 
+### v1.6.2 マイナーチェンジ
+
+- クリップボードで頂点カラーと選択セットをサポート
+- クリップボードに関する日本語メニューの辞書を追加
+- クリップボードのPaste時にイレギュラーポリゴンに対する処理を追加
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.

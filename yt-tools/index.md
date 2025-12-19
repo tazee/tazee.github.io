@@ -816,6 +816,12 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Fixed several external clipboard bugs.
 - To reduce JSON file size, edge attributes such as crease edges no longer output default edge data.
 
+### v1.6.2 Minor Changes
+
+- Support for vertex colors and selection sets in the clipboard
+- Added Japanese dictionary for clipboard menus
+- Added processing for irregular polygons when pasting from the clipboard
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.
