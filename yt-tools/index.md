@@ -478,6 +478,7 @@ The following attributes can also be copied and pasted on the clipboard: <br>
 - UV Map, Vertex Color, Shapekey
 - Edge Crease, Smooth, Seam, Freestyle
 - Vertex Weight (Vertex Group)
+- Selection Set
 <br>
 
 ## External Clipboard
