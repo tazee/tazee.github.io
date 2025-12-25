@@ -314,6 +314,19 @@ Enabling <b>Show Axis</b> displays axis handles at the Start and End positions o
 
 <b>Center Vertex Positions</b> sets the coordinate values of the selected vertices to the center value of the bounding box containing the selected vertices. <b>Axis</b> is the component of the coordinate value to set; only the components of the coordinate value for the enabled axis will be updated. <b>Space</b> specifies whether the coordinate value is set in the mesh's local coordinate value or the object's global coordinate value.<br>
 
+### <ins>Absolute Scale</ins><br>
+Absolute Scaling allows you to determine the dimensions of your mesh and then rescale it uniformly, explicitly or in reference to the dimensions of your mesh using precise numeral values. While it is possible to rescale a mesh item once it has been created, hauling the scale tool or adjusting the Scale X/Y/Z channels.<br>
+<b>Grab Size:</b><br>This command grabs the actual bounding box size and inputs it into the Uniform and Explicit data fields as a point of reference for sizing the selection.Enabling <b>Orient to Selection</b> will scale based on the axis direction and size calculated from the directional bounding box.<br>
+<b>Uniform:</b><br>The Uniform Scale options provide a means to uniformly scale all axes of a selection in a single step. To use, first choose the Grab Size command. This captures the longest axis length and inserts it into the Uniform value input field as a point of reference. Next, select a scaling center if you want it to be other than the default bounding box center. Enter a new explicit value into the Uniform input field. In Uniform Axis, define the axis you wish to scale absolutely, and then finally click the Uniform Scale button to perform the scale operation.<br>
+<b>Explicit:</b><br>The Explicit Scale option provides a means to define a specific size to the bounding box of the selected elements. To use it, first choose the Grab Size command. This captures the bounding box volume size of the entire selection. Next, select a scaling center if you want it to be other than the default bounding box center. Enter new size values into the X,Y and Z input fields, and click the Explicit Scale option to scale the object to the specified size.<br>
+<b>Scaling Center:</b><br>When scaling a selected area, these values define the origin of the scaling operation as defined from the drop-down selection. The Low option defines the side toward the negative end of the axis, Center refers to the averaged center position of all vertices. The High is the side of the bounding box nearest the positive values of the axis.<br>
+<div align="left">
+<img src="images/absoluteScale.png" style='max-width: 250px; object-fit: contain'/>
+</div>
+<div align="left">
+<img src="images/AbsoluteScale.gif">
+</div>
+
 ## Viewport Display
 
 Viewport Display is a function that changes the viewport display attributes of selected and unselected mesh objects all at once. In Blender, mesh objects have Viewport Display as a property that can be set for each individual object, but this sets this attribute all at once. Active Meshes sets the display attributes for selected mesh objects, and Inactive Meshes sets the display attributes for unselected mesh objects. Enabling Set Only Active Meshes and pressing the Set Attributes button will make no changes to unselected mesh objects and will only change the display attributes of selected mesh objects.
@@ -337,7 +350,13 @@ Displays the number of Faces, Edges, and Verts selected in Edit Mode, or informa
 
 Displays the scale of the Grid set in the Viewport Overlays panel.
 <div align="left">
-<img src="images/display_info.png"/>
+<img src="images/display_info.png" style='max-height: 100px; object-fit: contain'/>
+</div>
+
+## FPS Gauge<br>
+Enabling the FPS gauge will display the 3D view drawing speed as a color gauge and in FPS (Frames Per Second).
+<div align="left">
+<img src="images/fps.png" style='max-height: 100px; object-fit: contain'/>
 </div>
 You can change the font size used for this display information in the YT-Tools tab of the Preferences panel. This information is saved as the initial setting, so it is permanently used as a common setting for the scene file.
 <div align="left">
@@ -483,8 +502,8 @@ The following attributes can also be copied and pasted on the clipboard: <br>
 
 ## External Clipboard
 
-**External Clipboard** allows you to exchange mesh data between Blender and Modo.
-When **Use External Clipboard** is enabled, copied mesh data is output to the external clipboard specified by **Type** instead of the add-on's internal cache. Using the Modo Clipboard kit, you can exchange mesh data between Modo and Blender via this external clipboard. Mesh data is converted to JSON-formatted text data and output to the external clipboard. The default **Type** of the external clipboard is a temporary file, but specifying OS Clipboard will save the JSON text to the OS-provided clipboard. This is useful for viewing output data or saving it as a file. The mesh information output from Blender is almost the same as the above items. For information on data that can be input into Modo, please refer to the Modo Clipboard kit documentation. The ModoClipboard kit is available from [Gumroad](https://tazaki.gumroad.com/) or [Github](https://github.com/tazee/ModoClipboard/releases) download site.
+**External Clipboard** allows you to exchange mesh data between Blender, Modo and LightWave.
+When **Use External Clipboard** is enabled, copied mesh data is output to the external clipboard specified by **Type** instead of the add-on's internal cache. Using the Modo Clipboard kit, you can exchange mesh data between Modo and Blender via this external clipboard. Mesh data is converted to JSON-formatted text data and output to the external clipboard. The default **Type** of the external clipboard is a temporary file, but specifying OS Clipboard will save the JSON text to the OS-provided clipboard. This is useful for viewing output data or saving it as a file. The mesh information output from Blender is almost the same as the above items. For information on data that can be input into Modo, please refer to the Modo Clipboard kit documentation. The ModoClipboard kit is available from [Gumroad](https://tazaki.gumroad.com/) or [Github](https://github.com/tazee/ModoClipboard) download site.
 
 <div align="left">
 <img src="images/ExternalClipboard.gif">
@@ -821,6 +840,11 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Support for vertex colors and selection sets in the clipboard
 - Added Japanese dictionary for clipboard menus
 - Added processing for irregular polygons when pasting from the clipboard
+
+### v1.7 New Features Added
+- Added Absolute Scale
+- Added FPS Gauge
+- Supports copying and pasting multiple objects to the clipboard
 
 ## License
 

@@ -29,13 +29,14 @@ Save and restore complex selections by name. Allows undo-independent management 
 - **Polygon Slice / Edge Slice**: Interactive slicing using handle gizmos
 - **Merge (Symmetry-aware)**: Intelligent merge across axes
 - **Delete Contextual**: Context-aware delete for faces, edges, vertices
+
+### 🔹 Transform Tools
+- **Linear / Radial Transform**: Move/Scale/Rotate with linear or radial influence
+- **Linear Weight**: Assign vertex weights with distance-based falloff
 - **Bend Tool**
 - **Soft Drag**
 - **Smooth Brush**
-
-### 🔹 Transform with Falloff
-- **Linear / Radial Transform**: Move/Scale/Rotate with linear or radial influence
-- **Linear Weight**: Assign vertex weights with distance-based falloff
+- **Absolute Scale**
 
 ### 🔹 Additional Tools
 - **Viewport Display Settings**: Quick toggle for selection vs non-selection
@@ -45,8 +46,8 @@ Save and restore complex selections by name. Allows undo-independent management 
 - **On-screen Info**: Display transform values in viewport
 - **Japanese UI**
 - **Clipboard**: Copy & Paste Face/Edge/Vert in Edit Mesh mode
-- **External Clipboard**: Exchange mesh data between Blender and Modo
-The Modo external clipboard kit can be downloaded from [Gumroad](https://tazaki.gumroad.com/l/xzcqrp) [Github](https://github.com/tazee/ModoClipboard/releases).
+- **External Clipboard**: Exchange mesh data between Blender, Modo, and LightWave
+Modo external clipboard kit and LightWave plug-in can be downloaded from [Gumroad](https://tazaki.gumroad.com/l/xzcqrp).
 
 ---
 
@@ -113,13 +114,14 @@ YT-Toolsは、BlenderにModoライクな操作性をもたらすアドオンで�
 - ポリゴンスライス：ハンドル操作で直感的に分割
 - シンメトリ対応マージ
 - 選択モードに応じたスマートな削除
+
+### 🔹 トランスフォームツール
+- リニア・ラディアルの影響範囲で移動・スケール・回転
+- 距離に応じた頂点ウェイト設定
 - ベンドツール
 - ソフトドラッグ
 - スムースブラシ
-
-### 🔹 フォールオフ付き変形
-- リニア・ラディアルの影響範囲で移動・スケール・回転
-- 距離に応じた頂点ウェイト設定
+- 絶対スケール
 
 ### 🔹 その他ユーティリティ
 - ビューポート表示設定の一括変更
@@ -129,8 +131,8 @@ YT-Toolsは、BlenderにModoライクな操作性をもたらすアドオンで�
 - ビュー左下にリアルタイム情報を表示
 - 日本語UIサポート
 - クリップボード（面・エッジ・頂点のコピー＆ペースト）
-- 外部クリップボード（ModoとBlenderの間でメッシュデータを交換）
-Modo側の外部クリップボードのキットは、[Github](https://github.com/tazee/ModoClipboard/releases)からダウンロードできます。
+- 外部クリップボード（Modo、LightWave、Blenderの間でメッシュデータを交換）
+Modo側の外部クリップボードのキットとLightWaveのプラグインは、[Gumroad](https://tazaki.gumroad.com/l/xzcqrp)からダウンロードできます。
 
 ---
 

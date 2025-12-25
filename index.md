@@ -17,8 +17,9 @@ Hello I'm Taz, a software engineer specializing in modeling tools for 3D compute
 - <a href="https://superhivemarket.com/products/yt-tools">Superhive online store</a>
 - <a href="https://forms.gle/3XkJnZyQFghUkScw8">Feedback Form</a>
 - Release Note :<br>
-    <a href="/yt-tools/release_1_6.html">v1.6</a>
+    <a href="/yt-tools/release_1_7.html">v1.7</a>
     (
+    <a href="/yt-tools/release_1_6.html">v1.6</a>
     <a href="/yt-tools/release_1_5.html">v1.5</a>
     <a href="/yt-tools/release_1_4.html">v1.4</a>
     <a href="/yt-tools/release_1_3.html">v1.3</a>
@@ -28,6 +29,7 @@ Hello I'm Taz, a software engineer specializing in modeling tools for 3D compute
 
 <b>External Clipboard : </b><br>
 - <a href="https://tazaki.gumroad.com/l/xzcqrp">Modo Clipboard</a>
+- <a href="https://tazaki.gumroad.com/l/jvvzs">LightWave Clipboard</a>
 
 <b>Modo Open Source Plug-ins : </b><br>
 - <a href="https://tazaki.gumroad.com">Download from Gumroad</a>
