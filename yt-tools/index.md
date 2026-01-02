@@ -500,6 +500,15 @@ The following attributes can also be copied and pasted on the clipboard: <br>
 - Selection Set
 <br>
 
+***Replace Mesh***<br>
+If **Replace Mesh** is enabled, the destination mesh will be deleted before pasting the data from the clipboard.<br>
+
+***Replace Material***<br>
+If **Replace Material** is enabled, the material will be overwritten if the destination mesh has a material with the same name. If **Replace Material** is disabled, the material will not be changed.<br>
+
+***Import Transform***</br>
+Enabling **Import Transform** will set the object's translation, rotation, scale and parenting data to the target object's transform. This option is only available for **New Mesh from Clipboard** command.<br>
+
 ## External Clipboard
 
 **External Clipboard** allows you to exchange mesh data between Blender, Modo and LightWave.
@@ -845,6 +854,12 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Added Absolute Scale
 - Added FPS Gauge
 - Supports copying and pasting multiple objects to the clipboard
+
+### v1.7.1 Minor Changes
+- Added Replace Mesh, Replace Material and Import Transform options
+- Import hard edge vmap from Modo into hard edge marks in Blender.
+- Changed the behavior of Absolute Scale Uniform to be the same as Modo.
+- Fixed some bugs
 
 ## License
 
