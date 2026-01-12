@@ -851,17 +851,20 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Added processing for irregular polygons when pasting from the clipboard
 
 ### v1.7 New Features Added
+
 - Added Absolute Scale
 - Added FPS Gauge
 - Supports copying and pasting multiple objects to the clipboard
 
 ### v1.7.1 Minor Changes
+
 - Added Replace Mesh, Replace Material and Import Transform options
 - Import hard edge vmap from Modo into hard edge marks in Blender.
 - Changed the behavior of Absolute Scale Uniform to be the same as Modo.
 - Fixed some bugs
 
 ### v1.7.2 Bug Fixes
+
 - Fixed a crash bug about Display Info in edge mode on Windows
 - Fixed the handle behavior of Linear Falloff with mirror mode.
 - Changed Paste command of clipboard to freeze vertex positions to world space when "Import Transform" is enabled.
