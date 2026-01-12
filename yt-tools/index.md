@@ -861,6 +861,11 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Changed the behavior of Absolute Scale Uniform to be the same as Modo.
 - Fixed some bugs
 
+### v1.7.2 Bug Fixes
+- Fixed a crash bug about Display Info in edge mode on Windows
+- Fixed the handle behavior of Linear Falloff with mirror mode.
+- Changed Paste command of clipboard to freeze vertex positions to world space when "Import Transform" is enabled.
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.
