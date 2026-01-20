@@ -874,6 +874,11 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - リニアフォールオフのハンドル操作がミラーモードで正しく動作しない問題を修正
 - クリップボードの貼り付けコマンドは、"トランスフォームの読み込み"を有効にした時は、頂点座標値をワールド座標値に変換するように変更
 
+### v1.7.3 マイナーチェンジ
+
+- Viewport Displayで、非表示オブジェクトを無視するように変更
+- トランスフォームツール、ウェイトツールでパラメータをリセットするZキーを追加
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.

@@ -869,6 +869,11 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Fixed the handle behavior of Linear Falloff with mirror mode.
 - Changed Paste command of clipboard to freeze vertex positions to world space when "Import Transform" is enabled.
 
+### v1.7.3 Minor Changes
+
+- Changed the Viewport Display to ignore hidden objects.
+- Added Z key to reset parameters in the Transform and Weight tools.
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.
