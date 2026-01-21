@@ -22,6 +22,8 @@ th, td {
 
 # Attribute Manager for Blender
 
+- <a href="/AttributeManager/index.html">English document</a>
+
 # 概要
 
 Attribute Manager は Blender のための強力なアドオンで、スプレッドシート形式で属性を一括編集するUIを提供します。Blenderのプロパティパネルをひとつひとつクリックして変更する代わりに、このアドオンを使うと効率的に属性値を確認・編集できます。<br>
