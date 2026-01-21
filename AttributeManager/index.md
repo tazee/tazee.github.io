@@ -22,6 +22,8 @@ th, td {
 
 # Attribute Manager for Blender
 
+## About
+
 The Attribute Manager is a Blender add-on that provides a spreadsheet-style interface for editing mesh vertex, edge, and face attributes, as well as various other object attributes.
 
 It offers a convenient GUI for bulk attribute editing that would otherwise require manual and tedious panel clicks.<br>
