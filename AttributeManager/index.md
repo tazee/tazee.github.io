@@ -164,6 +164,11 @@ In Object Mode, you can edit various object attributes, including:
 - Display properties
 - Transform values
 - Object-type specific attributes
+- Currently the following objects are supported editing type-specific attributes for:
+  - Mesh Object
+  - Light Object
+  - Camera Object
+  - Empty Object
 
 When in Object Mode:
 - Use the first dropdown to select which object types to load (e.g., Mesh, Light, Camera).
@@ -171,12 +176,7 @@ When in Object Mode:
 
 For example, you can group attributes into categories like Visibility, Transform, Display, etc.<br>
 Press Apply to All Rows to apply changes to all selected objects.<br>
-When applying the same Name to multiple objects, Blender automatically appends numbers to ensure unique names (e.g., “Bone_LeftLeg_001”, “Bone_LeftLeg_002”, etc.).
-
-
-<div align="left">
-<img src="images/objectRename.gif"/>
-</div>
+When applying the same Name to multiple objects, Blender automatically appends numbers to ensure unique names.
 
 
 
