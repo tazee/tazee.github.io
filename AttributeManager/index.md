@@ -117,6 +117,8 @@ In Vertex Edit Mode, you can edit:
 - Vertex coordinates
 - Shape keys
 - Vertex group weights
+- Crease
+- Bevel Weight
 
 Coordinate values can be displayed and edited in either local or global coordinate space.<br>
 When in Edit Mode, global coordinates are converted from local, displayed in the table, and converted back when applied.
@@ -135,7 +137,10 @@ This allows precise positioning in global space when needed.
 
 In Edge Edit Mode, you can edit edge attributes such as:
 - Smooth
+- Freestyle
 - Crease
+- Edge Bevel Weight
+- Length
 
 These influence subdivision surfaces, shading, and modeling workflows.
 
@@ -151,7 +156,7 @@ These influence subdivision surfaces, shading, and modeling workflows.
 
 In Face Edit Mode, you can edit face attributes such as:
 - Material slots
-- Freestyle attributes
+- Freestyle mark
 
 This allows quick assignment or bulk editing of material indices and rendering attributes.
 
@@ -162,7 +167,10 @@ This allows quick assignment or bulk editing of material indices and rendering a
 
 In Object Mode, you can edit various object attributes, including:
 - Display properties
-- Transform values
+- Transform
+- Relations
+- Visibility
+- Viewport Display
 - Object-type specific attributes
 - Currently the following objects are supported editing type-specific attributes for:
   - Mesh Object
@@ -174,7 +182,7 @@ When in Object Mode:
 - Use the first dropdown to select which object types to load (e.g., Mesh, Light, Camera).
 - Use the second dropdown to select the category of attributes to show.
 
-For example, you can group attributes into categories like Visibility, Transform, Display, etc.<br>
+For example, you can group attributes into categories like Transform, Relations, Visibility, etc.<br>
 Press Apply to All Rows to apply changes to all selected objects.<br>
 When applying the same Name to multiple objects, Blender automatically appends numbers to ensure unique names.
 
