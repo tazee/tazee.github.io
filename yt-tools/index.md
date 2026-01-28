@@ -874,6 +874,11 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Changed the Viewport Display to ignore hidden objects.
 - Added Z key to reset parameters in the Transform and Weight tools.
 
+### v1.7.4 Bug Fixes
+
+- Fixed an issue where the Action Center pie menu would not appear.
+- Fixed an issue where Freestyle edges would not copy correctly if modifiers were added via the clipboard.
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.

@@ -879,6 +879,11 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - Viewport Displayで、非表示オブジェクトを無視するように変更
 - トランスフォームツール、ウェイトツールでパラメータをリセットするZキーを追加
 
+### v1.7.4 バグ修正
+
+- アクションセンターのパイメニューが表示されなくなる問題を修正
+- クリップボードでモディファイアが追加されているとFreestyleエッジが正しくコピーされない問題を修正
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.
