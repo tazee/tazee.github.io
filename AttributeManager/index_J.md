@@ -77,6 +77,7 @@ Attribute Manager は 3Dビューのサイドバー（Nパネル） に表示さ
 - Vertex（頂点）
 - Edge（エッジ）
 - Face（面）
+- Face Corner（面コーナー）
 - Object（オブジェクト）
 
 この切り替えに応じて、読み込む対象・表示する属性が変わります。
@@ -90,6 +91,7 @@ Attribute Manager は 3Dビューのサイドバー（Nパネル） に表示さ
 - Vertex モードなら「座標」「ウェイト」「Shape Key」など
 - Edge モードなら「smooth」「crease」など
 - Face モードなら「マテリアル」「Freestyle」など
+- Face Coner モードなら「UV」「カラー」など
 - Object モードなら「表示設定」「変形」「タイプ別属性」など
 
 ### <ins>(4) 編集テーブル</ins><br>
@@ -100,7 +102,13 @@ Attribute Manager は 3Dビューのサイドバー（Nパネル） に表示さ
 - テーブルはスクロール可能です
 - 最初の行は項目名（見出し）です
 - 現在の行は青くハイライトされます
+- 行を選択するとその行のエレメントはアクティブエレメントに設定されます。
 - セルを直接編集すると、その値が即座に Blender に反映されます。
+
+<div align="left">
+<img src="images/activeElement.gif"/>
+</div>
+<br>
 
 ### <ins>(5) Apply to All Rows<ins><br>
 このボタンは、特定の列だけ値をすべての行に反映させたいときに使います。
@@ -112,15 +120,33 @@ Attribute Manager は 3Dビューのサイドバー（Nパネル） に表示さ
 
 これで同じ列の値がすべての行に反映されます。
 
-### <ins>(6) Show Indices, Show Weights<ins><br>
+### <ins>(6) Show Indices, Show Weights, Show Colors<ins><br>
 
 - Show Indices<br>
 → 3Dビューに要素番号（Index）を番号付きで表示します
-→ Blender の Edit Mode Overlay の「Indices」に相当します
+→ Blender の Edit Mode Overlay の「Indices」に相当します。
 
 - Show Weights<br>
 → 3Dビューにウェイトをグラデーションで表示します
-→ Edit Mode の「Vertex Group Weights」Overlay と同じ機能
+→ Edit Mode の「Vertex Group Weights」Overlay に相当します。
+
+3Dビューを切り替えた時は、Show Indices, Show Weightsを再設定する必要があります。<br>
+
+<div align="left">
+<img src="images/EditModeOverlay.png"/>
+</div>
+<br>
+
+- Show Colors<br>
+→ 3Dビューにウェイトをグラデーションで表示します
+→ Object Mode の「Viewport Shading」にあるObject Color と同じ機能
+
+3Dビューを切り替えた時は、Show Colorsを再設定する必要があります。<br>
+
+<div align="left">
+<img src="images/ViewportShading.png"/>
+</div>
+<br>
 
 ### <ins>(7) Max Rows<ins><br>
 スプレッドシート表示における一度に表示する最大行数を調整します。初期値は6行です。
@@ -139,13 +165,22 @@ Attribute Manager は 3Dビューのサイドバー（Nパネル） に表示さ
 - Vertex Group ウェイト
 - クリース
 - ベベルウェイト
+- カラーアトリビュート（POINT）
 
 座標値は ローカル / グローバル空間 の両方で表示できます。編集時は Blender 側に自動で変換されて反映されます。<br>
 
-グローバル座標系の場合は、メッシュ頂点の座標値をグローバル座標系に変換して編集テーブルに表示し、編集した値はローカル座標系に変換してメッシュに書き戻しています。YT-Tools for Blenderの作業平面の機能と組み合わせて、作業平面上の頂点の座標値を揃えたい場合などで便利に使うことができます。シェイプキーとVertex Groupは、プルダウンメニューで選択されている対象データの値が対象になります。
+グローバル座標系の場合は、メッシュ頂点の座標値をグローバル座標系に変換して編集テーブルに表示し、編集した値はローカル座標系に変換してメッシュに書き戻しています。YT-Tools for Blenderの作業平面の機能と組み合わせて、作業平面上の頂点の座標値を揃えたい場合などで便利に使うことができます。シェイプキーとVertex Groupは、プルダウンメニューで選択されている対象データの値が対象になります。<br>
 
 <div align="left">
 <img src="images/vertexPosition.gif"/>
+</div>
+<br>
+
+Shape KeyモードをRelativeにすると、座標値はBaseキーからの相対値で表示されます。<br>
+
+
+<div align="left">
+<img src="images/shapekeyRelative.gif"/>
 </div>
 <br>
 
@@ -181,6 +216,26 @@ Attribute Manager は 3Dビューのサイドバー（Nパネル） に表示さ
 
 多くの面が同じマテリアルを共有する場合に一括編集が便利です。Freestyleの属性も変更可能です。
 
+## 面コーナー編集モード
+<div align="left">
+<img src="images/faceCornerMode.png"/>
+</div>
+面の各コーナーに属する属性編集ができます：
+
+- UV
+- カラーアトリビュート (CORNER)
+
+Blenderでは、UVやカラーアトリビュートは面の各コーナーごとに値を保持していて、必要に応じて頂点単位に編集を行ったり、切り離して独立した値を持たせることが可能です。<br>
+
+Index Orderは、頂点番号と面番号をどちらを基準にテーブルを表示するかを指定します。<b>Face - Vertex</b>を指定すると面とその面を構成する頂点を順番に表示します。<b>Vertex - Face</b>を指定すると頂点とその頂点にリンクされている面を順番に表示します。<br>
+
+<b>Shared Vertex</b>を有効にすると同一頂点において同じ面コーナーの値は同時に編集されます。同じ値を持つセルは表示されません。<b>Shared Vertex</b>をオフにすると面コーナー単位に独立して値を編集することができます。<br>
+
+<div align="left">
+<img src="images/faceCornerUV.gif"/>
+</div>
+<br>
+
 ## オブジェクト編集モード
 <div align="left">
 <img src="images/objectMode.png"/>
@@ -215,6 +270,13 @@ Object モードでは:<br>
 ### v1.0 新規リリース
 
 - Attribute Manager for Blenderの新規リリース
+
+### v1.1 新機能追加
+
+- Face Conerモードの追加
+- Color Attributeの追加
+- Show Colorsボタンの追加
+- Shape Keysで相対座標値の編集機能を追加
 
 ## License
 

@@ -75,6 +75,7 @@ There are four editing modes:<br>
 - Vertex
 - Edge
 - Face
+- Face Corner
 - Object
 
 When switching modes, the currently selected elements are automatically reloaded into the table.
@@ -92,15 +93,41 @@ This is the spreadsheet-style table where loaded attributes can be edited.
 - In Vertex/Edge/Face modes, mesh element indices are shown.
 - In Object mode, object names are shown.
 - The currently active row is highlighted in blue.
+- When you select a row, the element in that row will be set as the active element.
+
+<div align="left">
+<img src="images/activeElement.gif"/>
+</div>
+<br>
 
 ### <ins>(5) Apply to All Rows<ins><br>
 The <b>Apply to All Rows</b> button applies the value from the selected row to all other rows for the field chosen in the adjacent dropdown.
 
-### <ins>(6) Show Indices, Show Weights<ins><br>
+### <ins>(6) Show Indices, Show Weights, Show Colors<ins><br>
 - <b>Show Indices</b> displays the index numbers of mesh elements in the 3D View.
 This performs the same function as the Indices toggle in the Blender Edit Mode overlay.
+
 - <b>Show Weights</b> displays vertex group weights as a gradient in the 3D View.
 This matches the <b>Vertex Group Weights</b> overlay setting in Edit Mode.
+
+When switching 3D views, you must reset the Show Indices and Show Weights settings.<br>
+
+<div align="left">
+<img src="images/EditModeOverlay.png"/>
+</div>
+<br>
+
+- Show Colors<br>
+→ Displays weights as a gradient in the 3D view.
+→ Same function as Object Color in "Viewport Shading" in Object Mode.
+
+When switching 3D views, you must reset the Show Colors settings.<br>
+
+<div align="left">
+<img src="images/ViewportShading.png"/>
+</div>
+<br>
+
 
 ### <ins>(7) Max Rows<ins><br>
 <b>Max Rows</b> sets the number of rows shown in the editing table.
@@ -119,13 +146,22 @@ In Vertex Edit Mode, you can edit:
 - Vertex group weights
 - Crease
 - Bevel Weight
+- Color Attribute (POINT)
 
 Coordinate values can be displayed and edited in either local or global coordinate space.<br>
 When in Edit Mode, global coordinates are converted from local, displayed in the table, and converted back when applied.
-This allows precise positioning in global space when needed.
+This allows precise positioning in global space when needed.<br>
 
 <div align="left">
 <img src="images/vertexPosition.gif"/>
+</div>
+<br>
+
+When Shape Key mode is set to Relative, coordinate values ​​are displayed relative to the Base key.<br>
+
+
+<div align="left">
+<img src="images/shapekeyRelative.gif"/>
 </div>
 <br>
 
@@ -160,6 +196,26 @@ In Face Edit Mode, you can edit face attributes such as:
 
 This allows quick assignment or bulk editing of material indices and rendering attributes.
 
+## Face Corner Edit Mode
+<div align="left">
+<img src="images/faceCornerMode.png"/>
+</div>
+You can edit attributes associated with each corner of a face:
+
+- UV
+- Color Attributes (CORNER)
+
+In Blender, UV and color attributes are stored at each corner of a face, allowing you to edit them individually or separate them to have independent values. <br>
+
+Index Order specifies whether the table is displayed based on vertex or face numbers. Specifying <b>Face - Vertex</b> displays faces and their vertices in order. Specifying <b>Vertex - Face</b> displays vertices and their linked faces in order. <br>
+
+When <b>Shared Vertex</b> is enabled, values ​​for the same face corner at the same vertex are edited simultaneously. Cells with the same value are not displayed. When <b>Shared Vertex</b> is turned off, values ​​for each face corner can be edited independently. <br>
+
+<div align="left">
+<img src="images/faceCornerUV.gif"/>
+</div>
+<br>
+
 ## Object Edit Mode
 <div align="left">
 <img src="images/objectMode.png"/>
@@ -190,9 +246,16 @@ When applying the same Name to multiple objects, Blender automatically appends n
 
 ## Change Log
 
-### v1.0
+### v1.0 Initial Release
 
 - Initial release of Attribute Manager for Blender
+
+### v1.1 New Features
+
+- Added Face Contour Mode
+- Added Color Attribute
+- Added Show Colors button
+- Added the ability to edit relative coordinates in Shape Keys
 
 ## License
 

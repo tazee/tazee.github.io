@@ -32,6 +32,8 @@ Hello I'm Taz, a software engineer specializing in modeling tools for 3D compute
 - <a href="/AttributeManager/index_J.html">日本語ドキュメント</a>
 - <a href="https://tazaki.gumroad.com/l/wirsjp/ctrx7jt">Gumroad online store</a>
 - <a href="https://forms.gle/cQuSwEzg53GJHpm47">Feedback Form</a>
+- Release Note :<br>
+    <a href="/AttributeManager/release_1_1.html">v1.1</a>
 
 <b>External Clipboard : </b><br>
 - <a href="https://tazaki.gumroad.com/l/xzcqrp">Modo Clipboard</a>
