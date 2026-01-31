@@ -252,7 +252,7 @@ When applying the same Name to multiple objects, Blender automatically appends n
 
 ### v1.1 New Features
 
-- Added Face Contour Mode
+- Added Face Corner Mode
 - Added Color Attribute
 - Added Show Colors button
 - Added the ability to edit relative coordinates in Shape Keys
