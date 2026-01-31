@@ -273,7 +273,7 @@ Object モードでは:<br>
 
 ### v1.1 新機能追加
 
-- Face Conerモードの追加
+- Face Cornerモードの追加
 - Color Attributeの追加
 - Show Colorsボタンの追加
 - Shape Keysで相対座標値の編集機能を追加
