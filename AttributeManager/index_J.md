@@ -38,7 +38,7 @@ Attribute Manager は Blender のための強力なアドオンで、スプレ�
 - Blender を起動します
 - メニューから Edit > Preferences を開きます
 - 左側の Add-ons を選択します
-- Instal from Disk をクリックして AttributeManager.zip を選択します
+- Install from Disk をクリックして AttributeManager.zip を選択します
 - Attribute Manager のチェックボックスをオンにして有効にします
 
 <div align="left">
@@ -110,7 +110,7 @@ Attribute Manager は 3Dビューのサイドバー（Nパネル） に表示さ
 </div>
 <br>
 
-### <ins>(5) Apply to All Rows<ins><br>
+### <ins>(5) Apply to All Rows</ins><br>
 このボタンは、特定の列だけ値をすべての行に反映させたいときに使います。
 
 - まず1行を選択する
@@ -120,7 +120,7 @@ Attribute Manager は 3Dビューのサイドバー（Nパネル） に表示さ
 
 これで同じ列の値がすべての行に反映されます。
 
-### <ins>(6) Show Indices, Show Weights, Show Colors<ins><br>
+### <ins>(6) Show Indices, Show Weights, Show Colors</ins><br>
 
 - Show Indices<br>
 → 3Dビューに要素番号（Index）を番号付きで表示します
@@ -148,7 +148,7 @@ Attribute Manager は 3Dビューのサイドバー（Nパネル） に表示さ
 </div>
 <br>
 
-### <ins>(7) Max Rows<ins><br>
+### <ins>(7) Max Rows</ins><br>
 スプレッドシート表示における一度に表示する最大行数を調整します。初期値は6行です。
 
 
@@ -259,9 +259,18 @@ Object モードでは:<br>
   - Light オブジェクト
   - Camera オブジェクト
   - Empty オブジェクト
+  - Modifier
 - 次のドロップダウンで属性カテゴリ（トランスフォーム/関係/可視性 など）を選びます
 
-オブジェクトモードでは、オブジェクトの名称も変更することができます。<b>Apply to All Rows</b>を使って他のオブジェクトに同じ名称を設定した場合、Blenderが自動的に同じ名称のオブジェクトに対して連番を付加します。
+オブジェクトモードでは、オブジェクトの名称も変更することができます。<b>Apply to All Rows</b>を使って他のオブジェクトに同じ名称を設定した場合、Blenderが自動的に同じ名称のオブジェクトに対して連番を付加します。<br>
+
+Modifierモードでは、オブジェクトに追加されているモディファイアの表示属性を編集することができます。編集テーブルには、各オブジェクトに追加されているモディファイアの順番、もしくは各モディファイアを追加しているオブジェクトの順番に表示を切り替えることができます。<br>
+また、アイテムを<b>Properties</b>に設定して、<b>Apply to All Rows</b>を実行すると選択されている行のモディファイアと同じ種類のモディファイアに選択されている行のモディファイアの全てのプロパティがコピーされます。全てのモディファイアに対して同じプロパティを一括して設定したい場合に便利です。<b>Auto Expand</b>を有効にすると選択した行のモディファイアのプロパティパネルが展開され、それ以外のパネルは閉じられます。<br>
+
+<div align="left">
+<img src="images/objectModifier.gif"/>
+</div>
+
 
 
 
@@ -277,6 +286,11 @@ Object モードでは:<br>
 - Color Attributeの追加
 - Show Colorsボタンの追加
 - Shape Keysで相対座標値の編集機能を追加
+
+### v1.2 新機能追加
+
+- ObjectモードにModifierサブモードを追加
+- TransformのRotation設定のバグを修正
 
 ## License
 

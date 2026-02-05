@@ -92,6 +92,16 @@ Push, Pop, and Clear are functions that temporarily save the state of the curren
 </div>
 <br>
 
+## Primitives
+
+### <ins>New Empty Mesh</ins><br>
+
+New Empty Mesh adds a new, empty mesh object.
+
+### <ins>Teapot</ins><br>
+
+Teapot adds a primitive teapot shape. In Edit Mode, it adds a teapot to the currently selected mesh. In Object Mode, it adds a new mesh object and adds a teapot to it.
+
 ## Mesh Editing
 
 ### <ins>Loop Slice</ins><br>
@@ -495,7 +505,8 @@ Starting with v1.5.1, we have updated the app so that you can also copy and past
 The following attributes can also be copied and pasted on the clipboard: <br>
 - Material
 - UV Map, Vertex Color, Shapekey
-- Edge Crease, Smooth, Seam, Freestyle
+- Edge Crease, Smooth, Seam, Edge Freestyle, Bevel Weight
+- Face Freestyle
 - Vertex Weight (Vertex Group)
 - Selection Set
 <br>
@@ -548,7 +559,7 @@ Detects edges by the number of faces connected to each edge.
 
 #### <ins>By Boundary</ins>
 
-Material detects edges shared by faces with two different materials. Seam detects edges that have seam marks used in UV Unwrap. Coplanar detects edges where two connected faces have normal vectors in the same direction. Crease detects edges that have edge creases on subdivision surfaces. Sharp detects edges that have seam marks.
+Material detects edges shared by faces with two different materials. Seam detects edges that have seam marks used in UV Unwrap. Coplanar detects edges where two connected faces have normal vectors in the same direction. Crease detects edges that have edge creases on subdivision surfaces. Sharp detects edges that have seam marks. <b>Freestyle</b> detects edges with Freestyle marks. <b>Bevel</b> detects edges with edge bevel weights.
 
 ### Faces
 
@@ -558,7 +569,7 @@ Detects faces by the number of verts that make up each face.
 
 #### <ins>By Type</ins>
 
-Non Planar detects non-planar faces. Colocalted detects overlapping faces made up of the same vertices. Coplanar detects faces with adjacent normal vectors in the same direction. Convex detects convex faces. Concave detects concave faces.
+Non Planar detects non-planar faces. Colocalted detects overlapping faces made up of the same vertices. Coplanar detects faces with adjacent normal vectors in the same direction. Convex detects convex faces. Concave detects concave faces. <b>Freestyle</b> detects faces that have the Freestyle mark.
 
 #### <ins>By Material</ins>
 
@@ -707,6 +718,13 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 | Selection Center | view3d.yt_origin_to_selection |
 | Selection Border Center | view3d.yt_origin_to_selection_border |
 | Origin | view3d.yt_origin_to_origin |
+
+### Primitives
+
+| Name | Operator |
+|---------|------------------|
+| New Empty Mesh | mesh.sbl_primitive_empty |
+| Teapot | mesh.sbl_primitive_teapot |
 
 ### Mesh Editting
 
@@ -878,6 +896,13 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 
 - Fixed an issue where the Action Center pie menu would not appear.
 - Fixed an issue where Freestyle edges would not copy correctly if modifiers were added via the clipboard.
+
+### v1.8 New Features Added
+
+- Create a new empty mesh and add a teapot
+- Support for freestyle face and bevel edge weighting in the clipboard
+- Fixed a symmetry bug in the Radial Weight Tool and Linear Weight Tool
+- Support for freestyle and bevel edge weighting of faces in Statistics
 
 ## License
 

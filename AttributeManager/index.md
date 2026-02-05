@@ -233,6 +233,7 @@ In Object Mode, you can edit various object attributes, including:
   - Light Object
   - Camera Object
   - Empty Object
+  - Modifier
 
 When in Object Mode:
 - Use the first dropdown to select which object types to load (e.g., Mesh, Light, Camera).
@@ -240,7 +241,14 @@ When in Object Mode:
 
 For example, you can group attributes into categories like Transform, Relations, Visibility, etc.<br>
 Press Apply to All Rows to apply changes to all selected objects.<br>
-When applying the same Name to multiple objects, Blender automatically appends numbers to ensure unique names.
+When applying the same Name to multiple objects, Blender automatically appends numbers to ensure unique names.<br>
+
+In Modifier mode, you can edit the display attributes of modifiers added to objects. The editing table can be switched between displaying the order of modifiers added to each object or the order of the objects to which each modifier is added. <br>
+Also, if you set the item to <b>Properties</b> and execute <b>Apply to All Rows</b>, all properties of the modifier in the selected row will be copied to modifiers of the same type as the modifier in the selected row. This is useful when you want to set the same properties for all modifiers at once. Enabling <b>Auto Expand</b> will expand the properties panel for the modifier in the selected row and close all other panels. <br>
+
+<div align="left">
+<img src="images/objectModifier.gif"/>
+</div>
 
 
 
@@ -256,6 +264,11 @@ When applying the same Name to multiple objects, Blender automatically appends n
 - Added Color Attribute
 - Added Show Colors button
 - Added the ability to edit relative coordinates in Shape Keys
+
+### v1.2 New Features Added
+
+- Added Modifier submode to Object mode
+- Fixed a bug in the Transform Rotation setting
 
 ## License
 

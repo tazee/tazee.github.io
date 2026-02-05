@@ -92,6 +92,16 @@ Altキー＋LMBで選択するBlender標準のループ選択と同じですが�
 </div>
 <br>
 
+## プリミティブ
+
+### <ins>New Empty Mesh</ins><br>
+
+New Empty Meshは、新規に空のメッシュオブジェクトを追加します。
+
+### <ins>Teapot</ins><br>
+
+Teapotは、ティーポットのプリミティブ形状を追加します。Edit Modeでは、現在選択されているメッシュにティーポットを追加します。Objectモードのでは、新規にメッシュオブジェクトを追加し、そこにティーポットを追加します。
+
 ## メッシュ編集
 
 ### <ins>Loop Slice</ins><br>
@@ -500,7 +510,8 @@ v1.5.1からカーブのスプラインもコピー＆ペーストできるよ�
 クリップボードでは下記のような属性もコピー＆ペーストします。<br>
 - マテリアル
 - UVマップ、頂点カラー、シェイプキー
-- エッジクリース、スムース、シーム、Freestyle
+- エッジクリース、スムース、シーム、Freestyle、エッジベベルウェイト
+- 面Freestyle
 - 頂点ウェイト(頂点グループ)
 - 選択セット
 <br>
@@ -511,7 +522,7 @@ v1.5.1からカーブのスプラインもコピー＆ペーストできるよ�
 ***マテリアルの置き換え***<br>
 **マテリアルの置き換え** を有効にすると、貼り付け先のメッシュに同じ名前のマテリアルが存在する場合、マテリアルが上書きされます。**マテリアルの置き換え** が無効になっている場合、マテリアルは変更されません。<br>
 
-***トランスフォームのインポート***</br>
+***トランスフォームのインポート***<br>
 **トランスフォームのインポート** を有効にすると、オブジェクトの移動、回転、スケール、およびペアレント化のデータが、貼り付け先のオブジェクトのトランスフォームに設定されます。このオプションは、**クリップボードから新規メッシュ** コマンドでのみ使用できます。<br>
 
 ## 外部クリップボード(External Clipboard)
@@ -553,7 +564,7 @@ Statisticsは、MeshのVert、Edge、Faceの情報を項目別に表示し、そ
 
 #### <ins>By Boundary</ins>
 
-<b>Material</b>は、2つ別々のマテリアルを持つFaceに共有されているEdge検出します。<b>Seam</b>は、UV Unwrapで使用するSeamマークを持つEdgeを検出します。<b>Coplanar</b>は、連結されいる２つのFaceが同一方向の法線ベクトルを持つEdgeを検出します。<b>Crease</b>は、サブディビジョンサーフェイスのエッジクリースを持つEdgeを検出します。<b>Sharp</b>は、Seamマークを持つEdgeを検出します。
+<b>Material</b>は、2つ別々のマテリアルを持つFaceに共有されているEdge検出します。<b>Seam</b>は、UV Unwrapで使用するSeamマークを持つEdgeを検出します。<b>Coplanar</b>は、連結されいる２つのFaceが同一方向の法線ベクトルを持つEdgeを検出します。<b>Crease</b>は、サブディビジョンサーフェイスのエッジクリースを持つEdgeを検出します。<b>Sharp</b>は、Seamマークを持つEdgeを検出します。<b>Freestyle</b>は、Freestyleマークを持つEdgeを検出します。<b>Bevel</b>は、エッジベベルウェイトを持つEdgeを検出します。
 
 ### Faces
 
@@ -563,7 +574,7 @@ Statisticsは、MeshのVert、Edge、Faceの情報を項目別に表示し、そ
 
 #### <ins>By Type</ins>
 
-<b>Non Planar</b>は、非平面Faceを検出します。<b>Colocalted</b>同じ頂点で構成される重なって作られたFaceを検出します。<b>Coplanar</b>は、隣接するFaceが同一方向の法線ベクトルを持つFaceを検出します。<b>Convex</b>凸型のFaceを検出します。<b>Concave</b>凹型のFaceを検出します。
+<b>Non Planar</b>は、非平面Faceを検出します。<b>Colocalted</b>同じ頂点で構成される重なって作られたFaceを検出します。<b>Coplanar</b>は、隣接するFaceが同一方向の法線ベクトルを持つFaceを検出します。<b>Convex</b>凸型のFaceを検出します。<b>Concave</b>凹型のFaceを検出します。<b>Freestyle</b>は、Freestyleマークを持つFaceを検出します。
 
 #### <ins>By Material</ins>
 
@@ -712,6 +723,13 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 | Selection Center | view3d.yt_origin_to_selection |
 | Selection Border Center | view3d.yt_origin_to_selection_border |
 | Origin | view3d.yt_origin_to_origin |
+
+
+### プリミティブ
+| Name | Operator |
+|---------|------------------|
+| New Empty Mesh | mesh.sbl_primitive_empty |
+| Teapot | mesh.sbl_primitive_teapot |
 
 ### メッシュ編集
 
@@ -883,6 +901,13 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 
 - アクションセンターのパイメニューが表示されなくなる問題を修正
 - クリップボードでモディファイアが追加されているとFreestyleエッジが正しくコピーされない問題を修正
+
+### v1.8 新機能追加
+
+- 新規に空のメッシュを作成、ティーポットを追加
+- クリップボードで、面のFreestyleとベベルエッジウェイトをサポート
+- ラディアルウェイトツールとリニアウェイトツールの対称に関するバグを修正
+- Statisticesで、面のFreestyleとベベルエッジウェイトをサポート
 
 ## License
 
