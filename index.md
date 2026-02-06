@@ -31,7 +31,7 @@ Hello I'm Taz, a software engineer specializing in modeling tools for 3D compute
 <b>Attribute Manager : </b><br>
 - <a href="/AttributeManager/">English document</a>
 - <a href="/AttributeManager/index_J.html">日本語ドキュメント</a>
-- <a href="https://tazaki.gumroad.com/l/wirsjp/ctrx7jt">Gumroad online store</a>
+- <a href="https://tazaki.gumroad.com/l/wirsjp">Gumroad online store</a>
 - <a href="https://forms.gle/cQuSwEzg53GJHpm47">Feedback Form</a>
 - Release Note :<br>
     <a href="/AttributeManager/release_1_2.html">v1.2</a>
