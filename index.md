@@ -34,8 +34,9 @@ Hello I'm Taz, a software engineer specializing in modeling tools for 3D compute
 - <a href="https://tazaki.gumroad.com/l/wirsjp">Gumroad online store</a>
 - <a href="https://forms.gle/cQuSwEzg53GJHpm47">Feedback Form</a>
 - Release Note :<br>
-    <a href="/AttributeManager/release_1_2.html">v1.2</a>
+    <a href="/AttributeManager/release_1_3.html">v1.3</a>
     (
+    <a href="/AttributeManager/release_1_2.html">v1.2</a>
     <a href="/AttributeManager/release_1_1.html">v1.1</a>
     )
 

@@ -111,16 +111,58 @@ Attribute Manager は 3Dビューのサイドバー（Nパネル） に表示さ
 <br>
 
 ### <ins>(5) Apply to All Rows</ins><br>
-このボタンは、特定の列だけ値をすべての行に反映させたいときに使います。
+このボタンは、特定の列の値（項目）を算術式に基づいて、すべての行に反映させたいときに使います。
 
-- まず1行を選択する
-- 適用したい値に編集する
+- 算術式のフィールドに式を入力する
 - ドロップダウンから対象列を選ぶ
 - 「Apply to All Rows」を押す
 
-これで同じ列の値がすべての行に反映されます。
+これで指定した実数値（Float）の項目の値が算術式に基づいてすべての行の同じ項目に計算が適用されます。実数値（Float）以外の項目で「Apply to All Rows」を押した場合は、現在選択されているアクティブセルの値が全ての行に適用されます。<br>
 
-### <ins>(6) Show Indices, Show Weights, Show Colors</ins><br>
+算術式は、Pythonのeval関数をベースとしていて、基本的な四則演算をすべてサポートしています。Attribute Listの算術式では下記のような変数を用意しています。<br>
+また、Pythonの<a href="https://docs.python.org/3/library/math.html">mathモジュール</a>を使用することも可能です。<br>
+
+
+- $active : 現在選択されている行の指定した項目（セル）の値
+- $value : 計算対象となる行の指定した項目（セル）の値
+- $min_value : 全ての行の指定した項目（セル）の最小値
+- $max_value : 全ての行の指定した項目（セル）の最大値
+
+入力フィールド右側にあるポップアップから上記の変数や基本的な演算子をフィールドに追加することができます。<br>
+
+使用例１：全ての行の各値を現在選択されているセルの値に設定する<br>
+<b>$active</b><br>
+
+使用例２：全ての行の各値に一律に2.0を加える（現在の値に四則演算する場合は、最初の$valueを省略することができます。）<br>
+<b>$value + 2.0</b> もしくは <b>+ 2.0</b><br>
+
+使用例３：全ての行の各値を全ての行の中の最小値に設定する<br>
+<b>$min_value</b><br>
+
+使用例４：全ての行の各値を全ての行の中の最小値と最大値の中間値に設定する<br>
+<b>($min_value + $max_value) / 2.0</b><br>
+
+使用例５：行の値を指定した範囲内(0.0 ~ 1.0)に制限する<br>
+<b>clamp($value, 0.0, 1.0)</b><br>
+
+使用例６：全ての行の各値の平方根を設定する<br>
+<b>math.sqrt($value)</b><br>
+
+使用例７：全ての行の各値に10.0°をラジアンに変換して加える<br>
+<b>+ math.radians(10.0)</b><br>
+
+<div align="left">
+<img src="images/Expression.png"/>
+</div>
+<br>
+
+<div align="left">
+<img src="images/vertexAttributeList.gif"/>
+</div>
+<br>
+
+
+### <ins>(6) Show Indices, Show Weights, Show Colors, Show Attribute List</ins><br>
 
 - Show Indices<br>
 → 3Dビューに要素番号（Index）を番号付きで表示します
@@ -141,6 +183,10 @@ Attribute Manager は 3Dビューのサイドバー（Nパネル） に表示さ
 → 3Dビューにウェイトをグラデーションで表示します
 → Object Mode の「Viewport Shading」にあるObject Color と同じ機能
 
+- Show Attribute List<br>
+→ Edit Modeで編集可能な属性一覧を表示します
+→ このリストはBlender標準のAttributeタブにある属性リストと同等の機能を持っています。
+
 3Dビューを切り替えた時は、Show Colorsを再設定する必要があります。<br>
 
 <div align="left">
@@ -150,6 +196,15 @@ Attribute Manager は 3Dビューのサイドバー（Nパネル） に表示さ
 
 ### <ins>(7) Max Rows</ins><br>
 スプレッドシート表示における一度に表示する最大行数を調整します。初期値は6行です。
+
+### <ins>(8) Attribute List</ins><br>
+Attribute Listは、Edit Modeで編集可能な属性の一覧を表示します。<b>Set Attribute</b>ボタンを押すと選択した属性が編集テーブルに設定されます。
+また、Attribute Listの右側にある＋ボタンを押すとユーザー定義の属性を追加することができます。ーボタンを押すと現在選択されている属性が削除されます。
+
+<div align="left">
+<img src="images/AttributeList.png"/>
+</div>
+<br>
 
 
 ## 頂点編集モード
@@ -166,10 +221,15 @@ Attribute Manager は 3Dビューのサイドバー（Nパネル） に表示さ
 - クリース
 - ベベルウェイト
 - カラーアトリビュート（POINT）
+- その他の属性（Float, Float Vector, Int, String, Bool）
+
 
 座標値は ローカル / グローバル空間 の両方で表示できます。編集時は Blender 側に自動で変換されて反映されます。<br>
 
 グローバル座標系の場合は、メッシュ頂点の座標値をグローバル座標系に変換して編集テーブルに表示し、編集した値はローカル座標系に変換してメッシュに書き戻しています。YT-Tools for Blenderの作業平面の機能と組み合わせて、作業平面上の頂点の座標値を揃えたい場合などで便利に使うことができます。シェイプキーとVertex Groupは、プルダウンメニューで選択されている対象データの値が対象になります。<br>
+
+その他の属性ではAttribute Listなどで追加したユーザー定義のカスタム属性を編集できます。頂点に設定されている属性のリストから選択して編集を行います。<br>
+
 
 <div align="left">
 <img src="images/vertexPosition.gif"/>
@@ -197,8 +257,11 @@ Shape KeyモードをRelativeにすると、座標値はBaseキーからの相�
 - crease（クリース）
 - edge bevel weight（エッジベベルウェイト）
 - Length（長さ）
+- その他の属性（Float, Float Vector, Int, String, Bool）
 
-これらの属性はサブディビジョンやシェーディングに影響します。Lengthはエッジの端点の頂点の座標値を変更し、指定した長さにエッジの中心位置を基準に長さを調整します。
+これらの属性はサブディビジョンやシェーディングに影響します。Lengthはエッジの端点の頂点の座標値を変更し、指定した長さにエッジの中心位置を基準に長さを調整します。<br>
+
+その他の属性ではAttribute Listなどで追加したユーザー定義のカスタム属性を編集できます。エッジに設定されている属性のリストから選択して編集を行います。<br>
 
 <div align="left">
 <img src="images/edgeLength.gif"/>
@@ -213,8 +276,10 @@ Shape KeyモードをRelativeにすると、座標値はBaseキーからの相�
 
 - マテリアルスロット
 - Freestyleマーク
+- その他の属性（Float, Float Vector, Int, String, Bool）
 
-多くの面が同じマテリアルを共有する場合に一括編集が便利です。Freestyleの属性も変更可能です。
+多くの面が同じマテリアルを共有する場合に一括編集が便利です。Freestyleの属性も変更可能です。<br>
+その他の属性ではAttribute Listなどで追加したユーザー定義のカスタム属性を編集できます。面に設定されている属性のリストから選択して編集を行います。<br>
 
 ## 面コーナー編集モード
 <div align="left">
@@ -224,12 +289,15 @@ Shape KeyモードをRelativeにすると、座標値はBaseキーからの相�
 
 - UV
 - カラーアトリビュート (CORNER)
+- その他の属性（Float, Float Vector, Int, String, Bool）
 
 Blenderでは、UVやカラーアトリビュートは面の各コーナーごとに値を保持していて、必要に応じて頂点単位に編集を行ったり、切り離して独立した値を持たせることが可能です。<br>
 
 Index Orderは、頂点番号と面番号をどちらを基準にテーブルを表示するかを指定します。<b>Face - Vertex</b>を指定すると面とその面を構成する頂点を順番に表示します。<b>Vertex - Face</b>を指定すると頂点とその頂点にリンクされている面を順番に表示します。<br>
 
 <b>Shared Vertex</b>を有効にすると同一頂点において同じ面コーナーの値は同時に編集されます。同じ値を持つセルは表示されません。<b>Shared Vertex</b>をオフにすると面コーナー単位に独立して値を編集することができます。<br>
+
+その他の属性ではAttribute Listなどで追加したユーザー定義のカスタム属性を編集できます。面コーナーに設定されている属性のリストから選択して編集を行います。<br>
 
 <div align="left">
 <img src="images/faceCornerUV.gif"/>
@@ -264,6 +332,11 @@ Object モードでは:<br>
 
 オブジェクトモードでは、オブジェクトの名称も変更することができます。<b>Apply to All Rows</b>を使って他のオブジェクトに同じ名称を設定した場合、Blenderが自動的に同じ名称のオブジェクトに対して連番を付加します。<br>
 
+<div align="left">
+<img src="images/objectTransform.gif"/>
+</div>
+<br>
+
 Modifierモードでは、オブジェクトに追加されているモディファイアの表示属性を編集することができます。編集テーブルには、各オブジェクトに追加されているモディファイアの順番、もしくは各モディファイアを追加しているオブジェクトの順番に表示を切り替えることができます。<br>
 また、アイテムを<b>Properties</b>に設定して、<b>Apply to All Rows</b>を実行すると選択されている行のモディファイアと同じ種類のモディファイアに選択されている行のモディファイアの全てのプロパティがコピーされます。全てのモディファイアに対して同じプロパティを一括して設定したい場合に便利です。<b>Auto Expand</b>を有効にすると選択した行のモディファイアのプロパティパネルが展開され、それ以外のパネルは閉じられます。<br>
 
@@ -291,6 +364,11 @@ Modifierモードでは、オブジェクトに追加されているモディフ
 
 - ObjectモードにModifierサブモードを追加
 - TransformのRotation設定のバグを修正
+
+### v1.3 新機能追加
+
+- Attribute Listの追加
+- Apply to All Rowsを算術式を使用する方法に変更
 
 ## License
 
