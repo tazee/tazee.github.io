@@ -909,6 +909,11 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - ラディアルウェイトツールとリニアウェイトツールの対称に関するバグを修正
 - Statisticesで、面のFreestyleとベベルエッジウェイトをサポート
 
+### v1.8.1 バグ修正
+
+- クリップボードで、既存メッシュへのPasteでのエラーを修正
+- Teapotのマテリアルインデックスに関するバグを修正
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.

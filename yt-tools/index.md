@@ -904,6 +904,11 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Fixed a symmetry bug in the Radial Weight Tool and Linear Weight Tool
 - Support for freestyle and bevel edge weighting of faces in Statistics
 
+### v1.8.1 Bug Fixes
+
+- Fixed an error when pasting to an existing mesh via the clipboard.
+- Fixed a bug related to Teapot material indexing.
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.
