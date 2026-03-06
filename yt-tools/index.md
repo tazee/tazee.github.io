@@ -909,6 +909,15 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Fixed an error when pasting to an existing mesh via the clipboard.
 - Fixed a bug related to Teapot material indexing.
 
+### v1.8.2 Minor Changes
+
+- Added Undo/Redo functionality (Linear Transform, Radial Transform, Bend Transform, Linear Weight, Radial Weight)
+- Simultaneous slicing of loops for multiple selected edges in Loop Slice
+- Added a "Select (Set)" button to replace the selection with a selection set
+- Fixed a bug that prevented the Radial Transform and Radial Weight size handles from being clickable
+- Fixed an issue where the previous Transform would be affected when Auto Fitting a Linear Transform after a Transform.
+- Changed so that the dialog box is not displayed when Center Position is executed from a shortcut.
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.

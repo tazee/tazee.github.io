@@ -914,6 +914,18 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - クリップボードで、既存メッシュへのPasteでのエラーを修正
 - Teapotのマテリアルインデックスに関するバグを修正
 
+### v1.8.2 マイナーチェンジ
+
+- Undo/Redoの機能を追加 (Linear Transform, Radial Transform, Bend Transform, Linear Weight, Radial Weight)
+- ループスライスで複数の選択されたエッジに対するループを同時にスライス
+- 選択セットで選択を置換するための"Select (Set)"ボタンを追加
+- Radial Transform, Radial Weightのサイズハンドルがクリックできないバグを修正
+- Linear TransformのAuto FitをTransform後に行った際、直前のTransformが影響を受けてしまう問題を修正
+- ショートカットからCenter Positionを実行したときは、ダイアログを表示しないように変更
+
+
+
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.
