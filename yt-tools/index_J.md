@@ -923,6 +923,12 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - Linear TransformのAuto FitをTransform後に行った際、直前のTransformが影響を受けてしまう問題を修正
 - ショートカットからCenter Positionを実行したときは、ダイアログを表示しないように変更
 
+### v1.8.3 バグ修正
+
+- Gizmoのイベント処理に関する潜在的なバグを修正
+- クリップボードに関する潜在的なバグを修正
+- クリップボードで、custom normalをサポート
+
 
 
 

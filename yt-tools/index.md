@@ -918,6 +918,12 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Fixed an issue where the previous Transform would be affected when Auto Fitting a Linear Transform after a Transform.
 - Changed so that the dialog box is not displayed when Center Position is executed from a shortcut.
 
+### v1.8.3 Bug Fixes
+
+- Fixed a potential bug related to Gizmo event handling
+- Fixed a potential bug related to the clipboard
+- Added support for custom normal in the clipboard
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.
