@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-permalink: /AttributeManager/index_J.html
+permalink: /yt-bridge/index_J.html
 ---
 
 <style>
@@ -136,3 +136,13 @@ Import Custom Normalsを有効にすると、中間ファイルに保存され�
 ## 名前付きファイルへの保存・読み込み（Export/Import）
 
 YT-Bridgeでは、中間ファイルを一時ファイルとしてOSが提供するフォルダに作成し、アプリケーション間でデータの交換を行っています。Export/Importではこのデータファイルをユーザーが指定したファイル名称で任意のフォルダに保存したり、読み込む機能を提供しています。
+
+## データ変換詳細
+
+### オブジェクト座標データ
+
+BlenderのオブジェクトとModoのアイテム座標データは、位置座標値、回転座標値、スケール値、回転順序がそれぞれのローカル座標系で出力されれます。Blenderの座標系は右手座標系のZ-Up、Modoの座標系は右手座標系のY-Upです。座標値は中間データファイルから読み込む際に変換されます。また、オブジェクトのペアレンティングの情報も中間ファイルに保存されます。
+
+### リンクオブジェクト（インスタンスアイテム）
+
+Modoのインスタンスアイテムは、Blenderのリンクオブジェクトに相互に変換されます。Blenderのリンクオブジェクトは、シーン上で最初のリンクオブジェクトが実オブジェクトとして中間ファイルに保存され、それ以降のリンクオブジェクトがインスタンスとして出力されます。
