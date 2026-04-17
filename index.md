@@ -28,6 +28,12 @@ Hello I'm Taz, a software engineer specializing in modeling tools for 3D compute
     <a href="/yt-tools/release_1_1.html">v1.1</a>
     )
 
+<b>YT-Bridge : </b><br>
+- <a href="/yt-bridge/">English document</a>
+- <a href="/yt-bridge/index_J.html">日本語ドキュメント</a>
+- <a href="tazaki.gumroad.com/l/lfjpkw">Gumroad online store</a>
+- <a href="https://forms.gle/3XkJnZyQFghUkScw8">Feedback Form</a>
+
 <b>Attribute Manager : </b><br>
 - <a href="/AttributeManager/">English document</a>
 - <a href="/AttributeManager/index_J.html">日本語ドキュメント</a>
