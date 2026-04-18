@@ -40,6 +40,9 @@ YT-Bridge for Blender は BlenderとModoとの間でシーンデータを相互�
 - 左側の Add-ons を選択します
 - Install from Disk をクリックして yt_bridge_blender.zip を選択します
 - YT-Bridge のチェックボックスをオンにして有効にします
+<div align="left">
+<img src="images/bridge_blender.png"/>
+</div>
 
 ## Modoのバージョンとインストール方法
 
@@ -52,6 +55,9 @@ YT-Bridge for Blender は BlenderとModoとの間でシーンデータを相互�
 - Modoの初期設定でPythonのバージョンを3.9に設定してください。
 - yt_bridge_modo.zip をModoのビュー上にドラッグ＆ドロップします。
 - Modoが再起動され、YT-Bridgeが使用可能になります。
+<div align="left">
+<img src="images/bridge_modo.png"/>
+</div>
 
 ### YT-Tools外部クリップボードとの違い
 

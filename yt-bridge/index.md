@@ -40,6 +40,9 @@ YT-Bridge for Blender is a tool for exchanging scene data between Blender and Mo
 - Select Add-ons on the left
 - Click Install from Disk and select yt_bridge_blender.zip
 - Check the YT-Bridge checkbox to enable it.
+<div align="left">
+<img src="images/bridge_blender.png"/>
+</div>
 
 ## Modo Version and Installation Method
 
@@ -51,8 +54,10 @@ YT-Bridge for Blender is a tool for exchanging scene data between Blender and Mo
 - Launch Modo
 - Set the Python version to 3.9 in Modo's initial settings.
 - Drag and drop yt_bridge_modo.zip onto the Modo view.
-
 - Modo will restart, and YT-Bridge will become available.
+<div align="left">
+<img src="images/bridge_modo.png"/>
+</div>
 
 ### Differences from YT-Tools External Clipboard
 
