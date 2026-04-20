@@ -255,6 +255,10 @@ Setup Armature Modifiers (Setup Skeleton Deformers)を有効にすると、ボ�
 
 - YT-Bridge for Blenderの新規リリース
 
+### Bridge for Modo v1.0.1 バグ修正
+
+- カーブとサーフェイスポリゴンが混在したメッシュを出力した際、カーブのみが出力されてしまう問題を修正
+
 
 ## License
 

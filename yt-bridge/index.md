@@ -252,6 +252,10 @@ Enabling Setup Armature Modifiers (Setup Skeleton Deformers) sets the modifiers 
 
 - New release of YT-Bridge for Blender
 
+### Bridge for Modo v1.0.1 Bug Fix
+
+- Fixed an issue where, when exporting a mesh containing both curves and surface polygons, only the curves were exported.
+
 
 ## License
 
