@@ -256,6 +256,12 @@ Enabling Setup Armature Modifiers (Setup Skeleton Deformers) sets the modifiers 
 
 - Fixed an issue where, when exporting a mesh containing both curves and surface polygons, only the curves were exported.
 
+### Bridge for Modo v1.0.2 Bug Fix
+
+- Fixed an error with negative edge weight value
+- Export source items of instance evenif they are invisible.
+- Resolved alias for image path in asset library.
+- Export group locator as EMPTY object
 
 ## License
 
