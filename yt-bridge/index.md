@@ -257,6 +257,9 @@ In Modo, if mesh operators or other deformers are applied to a MESH, the mesh at
 <div align="left">
 <img src="images/Bridge_Setup.png"/>
 </div>
+<div align="left">
+<img src="images/Setup_Button.png"/>
+</div>
 <i>Scene Output in Setup Mode</i><br>
 
 

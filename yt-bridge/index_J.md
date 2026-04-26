@@ -258,6 +258,9 @@ Modoでは、MESHにメッシュオペレータなどが適応されている場
 <div align="left">
 <img src="images/Bridge_Setup.png"/>
 </div>
+<div align="left">
+<img src="images/Setup_Button.png"/>
+</div>
 <i>Setupモードでのシーン出力</i><br>
 
 
