@@ -246,6 +246,20 @@ The material outputs basic diffuse color and roughness values. The texture outpu
 
 Enabling Setup Armature Modifiers (Setup Skeleton Deformers) sets the modifiers (deformers) that map bones to Vertex Groups (vertex weight maps) when importing intermediate data. In Blender, the Armature modifier is set, and in Modo, the General Influence deformer is set. <br>
 
+
+### <ins>Scene Output in Setup Mode</ins>
+
+In Modo, if mesh operators or other deformers are applied to a MESH, the mesh at the current frame with the mesh operators applied will be output. To output the base mesh before mesh operators or other deformers are applied, you need to enable Modo's Setup mode and perform a YT-Bridge Push operation. Particular caution is needed if you are using a morph deformer, as this will prevent Blender's shape key base mesh from being output correctly. <br>
+<div align="left">
+<img src="images/Bridge_NoSetup.png"/>
+</div>
+<i>Normal Scene Output</i><br>
+<div align="left">
+<img src="images/Bridge_Setup.png"/>
+</div>
+<i>Scene Output in Setup Mode</i><br>
+
+
 ## Change Log
 
 ### v1.0 New Release

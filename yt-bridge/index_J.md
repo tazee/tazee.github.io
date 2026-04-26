@@ -248,6 +248,18 @@ ModoのスケルトンはロケータアイテムをJointアイテムとして�
 Setup Armature Modifiers (Setup Skeleton Deformers)を有効にすると、ボーンとVertex Groups（頂点ウェイトマップ）をマッピングするモディファイア（デフォーマー）を中間データ読み込み時にセットしてます。BlenderではArmatureモディファイアが、ModoではGeneral Influenceデフォーマーが設定されます。<br>
 
 
+### <ins>セットアップモードでのシーン出力</ins>
+
+Modoでは、MESHにメッシュオペレータなどが適応されている場合、メッシュオペレータが適応された現在のフレームのメッシュが出力されます。メッシュオペレータなどが適応される前のベースメッシュを出力するには、ModoのSetupモードを有効にした状態で、YT-BridgeのPush操作を行う必要があります。特にモーフデフォーマを使用していた場合、BlenderのシェイプキーのBaseメッシュが正しく出力されなくなるため注意が必要です。<br>
+<div align="left">
+<img src="images/Bridge_NoSetup.png"/>
+</div>
+<i>通常のシーン出力</i><br>
+<div align="left">
+<img src="images/Bridge_Setup.png"/>
+</div>
+<i>Setupモードでのシーン出力</i><br>
+
 
 ## 変更履歴
 
