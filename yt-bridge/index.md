@@ -99,7 +99,7 @@ The save format is specified in the panel's format options.
 YT-Bridge's push operation is equivalent to YT-Tools' copy operation, saving object data to an intermediate file using the specified method. The data in the intermediate file must be manually pulled from the target application. YT-Bridge does not provide an automatic import function using Inter-Process Communication.
 
 - All Objects (All Items)<br>
-Exports all supported objects in the scene. Hidden objects are not output.
+Exports all supported objects in the scene. If Export Hidden Items is turned off, hidden objects will not be exported.
 
 - All Objects (All Mesh Items)<br>
 Exports all mesh objects in the scene.<br>
@@ -279,6 +279,16 @@ In Modo, if mesh operators or other deformers are applied to a MESH, the mesh at
 - Export source items of instance evenif they are invisible.
 - Resolved alias for image path in asset library.
 - Export group locator as EMPTY object
+
+### Bridge for Modo v1.0.3 Bug Fixes
+
+- Fixed an issue where the replicator's source item would not export even if it was hidden.
+- Added the Export Hidden Items option.
+
+### Bridge for Blender v1.0.1 Bug Fixes
+
+- Fixed an error that occurred when the material was set to None.
+- Fixed a bug where the Subdivide modifier was not set correctly.
 
 ## License
 
