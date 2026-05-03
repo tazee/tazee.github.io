@@ -290,6 +290,10 @@ In Modo, if mesh operators or other deformers are applied to a MESH, the mesh at
 - Fixed an error that occurred when the material was set to None.
 - Fixed a bug where the Subdivide modifier was not set correctly.
 
+### Bridge for Modo v1.0.4 Bug Fixes
+- Fixed a bug where the default Colorspace was being converted to Non-Color
+- Fixed a bug where the Transform of items with multiple Transforms was not being converted correctly
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.

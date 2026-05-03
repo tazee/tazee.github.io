@@ -291,6 +291,10 @@ Modoでは、MESHにメッシュオペレータなどが適応されている場
 - マテリアルがNoneの場合に発生していたエラーを修正
 - Subdivideモディファイアが正しく設定されないバグを修正
 
+### Bridge for Modo v1.0.4 バグ修正
+- デフォルトのColorspaceがNon-Colorに変換されてしまうバグを修正
+- 複数のTransformを持つアイテムのTransformが正しく変換されないバグを修正
+
 
 
 ## License
