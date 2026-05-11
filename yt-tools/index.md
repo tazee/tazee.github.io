@@ -66,7 +66,6 @@ In Edit Mode, selects the next element based on the selection pattern of two or 
 ### <ins>Select Contextual</ins> (mouse double-click only)<br>
 
 In Edit Mode, double-clicking a face with the mouse selects other faces connected to that face. Double-clicking an edge selects an edge loop. Double-clicking while holding down the SHIFT key selects the aforementioned elements in addition to the existing selection.<br>
-<ins><b>Limitations: </b>The double-click shortcut does not work in Circle selection mode in the 3D View or when UV sync is off in the UV Editor. This is due to some limitation on Blender, and there is currently no workaround.</ins>
 <div align="left">
 <img src="images/SelectContextual.gif"/>
 </div>
@@ -138,7 +137,6 @@ Polygon Slice is an operator developed to achieve behavior similar to Modo's pol
 - Space key: Confirm the slice and change the mesh. The tool ends.<br>
 - P key: Shows a preview.<br>
 - ESC key, RMB click: Exit the tool without changing the mesh.<br>
-<ins>Limitation: Operators that use tool handles do not work in 4-view view mode. This is because Blender displays 4-views as a special view, and the add-on cannot correctly recognize 4-views.</ins>
 
 <div align="left">
 <img src="images/PolygonSlice.gif"/>
@@ -923,6 +921,12 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Fixed a potential bug related to Gizmo event handling
 - Fixed a potential bug related to the clipboard
 - Added support for custom normal in the clipboard
+
+### v1.8.4 Bug Fixes
+
+- Fixed an issue where modal operators did not work in split view.
+- Fixed an issue where soft dragging did not work in UV view.
+- Fixed an issue where edge loop selection no longer referenced the Delimit option.
 
 ## License
 
