@@ -82,6 +82,23 @@ Edit Modeで、現在選択されている編集モードをFace, Edge, Vertの�
 
 Altキー＋LMBで選択するBlender標準のループ選択と同じですが、選択されたエレメントを選択履歴に順番に登録します。これにより下矢印キーにアサインされているDeselect Lastを実行すると最後に選択されたエレメントから順番に選択されたエレメントを非選択にすることができます。
 
+## 投げ縄選択(Lasso Selection)
+
+ModoのMMBの投げ縄選択に似た機能を提供します。BlenderのBox選択やLasso選択は、現在のビューポートのシェーディングがソリッドの場合（X-Ray以外）は、背面に隠れている頂点や面は選択されません。現在のシェーディングモードに関わらず、選択範囲内にあるエレメントを選択する機能を提供しています。この投げ縄選択は、デフォルトでは無効になっていますので、プリファレンスパネルにあるこのアドオンのLasso Selectionのキーマップを有効にすれば、使用可能になります。Alt-RightMouseが設定されていますが、Modo互換のビューポートナビゲーションなどを使用されている場合は、MiddleMouseに変更して使用することもできます。キーマップは、通常選択、追加選択（Shiftキー）、選択除外（Ctrlキー）の3つが用意されています。また、Blenderの対称モードに対応しています。<br>
+<div align="left">
+<img src="images/LassoStyle.png"/>
+</div>
+<br>
+<div align="left">
+<img src="images/LassoSelectKeymap.png"/>
+</div>
+<br>
+<div align="left">
+<img src="images/LassoSelect.gif"/>
+</div>
+<br>
+
+
 ## 選択セット(Selection Set)
 
 <b>Selection Set</b>は、Vert、Edge、Faceの選択状態を名前をつけてメッシュに保存する機能です。これらの情報はメッシュのカスタムデータとして保存されます。Blenderのシーンファイルに保存されますので、保存したシーンを再度開いた場合にも保持されています。<b>Add</b>は、現在選択されているメッシュエレメントを<b>Selection Set</b>に追加します。<b>Selection Set</b>は、Vert、Edge、Faceに対して別々に保存されます。<b>Remove</b>は、現在表示されている<b>Selection Set</b>を削除します。<b>Remove All</b>を有効にすると、現在のEditモードに対して保存されている<b>Selection Set</b>を全て削除します。<b>Select</b>は、現在表示されている<b>Selection Set</b>に保存されいるエレメントを選択状態にします。<b>Replace</b>は、現在表示されている<b>Selection Set</b>を現在の選択状態で上書きします。<br><br>
@@ -683,6 +700,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 | Select Loop | mesh.yt_select_loop |
 | Select Loop Direct | mesh.yt_select_loop_direct |
 | Cycle Selection Mode | mesh.yt_cycle_select_mode |
+| Lasso Selection | mesh.yt_lasso_select |
 
 ### 選択セット
 
@@ -933,6 +951,10 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - ソフトドラッグがUVビューで動作しない問題を修正
 - エッジループ選択がDelimitオプションを参照するように修正
 
+### v1.8.5 マイナーチェンジ
+- クリップボードでDisplacement Textureをサポート
+- Statisticsのバグを修正
+- X-Ray投げ縄選択機能を追加
 
 ## License
 

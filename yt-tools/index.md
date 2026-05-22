@@ -82,6 +82,22 @@ In Edit Mode, cycles through the currently selected edit modes in the order Face
 
 This is the same as Blender's standard loop selection with Alt + LMB, but it registers the selected elements in the selection history in order. This allows you to deselect the last selected element and the elements selected in order by executing Deselect Last, which is assigned to the down arrow key.
 
+## Lasso Selection
+
+This feature provides functionality similar to Modo's MMB lasso selection. Blender's Box Selection and Lasso Selection do not select vertices or faces hidden behind objects when the current viewport shading is solid (other than X-Ray). This feature allows you to select elements within the selection area regardless of the current shading mode. This lasso selection keymaps are disabled by default; you can enable them by activating the Lasso Selection keymaps in the preferences panel. Alt-RightMouse is set as the default, but you can change it to MiddleMouse if you are using Modo-compatible viewport navigation. Three shortcuts are available: normal selection, additional selection (Shift key), and subtract (Ctrl key). It also supports Blender's symmetric mode.
+<div align="left">
+<img src="images/LassoStyle.png"/>
+</div>
+<br>
+<div align="left">
+<img src="images/LassoSelectKeymap.png"/>
+</div>
+<br>
+<div align="left">
+<img src="images/LassoSelect.gif"/>
+</div>
+<br>
+
 ## Selection Set
 
 Selection Set is a function that saves the selection state of vert, edge, and face to a mesh with a name. This information is saved as custom data for the mesh. It is saved in the Blender scene file, so it is retained even if you reopen the saved scene. Add adds the currently selected mesh elements to the Selection Set. Selection Sets are saved separately for verts, edges, and faces. Remove deletes the currently displayed Selection Set. Enabling Remove All deletes all Selection Sets saved for the current Edit mode. Select selects the elements saved in the currently displayed Selection Set.<b>Replace</b> overwrites the currently displayed <b>Selection Set</b> with the current selection.<br><br>
@@ -678,6 +694,7 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 | Select Loop | mesh.yt_select_loop |
 | Select Loop Direct | mesh.yt_select_loop_direct |
 | Cycle Selection Mode | mesh.yt_cycle_select_mode |
+| Lasso Selection | mesh.yt_lasso_select |
 
 ### Selection Set
 
@@ -927,6 +944,11 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Fixed an issue where modal operators did not work in split view.
 - Fixed an issue where soft dragging did not work in UV view.
 - Fixed an issue where edge loop selection no longer referenced the Delimit option.
+
+### v1.8.5 Minor Changes
+- Support Displacement Texture for Clipboard
+- Fixed a bug in Statistics
+- Added X-Ray lasso selection functionality
 
 ## License
 
