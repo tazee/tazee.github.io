@@ -950,6 +950,12 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Fixed a bug in Statistics
 - Added X-Ray lasso selection functionality
 
+### v1.8.6 Bug Fixes
+
+- Fixed an issue where an error occurred when using EdgeSlice in symmetric mode.
+- Fixed an issue where an error occurred when using SoftDrag in symmetric mode.
+- Fixed an issue where AddLoop's Absolute Distance was not symmetric in symmetric mode.
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.

@@ -956,6 +956,12 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - Statisticsのバグを修正
 - X-Ray投げ縄選択機能を追加
 
+### v1.8.6 バグ修正
+
+- EdgeSliceを対称モードで使用した時にエラーが発生する問題を修正
+- SoftDragを対称モードで使用した時にエラーが発生する問題を修正
+- AddLoopのAbsolute Distanceが対称モードで対称にならない問題を修正
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.
