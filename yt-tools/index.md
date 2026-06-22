@@ -258,6 +258,11 @@ Enabling <b>Show Axis</b> displays axis handles at the Start and End positions o
 <img src="images/LinearTransform.gif"/>
 </div>
 
+Enabling <b>Selection Island</b> calculates falloff weights on an island basis for consecutively selected elements. If nothing is selected, falloff weights are calculated on an island basis for connected Faces. <br>
+<div align="left">
+<img src="images/LinearTransformSelectionIsland.gif"/>
+</div>
+
 ### <ins>Radial Transform</ins><br>
 
 <b>Radial Transform</b> is a transform operator with a radial falloff. The degree of transformation is attenuated in a circular shape. Move Offset, Scale, and Angle specify the relative amount of movement, scale, and rotation to transform, respectively. The center of rotation and scale refers to the currently set Transform Pivot Point. Transform Orientation only supports Normal. The rest follow the Global direction. You can interactively change the transformation value by manipulating the Hauling or Transform Handle in the 3D view while holding down the LMB. The items used for the Hauling operation can be specified in the Hauling menu. They are also assigned to the shortcut keys T, R, and S, so they can also be changed using keyboard shortcuts. Radial Center and Radial Side are the center point of the radial falloff and the radius of the sphere. The closer to the center point, the smaller the falloff weight, and the farther away from the center, the larger the movement. The weight on the outside of the sphere is zero. These positions are set to fit the bounding box of the currently selected mesh element when the operator is started. You can redraw this sphere by dragging in the 3D view while holding down the Shift key. You can also constrain the drag direction to horizontal or vertical by holding down the Ctrl key and dragging the LMB.<br>
@@ -955,6 +960,11 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Fixed an issue where an error occurred when using EdgeSlice in symmetric mode.
 - Fixed an issue where an error occurred when using SoftDrag in symmetric mode.
 - Fixed an issue where AddLoop's Absolute Distance was not symmetric in symmetric mode.
+
+### v1.8.7 Minor Changes
+
+- Modified WorkPlane to add all visible meshes except the active mesh to the WorkPlane object.
+- Added Selection Island option to Linear Transform.
 
 ## License
 

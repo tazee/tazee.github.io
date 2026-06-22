@@ -259,6 +259,11 @@ Adjust Last Operation(最後の操作を調整) パネルで、UVs(UV) がチェ
 <img src="images/LinearTransform.gif"/>
 </div>
 
+<b>Selection Island</b>を有効にすると連続して選択されているエレメントのアイランド単位にフォールオフウェイトが計算されます。何も選択されていない場合は、連結されているFaceのアイランド単位にフォールオフウェイトが計算されます。<br>
+<div align="left">
+<img src="images/LinearTransformSelectionIsland.gif"/>
+</div>
+
 ### <ins>Radial Transform</ins><br>
 
 <b>Radial Transform</b>は、ラディアルフォールオフを使用したトランスフォームオペレータです。円環状の形状の中でトランスフォームの度合いが減衰されます。<b>Move Offset</b>, <b>Scale</b>, <b>Angle</b>は、それぞれトランスフォームする相対的な移動量、スケール、および回転量を指定します。回転とスケールの中心は現在設定されている<b>Transform Pivot Point</b>を参照しています。<b>Transform Orientation</b>は、Normalのみに対応しています。それ以外はGlobalの方向に準じます。LMBを押しながら３Dビュー上でHaulingもしくはトランスフォームハンドルを操作するとインタラクティブにトランスフォーム値を変更することができます。Hauling操作で使用する項目は、メニューのHaulingで指定できます。また、ショートカットキーのT、R、Sに割り当てられていますので、キーボードショートカットからも変更することが可能です。<b>Radial Center</b>, <b>Radial Side</b>は、ラディアルフォールオフの中心点と球体の半径です。中心点に近いほどフォールオフウェイトが小さく、中心から離れるほど大きな移動になります。球体の外側のウェイトはゼロになります。これらの位置はオペレータ起動時に現在選択されているメッシュエレメントのバウンディングボックスにフィットするように設定されます。Shiftキーを押しながら３Dビュー画面をドラックするとこの球体を新しく引き直すことができます。また、Ctrlキーを押しながらLMBをドラッグするとドラッグ方向が水平または垂直方向に拘束されます。<br>
@@ -961,6 +966,11 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - EdgeSliceを対称モードで使用した時にエラーが発生する問題を修正
 - SoftDragを対称モードで使用した時にエラーが発生する問題を修正
 - AddLoopのAbsolute Distanceが対称モードで対称にならない問題を修正
+
+### v1.8.7 マイナーチェンジ
+
+- WorkPlaneでアクティブメッシュ以外の全ての表示メッシュをWorkPlaneオブジェクトに追加するように変更
+- Linear TransformにSelection Islandオプションを追加
 
 ## License
 
