@@ -304,6 +304,16 @@ In Modo, if mesh operators or other deformers are applied to a MESH, the mesh at
 - Support Displacement texture
 - Fixed an issue where source item data was not output when selecting and outputting instance items.
 
+### Bridge for Blender v1.0.3 Bug Fixes
+
+- Prevented a potential error at copying objects.
+- Fixed errors in Paint modes.
+
+### Bridge for Blender v1.0.4 Bug Fixes
+
+- Fixed a bug about shapekey
+
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.
