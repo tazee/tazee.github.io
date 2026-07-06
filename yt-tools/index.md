@@ -966,6 +966,12 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Modified WorkPlane to add all visible meshes except the active mesh to the WorkPlane object.
 - Added Selection Island option to Linear Transform.
 
+### v1.8.8 Bug Fixes
+
+- Fixed some bugs about soft drag tool.
+- Fixed a bug about clipboard during pasting shapekey.
+- Support view rotation with Maya navigation keymap in tool active.
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.

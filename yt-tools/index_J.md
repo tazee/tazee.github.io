@@ -972,6 +972,12 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - WorkPlaneでアクティブメッシュ以外の全ての表示メッシュをWorkPlaneオブジェクトに追加するように変更
 - Linear TransformにSelection Islandオプションを追加
 
+### v1.8.8 バグ修正
+
+- ソフトドラッグに関するバグを修正
+- ClipboardでShapekeyのペースト時のバグを修正
+- Mayaナビゲーションモードで、モーダルツール使用中にビューがナビゲーションできない問題を修正
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.
