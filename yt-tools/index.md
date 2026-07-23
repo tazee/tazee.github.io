@@ -972,6 +972,11 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Fixed a bug about clipboard during pasting shapekey.
 - Support view rotation with Maya navigation keymap in tool active.
 
+### v1.8.9 Bug Fixes
+
+- Added Selection Island option to Linear Weight tool.
+- Prevented a potential error about view area data.
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.

@@ -978,6 +978,11 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - ClipboardでShapekeyのペースト時のバグを修正
 - Mayaナビゲーションモードで、モーダルツール使用中にビューがナビゲーションできない問題を修正
 
+### v1.8.9 バグ修正
+
+- Linear WeightにSelection Islandオプションを追加
+- ビューポートエリアサイズに関する潜在的なバグを修正
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.
