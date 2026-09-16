@@ -985,7 +985,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 
 ### v1.8.10 マイナーチェンジ
 
-- SoftDragtツールでUndo/Redoをサポート
+- SoftDragツールでUndo/Redoをサポート
 - ツール使用中にレイアウトを切り替えた時に発生したエラーを修正
 
 ## License

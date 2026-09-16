@@ -979,7 +979,7 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 
 ### v1.8.10 Minor Changes
 
-- Added Undo/Redo support for the SoftDragt tool.
+- Added Undo/Redo support for the SoftDrag tool.
 - Fixed an error that occurred when switching layouts while using the tool.
 
 ## License
