@@ -983,6 +983,11 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - Linear WeightにSelection Islandオプションを追加
 - ビューポートエリアサイズに関する潜在的なバグを修正
 
+### v1.8.10 マイナーチェンジ
+
+- SoftDragtツールでUndo/Redoをサポート
+- ツール使用中にレイアウトを切り替えた時に発生したエラーを修正
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.

@@ -977,6 +977,11 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Added Selection Island option to Linear Weight tool.
 - Prevented a potential error about view area data.
 
+### v1.8.10 Minor Changes
+
+- Added Undo/Redo support for the SoftDragt tool.
+- Fixed an error that occurred when switching layouts while using the tool.
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.
