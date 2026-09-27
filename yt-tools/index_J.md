@@ -988,6 +988,11 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - SoftDragツールでUndo/Redoをサポート
 - ツール使用中にレイアウトを切り替えた時に発生したエラーを修正
 
+### v1.8.11 マイナーチェンジ
+
+- SoftDragツールでSHIFTキーでSmoothBrushを呼び出した時のエラーを修正
+- BendツールとLinear、RadialトランスフォームのAxisの選択メニューをHUDに表示
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.

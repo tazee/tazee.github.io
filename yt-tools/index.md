@@ -982,6 +982,10 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Added Undo/Redo support for the SoftDrag tool.
 - Fixed an error that occurred when switching layouts while using the tool.
 
+### v1.8.11 Minor Changes
+- Fixed an error that occurred when invoking the Smooth Brush using the Shift key while using the Soft Drag tool.
+- Added axis selection menus for the Bend tool and Linear/Radial transforms to the HUD.
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.
