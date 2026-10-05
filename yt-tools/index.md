@@ -191,6 +191,17 @@ If UVs is checked in the Adjust Last Operation panel, UV mapping coordinates wil
 - Merge By Distance:
 Merges geometry around selected vertices, merging selected mesh vertices or point cloud points within the specified distance.
 
+
+### <ins>Vertex Slide</ins><br>
+
+<b>Vertex Slide</b> is a tool that moves a vertex's coordinates along the edges connected to it. Clicking a vertex in the 3D view displays arrow handles along the connected edges. Dragging an arrow handle with the Left Mouse Button (LMB) slides the vertex along that edge in the direction of the handle. Holding down the Control key while dragging snaps the movement position along the edge in 10% increments.<br>
+
+<b>Offset</b> represents the distance the vertex slides along the edge. Enabling <b>Merge</b> causes the sliding vertex to merge with the endpoint vertex if it reaches the end of the edge. Specifying an axis of symmetry via <b>Symmetry</b> causes the vertex at the symmetrical position to move in a corresponding symmetrical direction as you drag the target vertex.<br>
+
+<div align="left">
+<img src="images/VertexSlide.gif"/>
+</div>
+
 ## Weight Editing
 
 ### <ins>Linear Weight</ins><br>
@@ -755,6 +766,7 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 | Edge Slice | mesh.yt_edgeslice |
 | Merge | mesh.yt_merge_verts |
 | Add Loop | mesh.yt_addloop |
+| Vertex Slide | mesh.yt_vertexslide |
 
 ### Weight Editting
 
@@ -985,6 +997,10 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 ### v1.8.11 Minor Changes
 - Fixed an error that occurred when invoking the Smooth Brush using the Shift key while using the Soft Drag tool.
 - Added axis selection menus for the Bend tool and Linear/Radial transforms to the HUD.
+
+### v1.8.12 Minor Changes
+- Added Vertex Slide tool
+- Fixed a bug about Loop Slice
 
 ## License
 

@@ -192,6 +192,16 @@ Adjust Last Operation(最後の操作を調整) パネルで、UVs(UV) がチェ
 - By Distance(距離でマージ):
 選択されている頂点周囲のジオメトリをマージし、指定された距離内で選択したメッシュ頂点やポイントクラウドの点をマージします。
 
+### <ins>Vertex Slide</ins><br>
+
+<b>Vertex Slide</b>は、頂点の座標値をその頂点に連結されているエッジに沿って、移動させるツールです。3Dビュー上で頂点をクリックするとその頂点に連結されているエッジに沿って矢印ハンドルが表示されます。矢印ハンドルをLMBでドラッグすると頂点がドラッグしているハンドルの方向にそのエッジ上にスライドします。Controlキーを押しながらハンドルをドラッグするとエッジ上で、10%単位で移動位置がスナップします。<br>
+
+<b>Offset</b>は、エッジ上をスライドする距離です。<b>Merge</b>を有効にすると、スライドしている頂点がエッジの終点に移動した場合、スライドしている頂点と終点の頂点がマージされます。<b>Symmetry</b>で、対称軸を指定するとドラッグしている頂点と対称位置にある頂点が軸対称方向に移動します。<br>
+
+<div align="left">
+<img src="images/VertexSlide.gif"/>
+</div>
+
 ## ウェイト編集
 
 ### <ins>Linear Weight</ins><br>
@@ -761,6 +771,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 | Edge Slice | mesh.yt_edgeslice |
 | Merge | mesh.yt_merge_verts |
 | Add Loop | mesh.yt_addloop |
+| Vertex Slide | mesh.yt_vertexslide |
 
 ### ウェイト編集
 
@@ -992,6 +1003,11 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 
 - SoftDragツールでSHIFTキーでSmoothBrushを呼び出した時のエラーを修正
 - BendツールとLinear、RadialトランスフォームのAxisの選択メニューをHUDに表示
+
+### v1.8.12 マイナーチェンジ
+
+- 頂点スライドの追加
+- ループスライスのバグを修正
 
 ## License
 
