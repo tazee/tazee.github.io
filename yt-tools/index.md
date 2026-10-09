@@ -198,6 +198,10 @@ Merges geometry around selected vertices, merging selected mesh vertices or poin
 
 <b>Offset</b> represents the distance the vertex slides along the edge. Enabling <b>Merge</b> causes the sliding vertex to merge with the endpoint vertex if it reaches the end of the edge. Specifying an axis of symmetry via <b>Symmetry</b> causes the vertex at the symmetrical position to move in a corresponding symmetrical direction as you drag the target vertex.<br>
 
+Enabling <b>Show Normal Handle</b> displays a handle for moving coordinate values ​​along the vertex normal vector.<br>
+
+<b>Handle Size</b> adjusts the on-screen size of the arrow handle. This value is permanently saved, allowing you to use the same handle size across sessions.<br>
+
 <div align="left">
 <img src="images/VertexSlide.gif"/>
 </div>
@@ -995,12 +999,22 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Fixed an error that occurred when switching layouts while using the tool.
 
 ### v1.8.11 Minor Changes
+
 - Fixed an error that occurred when invoking the Smooth Brush using the Shift key while using the Soft Drag tool.
 - Added axis selection menus for the Bend tool and Linear/Radial transforms to the HUD.
 
 ### v1.8.12 Minor Changes
+
 - Added Vertex Slide tool
 - Fixed a bug about Loop Slice
+
+### v1.8.13 Minor Updates
+
+- Enabled the use of negative offsets for Vertex Slide.
+- Added a parameter to adjust the handle size for Vertex Slide.
+- Added an option to display a handle aligned with the vertex normal in Vertex Slide.
+- Modified Vertex Slide to cancel changes when pressing Esc or the Right Mouse Button (RMB).
+- Adjusted the default radius for hit testing.
 
 ## License
 
