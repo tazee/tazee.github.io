@@ -371,6 +371,20 @@ Absolute Scaling allows you to determine the dimensions of your mesh and then re
 <img src="images/AbsoluteScale.gif">
 </div>
 
+### <ins>EdgeFlow</ins><br>
+
+EdgeFlow relaxes selected edge loops and nearby parallel flow rails while trying to preserve surface curvature, volume, and the original direction of the mesh flow.<br>
+
+- Preserves curvature and volume using a rail-based relaxation approach
+- Locks the vertex on boundary when <b>Pin Boundary</b> is enabled.
+- Supports configurable iteration count, relaxation factor, and tension
+- Project relaxing position along the vetex normal when <b>Project Normal</b> is enabled.
+- Provides `CENTRIPETAL` and `UNIFORM` Catmull-Rom spline options
+<br>
+<div align="left">
+<img src="images/EdgeFlow.gif">
+</div>
+
 ## Viewport Display
 
 Viewport Display is a function that changes the viewport display attributes of selected and unselected mesh objects all at once. In Blender, mesh objects have Viewport Display as a property that can be set for each individual object, but this sets this attribute all at once. Active Meshes sets the display attributes for selected mesh objects, and Inactive Meshes sets the display attributes for unselected mesh objects. Enabling Set Only Active Meshes and pressing the Set Attributes button will make no changes to unselected mesh objects and will only change the display attributes of selected mesh objects.
@@ -790,6 +804,7 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 | Smooth Brush | mesh.yt_sculpt_smooth |
 | Set Vertex Positions | mesh.yt_vert_position_set |
 | Center Vertex Positions | mesh.yt_vert_position_center |
+| Edge Flow | mesh.yt_edgeflow |
 
 ### WorkPlane
 

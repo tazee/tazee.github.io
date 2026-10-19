@@ -375,6 +375,20 @@ Adjust Last Operation(最後の操作を調整) パネルで、UVs(UV) がチェ
 <img src="images/AbsoluteScale.gif">
 </div>
 
+### <ins>EdgeFlow</ins><br>
+
+EdgeFlowは、選択したエッジループおよびその近傍にある平行な「フローレール（flow rails）」を緩和（リラックス）させます。その際、サーフェスの曲率やボリューム、そしてメッシュフロー本来の方向を可能な限り維持します。<br>
+
+- レールベースの緩和手法により、曲率とボリュームを維持します。
+- 「Pin Boundary（境界の固定）」を有効にすると、境界上の頂点が固定されます。
+- 反復回数（イテレーション数）、緩和係数、テンションを調整可能です。
+- 「Project Normal（法線への投影）」を有効にすると、頂点の法線方向に沿って緩和後の位置が投影されます。
+- Catmull-Romスプラインの計算方式として、「CENTRIPETAL（求心）」および「UNIFORM（均一）」を選択可能です。
+<br>
+<div align="left">
+<img src="images/EdgeFlow.gif">
+</div>
+
 ## メッシュオブジェクトの表示属性の変更（Viewport Display）
 
 Viewport Displayは、選択されているメッシュオブジェクトと非選択のメッシュオブジェクトのビューポート表示属性を一括して変更する機能です。BlenderではメッシュオブジェクトのプロパティにViewport Displayがあり、個々のオブジェクトに対して設定可能ですが、この属性を一括して設定します。Active Meshesでは、選択されているメッシュオブジェトのための表示属性を設定し、Inactive Meshesでは非選択のメッシュオブジェトのための表示属性を設定します。Set Only Active Meshesを有効にして、Set Attributesボタンを押すと非選択のメッシュオブジェクトには変更は加えず、選択されているメッシュオブジェクトの表示属性だけを変更します。
@@ -795,6 +809,7 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 | Smooth Brush | mesh.yt_sculpt_smooth |
 | Set Vertex Positions | mesh.yt_vert_position_set |
 | Center Vertex Positions | mesh.yt_vert_position_center |
+| Edge Flow | mesh.yt_edgeflow |
 
 ### 作業平面
 
