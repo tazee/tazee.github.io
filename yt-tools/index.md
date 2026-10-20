@@ -1031,6 +1031,11 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Modified Vertex Slide to cancel changes when pressing Esc or the Right Mouse Button (RMB).
 - Adjusted the default radius for hit testing.
 
+### v1.9 New Features
+
+- Added Edge Flow tool
+- Fixed a bug about Vertex Slide with Merge mode
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.

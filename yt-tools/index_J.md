@@ -1036,6 +1036,11 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - 頂点スライドでESCもしくはRMBを押した時は変更をキャンセルするように修正
 - 頂点のヒットテスティングのデフォルトサイズを調整
 
+### v1.9 新機能追加
+
+- Edge Flowツールの追加
+- Vertex SlideのMergeオプションに関するバグを修正
+
 
 ## License
 
