@@ -32,5 +32,5 @@ EdgeFlow relaxes selected edge loops and nearby parallel flow rails while trying
 - Provides `CENTRIPETAL` and `UNIFORM` Catmull-Rom spline options
 
 <div align="left">
-<img src="images/edgeFlow.gif">
+<img src="images/edgeflow.gif">
 </div>
