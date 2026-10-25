@@ -1036,6 +1036,10 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 - Added Edge Flow tool
 - Fixed a bug about Vertex Slide with Merge mode
 
+### v1.9.1 Minor Updates
+
+- Improved the algorithm for Edge Flow
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.

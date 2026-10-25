@@ -1041,6 +1041,10 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 - Edge Flowツールの追加
 - Vertex SlideのMergeオプションに関するバグを修正
 
+### v1.9.1 マイナーチェンジ
+
+- Edge Flowのアルゴリズムを改善
+
 
 ## License
 
