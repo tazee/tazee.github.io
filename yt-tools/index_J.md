@@ -1045,6 +1045,11 @@ Action Centerをセットしたときに、Transform Gizmoを自動的にセッ�
 
 - Edge Flowのアルゴリズムを改善
 
+### v1.9.2 マイナーチェンジ
+- トランスフォームされたメッシュオブジェクトでのVertex Slideのバグを修正
+- クリップボードに関するエラーを修正
+- EdgeSliceで、頂点が重複する場合があるバグを修正
+
 
 ## License
 

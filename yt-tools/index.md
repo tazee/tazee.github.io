@@ -1040,6 +1040,11 @@ Specifies the keymap used for view navigation. This is used to prevent modal too
 
 - Improved the algorithm for Edge Flow
 
+### v1.9.2 Minor Update
+- Fixed a bug with Vertex Slide on transformed mesh objects
+- Fixed errors related to the clipboard
+- Fixed a bug in EdgeSlice that could result in duplicate vertices
+
 ## License
 
 This Blender add-on is licensed under the GNU General Public License v3.0 or later.
